@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>VFE_IndustrialGenerators</defName>
+    <label>industrial generators</label>
+    <description>Build industrial-grade generators, capable of storing significantly more fuel and producing higher power.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Industrial</techLevel>
+  <researchViewX>9.00</researchViewX>
+  <researchViewY>0.50</researchViewY>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_AdvancedBatteries</defName>
+    <label>advanced battery</label>
+    <description>Build ultratech batteries, capable of efficiently storing large amounts of energy.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>Batteries</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>10.00</researchViewX>
+  <researchViewY>0.50</researchViewY>
+  </ResearchProjectDef>
+
+
+</Defs>
+

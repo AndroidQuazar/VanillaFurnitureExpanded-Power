@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Vanilla Furniture Expanded - Power</name>
+	<author>Oskar Potocki, Sarg Bjornson, Kikohi</author>
+	<url></url>
+    <supportedVersions>
+        <li>1.1</li>
+        <li>1.0</li>
+    </supportedVersions>
+    <packageId>VanillaExpanded.VFEPower</packageId>
+    <description>TBD</description>
+</ModMetaData>
