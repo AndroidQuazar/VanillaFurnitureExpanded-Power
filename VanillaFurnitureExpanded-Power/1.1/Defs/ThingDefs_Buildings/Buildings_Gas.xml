@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs> 
+
+
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPipe</defName>
+		<label>gas pipe</label>
+		<description>Description here.</description>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/GasPipe_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom6</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/GasPipe_MenuIcon</uiIconPath>
+		<uiIconScale>1</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/GasPipe_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>35</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>1</Steel>
+		</costList>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTransmitter</compClass>
+				<transmitsGas>true</transmitsGas>
+
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_Pipe</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+
+	</ThingDef>
+
+
+
+
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasTank</defName>
+		<label>gas tank</label>
+		<description>Description here</description>
+		<thingClass>VanillaPowerExpanded.Building_Tank</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasTank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,3.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>0.40</fillPercent>
+
+		<tickerType>Normal</tickerType>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsPower</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>-15</Beauty>
+		</statBases>
+
+		<size>(1,2)</size>
+		<costList>
+			<Steel>70</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_PipeTank">
+				<storedEnergyMax>1000</storedEnergyMax>
+				<efficiency>0.5</efficiency>
+				<shortCircuitInRain>false</shortCircuitInRain>
+				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
+		</placeWorkers>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_HelixienPump</defName>
+		<label>helixien pump</label>
+		<description>Description here</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/HelixienPump</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5,5)</drawSize>
+
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<castEdgeShadows>false</castEdgeShadows>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(3,3)</size>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
+		</placeWorkers>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipePlant</compClass>
+				<basePowerConsumption>-4000</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_Flickable" />
+
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(217,112,33,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>6</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc3</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_HelixienGenerator</defName>
+		<label>helixien gas powered generator</label>
+		<description>Produces power by consuming helixien gas. Must be connected to a gas pipe network.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/HelixienPoweredGenerator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.93,1,1.69)</volume>
+				<offset>(-0.03,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(2,2)</size>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Power">
+				<compClass>VanillaPowerExpanded.CompGasPowerPlant</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
+				<basePowerConsumption>1000</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_Flickable" />
+
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(80,112,180,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>6</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
+		</placeWorkers>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc4</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasCrematorium</defName>
+		<label>helixien gas crematorium</label>
+		<description>A huge stone crematorium which vaporizes corpses with extremely high temperatures.</description>
+		<thingClass>Building_WorkTable_HeatPush</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasCrematorium</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,2)</drawSize>
+			<shadowData>
+				<volume>(1.95,0.5,1.3)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.3,0.1,2.4,1.8)</rect>
+			</damageData>
+		</graphicData>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>150</costStuffCount>
+		<costList>
+			<Steel>20</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>4500</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Cleanliness>-20</Cleanliness>
+			<Beauty>-10</Beauty>
+		</statBases>
+		<size>(3,2)</size>
+		<designationCategory>Production</designationCategory>
+		<fillPercent>1</fillPercent>
+		<passability>Impassable</passability>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<interactionCellIcon>DiningChair</interactionCellIcon>
+		<surfaceType>Item</surfaceType>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<recipes>
+			<li>CremateCorpse</li>
+			<li>BurnApparel</li>
+			<li>BurnWeapon</li>
+			<li>BurnDrugs</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
+				<basePowerConsumption>250</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(217,112,33,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>12</heatPerSecond>
+			</li>
+		</comps>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.32</heatPerTickWhileWorking>
+			<forceShowRoomStats>true</forceShowRoomStats>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<designationHotKey>Misc5</designationHotKey>
+		<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+
+
+
+
+
+</Defs>
