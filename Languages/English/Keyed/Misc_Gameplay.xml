@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+
+	<!-- Gas pipe system -->
+	<VPE_PipesNotConnected>Pipes not connected to generator or tanks</VPE_PipesNotConnected>
+	<VPE_PipeConnectedRateStored>Pipe grid excess/stored: {0} ml / {1} ml-d</VPE_PipeConnectedRateStored>
+	<VPE_LiquidTankStored>Gas stored</VPE_LiquidTankStored>
+    <VPE_LiquidTankEfficiency>Tank efficiency</VPE_LiquidTankEfficiency>
+    <VPE_TankLeakage>Minimum sealant leakage</VPE_TankLeakage>
+	<VPE_NutrientNeeded>Gas needed</VPE_NutrientNeeded>
+    <VPE_LiquidOutput>Gas output</VPE_LiquidOutput>
+
+	<!-- Nucular Reactor -->
+	<VPE_RadiationProduced>Warning: Reactor producing radiation in a {0} meters radius</VPE_RadiationProduced>
+	<VPE_TempInReactorRoom>Temperature in reactor room: {0}ºC</VPE_TempInReactorRoom>
+	<VPE_TempInReactorRoomCritical>Warning: Temperature in reactor room: {0}ºC</VPE_TempInReactorRoomCritical>
+	<VPE_Meltdown>Warning: Meltdown due to high temperature. Until repaired, reactor will kill all life in a radius of</VPE_Meltdown>
+	<VPE_MeltdownLetterLabel>Reactor Meltdown</VPE_MeltdownLetterLabel>
+	<VPE_MeltdownLetter>A partial reactor meltdown has occured due to high temperature in the reactor room! Until repaired, this reactor will be extremely harmful to life in an extended radius.\n\nIgnoring this may very well be the end of your colony in a few hours.</VPE_MeltdownLetter>
+
+	<!-- Misc -->
+	<VPE_MustPlaceRoofed>This building needs to be placed in an indoors, roofed area</VPE_MustPlaceRoofed>
+
+</LanguageData>

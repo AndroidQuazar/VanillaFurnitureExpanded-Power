@@ -1,4 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaPowerExpanded\1.1\Assemblies\VanillaPowerExpanded.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaPowerExpanded\1.1\Source\VanillaPowerExpanded\VanillaPowerExpanded\obj\Debug\VanillaPowerExpanded.csprojAssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaPowerExpanded\1.1\Source\VanillaPowerExpanded\VanillaPowerExpanded\obj\Debug\VanillaPowerExpanded.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\VanillaPowerExpanded\1.1\Source\VanillaPowerExpanded\VanillaPowerExpanded\obj\Debug\VanillaPowerExpanded.dll
