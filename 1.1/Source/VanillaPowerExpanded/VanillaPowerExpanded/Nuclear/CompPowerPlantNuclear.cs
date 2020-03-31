@@ -218,13 +218,14 @@ namespace VanillaPowerExpanded
             if (noReactorRoom)
             {
                 stringBuilder.Append("VPE_NoReactorRoom".Translate());
-                return stringBuilder.ToString();
                 if (this.parent.GetComp<CompBreakdownable>().BrokenDown && signalMeltdown)
                 {
                     stringBuilder.AppendLine();
                     CompPlantHarmRadiusIfBroken comp = this.parent.GetComp<CompPlantHarmRadiusIfBroken>();
                     stringBuilder.Append("VPE_Meltdown".Translate() + ": " + comp.CurrentRadius.ToString("0.0") + " meters");
                 }
+                return stringBuilder.ToString();
+                
             }
             else
             {
