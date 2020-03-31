@@ -30,6 +30,23 @@
   <researchViewX>10.00</researchViewX>
   <researchViewY>0.50</researchViewY>
   </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_AdvancedPowerSources</defName>
+    <label>advanced power sources</label>
+    <description>Construct ultratech green power generators, including advanced solar panels and wind turbines.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>Microelectronics</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>11.00</researchViewX>
+  <researchViewY>0.50</researchViewY>
+  </ResearchProjectDef>
 
 
 </Defs>
