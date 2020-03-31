@@ -63,7 +63,7 @@
     <defName>VFE_SmallBattery</defName>
     <label>small battery</label>
     <description>Stores small amount of electricity for later use. Charged batteries explode when exposed to rain or fire.</description>
-    <thingClass>Building_Battery</thingClass>
+    <thingClass>VanillaPowerExpanded.Building_SmallBattery</thingClass>
     <graphicData>
       <texPath>Things/Building/Batteries/BatterySmall</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

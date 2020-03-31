@@ -46,8 +46,8 @@
 			</li>
 			<li Class="CompProperties_Breakdownable"/>
 			
-			<li Class="CompProperties_HeatPusher">
-				<compClass>CompHeatPusherPowered</compClass>
+			<li Class="VanillaPowerExpanded.CompProperties_VariableHeatPusher">
+				<compClass>VanillaPowerExpanded.CompVariableHeatPusher</compClass>
 				<heatPerSecond>60</heatPerSecond>
 			</li>
 			<li Class="CompProperties_Refuelable">
@@ -61,7 +61,7 @@
 				</fuelFilter>
 				<fuelConsumptionRate>2</fuelConsumptionRate>
 				<consumeFuelOnlyWhenUsed>false</consumeFuelOnlyWhenUsed>
-				<autoRefuelPercent>10</autoRefuelPercent>
+				<autoRefuelPercent>100</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
 				<drawOutOfFuelOverlay>true</drawOutOfFuelOverlay>
 				<drawFuelGaugeInMap>true</drawFuelGaugeInMap>

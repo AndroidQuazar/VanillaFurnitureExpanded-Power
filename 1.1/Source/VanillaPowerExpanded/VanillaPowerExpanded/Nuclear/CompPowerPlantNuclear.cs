@@ -14,6 +14,8 @@ namespace VanillaPowerExpanded
 
         protected CompBreakdownable breakdownableComp;
 
+        protected CompVariableHeatPusher variableHeatPusherComp;
+
         public float radiationRadius = 0;
 
         public int tickRadiation = 0;
@@ -28,15 +30,22 @@ namespace VanillaPowerExpanded
 
         public bool signalMeltdown = false;
 
+        public bool noReactorRoom = false;
 
 
 
+        public override void PostExposeData()
+        {
+            Scribe_Values.Look<float>(ref this.radiationRadius, "radiationRadius", 0, false);
+            Scribe_Values.Look<int>(ref this.tickRadiation, "tickRadiation", 0, false);
+            Scribe_Values.Look<bool>(ref this.signalMeltdown, "signalMeltdown", false, false);
+        }
 
         protected virtual float DesiredPowerOutputAndRadius
         {
             get
             {
-
+                
                 if (this.breakdownableComp.BrokenDown && signalMeltdown)
                 {
 
@@ -47,6 +56,12 @@ namespace VanillaPowerExpanded
                 if (this.breakdownableComp.BrokenDown && !signalMeltdown)
                 {
 
+                    radiationRadius = 0;
+                    tickRadiation = 0;
+                    return 0f;
+                }
+                if (noReactorRoom)
+                {
                     radiationRadius = 0;
                     tickRadiation = 0;
                     return 0f;
@@ -65,6 +80,7 @@ namespace VanillaPowerExpanded
                     signalMeltdown = false;
                     radiationRadius = 0;
                     tickRadiation = 0;
+                    variableHeatPusherComp.HeatPerSecondVariable = variableHeatPusherComp.Props.heatPerSecond;
                     return -base.Props.basePowerConsumption;
                 } else
                 {
@@ -72,6 +88,7 @@ namespace VanillaPowerExpanded
                     float powerAdditional;
                     powerAdditional = (this.refuelableComp.FuelPercentOfMax) * base.Props.basePowerConsumption;
                     radiationRadius = radiationRadiusBase + ((this.refuelableComp.FuelPercentOfMax - 0.5f) * radiationRadiusBase *5);
+                    variableHeatPusherComp.HeatPerSecondVariable = variableHeatPusherComp.Props.heatPerSecond + (variableHeatPusherComp.Props.heatPerSecond * this.refuelableComp.FuelPercentOfMax);                
                     tickRadiation = (int)Math.Round((tickRadiationBase * (1.0f - this.refuelableComp.FuelPercentOfMax)) + tickRadiationBase);
                     return -base.Props.basePowerConsumption- powerAdditional;
                 }
@@ -92,6 +109,8 @@ namespace VanillaPowerExpanded
             base.PostSpawnSetup(respawningAfterLoad);
             this.refuelableComp = this.parent.GetComp<CompRefuelable>();
             this.breakdownableComp = this.parent.GetComp<CompBreakdownable>();
+            this.variableHeatPusherComp = this.parent.GetComp<CompVariableHeatPusher>();
+
             if (base.Props.basePowerConsumption < 0f && !this.parent.IsBrokenDown() && FlickUtility.WantsToBeOn(this.parent))
             {
                 base.PowerOn = true;
@@ -102,30 +121,48 @@ namespace VanillaPowerExpanded
         {
             base.CompTick();
             this.UpdateDesiredPowerOutput();
-            if (this.radiationRadius > 0)
+
+            Room room = this.parent.PositionHeld.GetRoom(this.parent.Map, RegionType.Set_All);
+            if (room != null)
             {
-                if (Find.TickManager.TicksGame % tickRadiation == 0)
+                if ((room.OutdoorsForWork || (!this.parent.Map.roofGrid.Roofed(this.parent.PositionHeld))) || room.OpenRoofCount > 0)
                 {
-                    int num = GenRadial.NumCellsInRadius(this.radiationRadius);
-                    for (int i = 0; i < num; i++)
+                    noReactorRoom = true;
+                }
+                else noReactorRoom = false;
+            } 
+
+            if (!noReactorRoom) {
+                if (this.radiationRadius > 0)
+                {
+                    if (Find.TickManager.TicksGame % tickRadiation == 0)
                     {
-                        AffectCell(this.parent.Position + GenRadial.RadialPattern[i]);
+                        int num = GenRadial.NumCellsInRadius(this.radiationRadius);
+                        for (int i = 0; i < num; i++)
+                        {
+                            AffectCell(this.parent.Position + GenRadial.RadialPattern[i]);
+                        }
                     }
                 }
+
+
+                float result;
+                GenTemperature.TryGetTemperatureForCell(this.parent.Position, this.parent.Map, out result);
+                temperatureRightNow = (int)Math.Round(result);
+                if ((temperatureRightNow > criticalTemp) && !signalMeltdown)
+                {
+                    signalMeltdown = true;
+                    this.parent.Map.weatherManager.curWeather = WeatherDef.Named("VPE_RadioactiveFog");
+                    this.parent.Map.weatherManager.TransitionTo(WeatherDef.Named("VPE_RadioactiveFog"));
+                    this.breakdownableComp.DoBreakdown();
+                    this.refuelableComp.ConsumeFuel(refuelableComp.Fuel);
+                    List<ThingDef> links = new List<ThingDef>();
+                    links.Add(ThingDef.Named("VPE_NuclearGenerator"));
+                    Find.LetterStack.ReceiveLetter("VPE_MeltdownLetterLabel".Translate(), "VPE_MeltdownLetter".Translate(), LetterDefOf.NegativeEvent, this.parent, null, null, links, null);
+                }
+
             }
             
-               
-            float result;
-            GenTemperature.TryGetTemperatureForCell(this.parent.Position, this.parent.Map, out result);
-            temperatureRightNow = (int)Math.Round(result);
-            if ((temperatureRightNow> criticalTemp)&&!signalMeltdown) {
-                signalMeltdown = true;
-                this.breakdownableComp.DoBreakdown();
-                this.refuelableComp.ConsumeFuel(refuelableComp.Fuel);
-                List<ThingDef> links = new List<ThingDef>();
-                links.Add(ThingDef.Named("VPE_NuclearGenerator"));
-                Find.LetterStack.ReceiveLetter("VPE_MeltdownLetterLabel".Translate(), "VPE_MeltdownLetter".Translate(), LetterDefOf.NegativeEvent, this.parent, null, null, links, null);
-            }
 
 
         }
@@ -176,31 +213,46 @@ namespace VanillaPowerExpanded
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append(base.CompInspectStringExtra());
             stringBuilder.AppendLine();
-            
-           
-            
-            
-            if (temperatureRightNow < 80)
-            {
-                stringBuilder.Append("VPE_TempInReactorRoom".Translate(temperatureRightNow));
-            }
-            else stringBuilder.Append("VPE_TempInReactorRoomCritical".Translate(temperatureRightNow));
 
-            if (this.radiationRadius > 0)
-            {
-                stringBuilder.AppendLine();
-                
-                stringBuilder.Append("VPE_RadiationProduced".Translate((int)Math.Round(this.radiationRadius)));
-                
-            }
-            if (this.parent.GetComp<CompBreakdownable>().BrokenDown && signalMeltdown)
-            {
-                stringBuilder.AppendLine();
-                CompPlantHarmRadiusIfBroken comp = this.parent.GetComp<CompPlantHarmRadiusIfBroken>();
-                stringBuilder.Append("VPE_Meltdown".Translate() + ": " + comp.CurrentRadius.ToString("0.0") + " meters");
-            }
 
-            return stringBuilder.ToString();
+            if (noReactorRoom)
+            {
+                stringBuilder.Append("VPE_NoReactorRoom".Translate());
+                return stringBuilder.ToString();
+                if (this.parent.GetComp<CompBreakdownable>().BrokenDown && signalMeltdown)
+                {
+                    stringBuilder.AppendLine();
+                    CompPlantHarmRadiusIfBroken comp = this.parent.GetComp<CompPlantHarmRadiusIfBroken>();
+                    stringBuilder.Append("VPE_Meltdown".Translate() + ": " + comp.CurrentRadius.ToString("0.0") + " meters");
+                }
+            }
+            else
+            {
+                if (temperatureRightNow < 80)
+                {
+                    stringBuilder.Append("VPE_TempInReactorRoom".Translate(temperatureRightNow));
+                }
+                else stringBuilder.Append("VPE_TempInReactorRoomCritical".Translate(temperatureRightNow));
+
+                if (this.radiationRadius > 0)
+                {
+                    stringBuilder.AppendLine();
+
+                    stringBuilder.Append("VPE_RadiationProduced".Translate((int)Math.Round(this.radiationRadius)));
+
+                }
+                if (this.parent.GetComp<CompBreakdownable>().BrokenDown && signalMeltdown)
+                {
+                    stringBuilder.AppendLine();
+                    CompPlantHarmRadiusIfBroken comp = this.parent.GetComp<CompPlantHarmRadiusIfBroken>();
+                    stringBuilder.Append("VPE_Meltdown".Translate() + ": " + comp.CurrentRadius.ToString("0.0") + " meters");
+                }
+
+                return stringBuilder.ToString();
+
+            }
+            
+            
         }
 
 

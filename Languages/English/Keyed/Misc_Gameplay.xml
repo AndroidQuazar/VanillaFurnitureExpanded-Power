@@ -18,6 +18,7 @@
 	<VPE_Meltdown>Warning: Meltdown due to high temperature. Until repaired, reactor will kill all life in a radius of</VPE_Meltdown>
 	<VPE_MeltdownLetterLabel>Reactor Meltdown</VPE_MeltdownLetterLabel>
 	<VPE_MeltdownLetter>A partial reactor meltdown has occured due to high temperature in the reactor room! Until repaired, this reactor will be extremely harmful to life in an extended radius.\n\nIgnoring this may very well be the end of your colony in a few hours.</VPE_MeltdownLetter>
+	<VPE_NoReactorRoom>Reactor room must be a roofed, enclosed space</VPE_NoReactorRoom>
 
 	<!-- Misc -->
 	<VPE_MustPlaceRoofed>This building needs to be placed in an indoors, roofed area</VPE_MustPlaceRoofed>

@@ -294,9 +294,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompPlantHarmRadiusIfBroken.cs" />
-    <Compile Include="CompPowerPlantNuclear.cs" />
-    <Compile Include="CompProperties_PlantHarmRadiusIfBroken.cs" />
+    <Compile Include="Batteries\Building_SmallBattery.cs" />
+    <Compile Include="Nuclear\CompPlantHarmRadiusIfBroken.cs" />
+    <Compile Include="Nuclear\CompPowerPlantNuclear.cs" />
+    <Compile Include="Nuclear\CompProperties_PlantHarmRadiusIfBroken.cs" />
+    <Compile Include="Nuclear\CompProperties_VariableHeatPusher.cs" />
+    <Compile Include="Nuclear\CompVariableHeatPusher.cs" />
     <Compile Include="PipeNet\Building_Tank.cs" />
     <Compile Include="PipeNet\CompGasPowerPlant.cs" />
     <Compile Include="PipeNet\CompPipe.cs" />
@@ -315,9 +318,9 @@
     <Compile Include="PipeNet\PipeOverlayMats.cs" />
     <Compile Include="PipeNet\PlaceWorker_PipeUser.cs" />
     <Compile Include="PipeNet\PlaceWorker_Pipe.cs" />
-    <Compile Include="PlacementWorker_MustBeRoofed.cs" />
+    <Compile Include="Nuclear\PlacementWorker_MustBeRoofed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomRoleWorker_ReactorRoom.cs" />
+    <Compile Include="Nuclear\RoomRoleWorker_ReactorRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

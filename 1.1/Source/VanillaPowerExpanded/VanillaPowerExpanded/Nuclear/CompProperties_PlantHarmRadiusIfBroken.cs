@@ -13,7 +13,7 @@ namespace VanillaPowerExpanded
 
         public float harmFrequencyPerArea = 0.011f;
 
-        public float leaflessPlantKillChance = 0.05f;
+        public float leaflessPlantKillChance = 0.5f;
 
         public SimpleCurve radiusPerDayCurve;
     }

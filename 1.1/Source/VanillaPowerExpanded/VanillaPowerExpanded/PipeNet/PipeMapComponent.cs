@@ -159,14 +159,14 @@ namespace VanillaPowerExpanded
                     ThingWithComps parent = delayedAction.compPipe.parent;
                     if (this.map.GetComponent<PipeNetGrid>().TransmittedPowerNetAt(parent.Position) != null)
                     {
-                        Log.Warning(string.Concat(new object[]
+                        /*Log.Warning(string.Concat(new object[]
                         {
                             "Tried to register trasmitter ",
                             parent,
                             " at ",
                             parent.Position,
                             ", but there is already a power net here. There can't be two transmitters on the same cell."
-                        }), false);
+                        }), false);*/
                     }
                     delayedAction.compPipe.SetUpPowerVars();
                     foreach (IntVec3 current in GenAdj.CellsAdjacentCardinal(parent))
