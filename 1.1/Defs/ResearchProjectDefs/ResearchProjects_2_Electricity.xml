@@ -47,6 +47,19 @@
   <researchViewX>11.00</researchViewX>
   <researchViewY>0.50</researchViewY>
   </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_TidalPower</defName>
+    <label>tidal power</label>
+    <description>Build tidal generators on water to produce a large volume of sustainable green energy.</description>
+    <baseCost>3200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+    <researchViewX>8.00</researchViewX>
+    <researchViewY>3.60</researchViewY>
+  </ResearchProjectDef>
 
 
 </Defs>
