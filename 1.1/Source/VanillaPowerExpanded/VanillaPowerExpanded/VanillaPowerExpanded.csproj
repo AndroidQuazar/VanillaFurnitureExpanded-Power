@@ -295,11 +295,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Batteries\Building_SmallBattery.cs" />
+    <Compile Include="MapComponentExtender.cs" />
     <Compile Include="Nuclear\CompPlantHarmRadiusIfBroken.cs" />
     <Compile Include="Nuclear\CompPowerPlantNuclear.cs" />
     <Compile Include="Nuclear\CompProperties_PlantHarmRadiusIfBroken.cs" />
     <Compile Include="Nuclear\CompProperties_VariableHeatPusher.cs" />
     <Compile Include="Nuclear\CompVariableHeatPusher.cs" />
+    <Compile Include="PipeNet\Building_GasGeyser.cs" />
+    <Compile Include="PipeNet\Building_GasValve.cs" />
     <Compile Include="PipeNet\Building_Tank.cs" />
     <Compile Include="PipeNet\CompGasPowerPlant.cs" />
     <Compile Include="PipeNet\CompPipe.cs" />
@@ -309,6 +312,7 @@
     <Compile Include="PipeNet\CompPipeTransmitter.cs" />
     <Compile Include="PipeNet\CompProperties_Pipe.cs" />
     <Compile Include="PipeNet\CompProperties_PipeTank.cs" />
+    <Compile Include="PipeNet\IntermitentGasSprayer.cs" />
     <Compile Include="PipeNet\NutrientPipeNet.cs" />
     <Compile Include="PipeNet\PipeConnectionMaker.cs" />
     <Compile Include="PipeNet\PipeMapComponent.cs" />
@@ -316,11 +320,17 @@
     <Compile Include="PipeNet\PipeNetGrid.cs" />
     <Compile Include="PipeNet\PipeNetMaker.cs" />
     <Compile Include="PipeNet\PipeOverlayMats.cs" />
+    <Compile Include="PipeNet\PlaceWorker_PipeUserOnGasGeyser.cs" />
     <Compile Include="PipeNet\PlaceWorker_PipeUser.cs" />
     <Compile Include="PipeNet\PlaceWorker_Pipe.cs" />
     <Compile Include="Nuclear\PlacementWorker_MustBeRoofed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Nuclear\RoomRoleWorker_ReactorRoom.cs" />
+    <Compile Include="Solar\CompPowerAdvancedSolar.cs" />
+    <Compile Include="SoulPowered\CompSoulsPowerPlant.cs" />
+    <Compile Include="SpecialPowerSpawnsDef.cs" />
+    <Compile Include="Watermill\CompPowerAdvancedWater.cs" />
+    <Compile Include="Wind\CompPowerAdvancedWind.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

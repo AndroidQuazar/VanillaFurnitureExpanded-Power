@@ -67,8 +67,56 @@
 	</ThingDef>
 
 
+<!--	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPipeValve</defName>
+		<label>gas pipe valve</label>
+		<description>Switches gas flow on/off.</description>
+		<thingClass>VanillaPowerExpanded.Building_GasValve</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasSwitch</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+		</graphicData>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<allowWireConnection>false</allowWireConnection>
+		</building>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>0</placingDraggableDimensions>
+		<costList>
+			<Steel>15</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTransmitter</compClass>
+				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_Flickable"/>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>false</neverMultiSelect>
+		<tickerType>Normal</tickerType>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc2</designationHotKey>
+		
+	</ThingDef>
 
-
+-->
 
 
 	<ThingDef ParentName="BuildingBase">
@@ -163,7 +211,7 @@
 			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
 		<placeWorkers>
-			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUserOnGasGeyser</li>
 		</placeWorkers>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -269,42 +317,42 @@
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 	</ThingDef>
-	
-	  <ThingDef ParentName="BuildingBase">
-    <defName>VPE_IndustrialHelixienGenerator</defName>
-    <label>industrial helixien gas powered generator</label>
-    <description>Produces a large amount of power by consuming helixien gas. Must be connected to a gas pipe network.</description>
-    <thingClass>Building</thingClass>
-    <graphicData>
-      <texPath>Things/Building/IndustrialGenerators/IndustrialChemfuelPoweredGenerator</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(3,3)</drawSize>
-      <shadowData>
-        <volume>(1.93,1,1.69)</volume>
-        <offset>(-0.03,0,-0.1)</offset>
-      </shadowData>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <pathCost>150</pathCost>
-    <blockWind>true</blockWind>
-    <fillPercent>1.0</fillPercent>
-    <rotatable>false</rotatable>
-    <statBases>
-      <MaxHitPoints>500</MaxHitPoints>
-      <WorkToBuild>3500</WorkToBuild>
-      <Flammability>1.0</Flammability>
-      <Beauty>-20</Beauty>
-    </statBases>
-    <tickerType>Normal</tickerType>
-    <canOverlapZones>false</canOverlapZones>
-    <size>(3,3)</size>
-    <costList>
-      <Steel>180</Steel>
-      <ComponentIndustrial>6</ComponentIndustrial>
-    </costList>
-    <comps>
-      <li Class="CompProperties_Power">
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_IndustrialHelixienGenerator</defName>
+		<label>industrial helixien gas powered generator</label>
+		<description>Produces a large amount of power by consuming helixien gas. Must be connected to a gas pipe network.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/IndustrialGenerators/IndustrialChemfuelPoweredGenerator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(1.93,1,1.69)</volume>
+				<offset>(-0.03,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(3,3)</size>
+		<costList>
+			<Steel>180</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Power">
 				<compClass>VanillaPowerExpanded.CompGasPowerPlant</compClass>
 				<basePowerConsumption>-2250</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
@@ -314,37 +362,37 @@
 				<basePowerConsumption>2000</basePowerConsumption>
 				<transmitsGas>true</transmitsGas>
 			</li>
-      <li Class="CompProperties_Flickable" />
-     
-      <li Class="CompProperties_Glower">
-        <glowRadius>8</glowRadius>
-        <glowColor>(80,112,180,0)</glowColor>
-      </li>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>12</heatPerSecond>
-      </li>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_Explosive">
-        <explosiveRadius>0</explosiveRadius>
-        <explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
-        <explosiveDamageType>Flame</explosiveDamageType>
-        <destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
-        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
-        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
-        <preExplosionSpawnChance>1</preExplosionSpawnChance>
-        <wickTicks>70~150</wickTicks>
-      </li>
-    </comps>
-    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-    <designationCategory>Power</designationCategory>
-    <designationHotKey>Misc4</designationHotKey>
-    <constructEffect>ConstructMetal</constructEffect>
-    <researchPrerequisites>
-      <li>VFE_IndustrialGenerators</li>
-    </researchPrerequisites>
-    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
-  </ThingDef>
+			<li Class="CompProperties_Flickable" />
+
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(80,112,180,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>12</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc4</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_IndustrialGenerators</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+	</ThingDef>
 
 
 
@@ -510,90 +558,90 @@
 			<li>Electricity</li>
 		</researchPrerequisites>
 	</ThingDef>
-	
-	
+
+
 	<ThingDef ParentName="BenchBase">
-    <defName>VPE_GasStove</defName>
-    <label>electric stove</label>
-    <description>An electrically-powered stove with an attached countertop for preparing meals.</description>
-    <thingClass>Building_WorkTable_HeatPush</thingClass>
-    <graphicData>
-      <texPath>Things/Building/GasMachines/TableStoveGas</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(3.5,1.5)</drawSize>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <castEdgeShadows>true</castEdgeShadows>
-    <staticSunShadowHeight>0.20</staticSunShadowHeight>
-    <constructEffect>ConstructMetal</constructEffect>
-    <costList>
-      <Steel>80</Steel>
-      <ComponentIndustrial>2</ComponentIndustrial>
-    </costList>
-    <altitudeLayer>Building</altitudeLayer>
-    <fillPercent>0.5</fillPercent>
-    <useHitPoints>True</useHitPoints>
-    <statBases>
-      <WorkToBuild>2000</WorkToBuild>
-      <MaxHitPoints>180</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-    </statBases>
-    <size>(3,1)</size>
-    <designationCategory>Production</designationCategory>
-    <passability>PassThroughOnly</passability>
-    <pathCost>70</pathCost>
-    <hasInteractionCell>True</hasInteractionCell>
-    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-    <surfaceType>Item</surfaceType>
-    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-    <recipes>
-      <li>CookMealSimple</li>
-      <li>CookMealFine</li>
-      <li>CookMealLavish</li>
-      <li>CookMealSurvival</li>
-      <li>CookMealSimpleBulk</li>
-      <li>CookMealFineBulk</li>
-      <li>CookMealLavishBulk</li>
-      <li>CookMealSurvivalBulk</li>
-      <li>Make_Pemmican</li>
-      <li>Make_PemmicanBulk</li>
-    </recipes>
-    <inspectorTabs>
-      <li>ITab_Bills</li>
-    </inspectorTabs>
-    <comps>
-     <li Class="VanillaPowerExpanded.CompProperties_Pipe">
+		<defName>VPE_GasStove</defName>
+		<label>electric stove</label>
+		<description>An electrically-powered stove with an attached countertop for preparing meals.</description>
+		<thingClass>Building_WorkTable_HeatPush</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/TableStoveGas</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,1.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<recipes>
+			<li>CookMealSimple</li>
+			<li>CookMealFine</li>
+			<li>CookMealLavish</li>
+			<li>CookMealSurvival</li>
+			<li>CookMealSimpleBulk</li>
+			<li>CookMealFineBulk</li>
+			<li>CookMealLavishBulk</li>
+			<li>CookMealSurvivalBulk</li>
+			<li>Make_Pemmican</li>
+			<li>Make_PemmicanBulk</li>
+		</recipes>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
 				<basePowerConsumption>400</basePowerConsumption>
 				<transmitsGas>true</transmitsGas>
 			</li>
-      <li Class="CompProperties_Flickable"/>
-      <li Class="CompProperties_Breakdownable"/>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>3</heatPerSecond>
-      </li>
-    </comps>
-    <building>
-      <isMealSource>true</isMealSource>
-      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
-      <heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
-    </building>
-    <designationHotKey>Misc8</designationHotKey>
-    <placeWorkers>
-      <li>PlaceWorker_PreventInteractionSpotOverlap</li>
-    </placeWorkers>
-    <researchPrerequisites>
-      <li>Electricity</li>
-    </researchPrerequisites>
-  </ThingDef>
-  
-  
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>3</heatPerSecond>
+			</li>
+		</comps>
+		<building>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+		</building>
+		<designationHotKey>Misc8</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>Electricity</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+
 
 
 

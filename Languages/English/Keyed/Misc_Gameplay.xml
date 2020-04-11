@@ -10,6 +10,7 @@
     <VPE_TankLeakage>Minimum sealant leakage</VPE_TankLeakage>
 	<VPE_NutrientNeeded>Gas needed</VPE_NutrientNeeded>
     <VPE_LiquidOutput>Gas output</VPE_LiquidOutput>
+	<VPE_MustPlaceOnGasGeyser>This building must be placed on top of a helixien gas geyser</VPE_MustPlaceOnGasGeyser>
 
 	<!-- Nucular Reactor -->
 	<VPE_RadiationProduced>Warning: Reactor producing radiation in a {0} meters radius</VPE_RadiationProduced>
@@ -22,5 +23,10 @@
 
 	<!-- Misc -->
 	<VPE_MustPlaceRoofed>This building needs to be placed in an indoors, roofed area</VPE_MustPlaceRoofed>
+	
+	<!-- Violence Generator -->
+	<VPE_SoulsTime>Souls stored for: </VPE_SoulsTime>
+	<VPE_Producing>Producing {0} W of electricity</VPE_Producing>
+	<VPE_Producing>No souls absorbed. The Machine Gods are hungry for human souls.</VPE_Producing>
 
 </LanguageData>

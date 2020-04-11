@@ -38,7 +38,7 @@
     <baseCost>2500</baseCost>
     <techLevel>Ultra</techLevel>
     <prerequisites>
-      <li>Microelectronics</li>
+      <li>MicroelectronicsBasics</li>
     </prerequisites>
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
     <requiredResearchFacilities>

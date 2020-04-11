@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  
+  <!--=============== Puffs ==============-->
+  
+  <ThingDef ParentName="MoteBase">
+    <defName>VPE_Mote_GasPuff</defName>
+    <graphicData>
+      <texPath>Things/Mote/AirPuff</texPath>
+	  <color>(91,136,101)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.04</fadeInTime>
+      <solidTime>0.03</solidTime>
+      <fadeOutTime>1</fadeOutTime>
+    </mote>
+  </ThingDef>
+  
+ 
+  
+</Defs>

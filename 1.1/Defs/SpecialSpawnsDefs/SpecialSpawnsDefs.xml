@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  
+   <VanillaPowerExpanded.SpecialPowerSpawnsDef>
+      <defName>VPE_SpawnHelixienVents</defName>
+      <thingDef>VPE_HelixienGeyser</thingDef>
+      <allowOnWater>false</allowOnWater>
+	  <numberToSpawn>3</numberToSpawn>
+      <terrainValidationDisallowed/>
+      <terrainValidationAllowed/>
+            
+      <disallowedBiome>None</disallowedBiome>
+   </VanillaPowerExpanded.SpecialPowerSpawnsDef>
+   
+  
+   
+</Defs>

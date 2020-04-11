@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingDef ParentName="BuildingNaturalBase">
+    <defName>VPE_HelixienGeyser</defName>
+    <label>helixien gas geyser</label>
+    <description>A natural source of high-pressure gas. Helixien gas pumps can be built on top to extract the gas.</description>
+    <thingClass>VanillaPowerExpanded.Building_GasGeyser</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Natural/GasGeyser</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>Transparent</shaderType>
+      <drawSize>(4,4)</drawSize>
+    </graphicData>
+    <uiIconScale>0.5</uiIconScale>
+    <altitudeLayer>Floor</altitudeLayer>
+    <rotatable>false</rotatable>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+    <tickerType>Normal</tickerType>
+    <selectable>true</selectable>
+    <size>(2,2)</size>
+    <neverOverlapFloors>true</neverOverlapFloors>
+    <blockPlants>true</blockPlants>
+    <building>
+      <isEdifice>false</isEdifice>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+    </building>
+  </ThingDef>
+
+ 
+
+</Defs>

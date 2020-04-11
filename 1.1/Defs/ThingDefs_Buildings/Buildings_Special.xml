@@ -161,7 +161,7 @@
     </costList>
     <comps>
       <li Class="CompProperties_Power">
-        <compClass>CompPowerPlant</compClass>
+        <compClass>VanillaPowerExpanded.CompSoulsPowerPlant</compClass>
         <basePowerConsumption>-5000</basePowerConsumption>
         <transmitsPower>true</transmitsPower>
       </li>
@@ -169,16 +169,7 @@
         <glowRadius>6</glowRadius>
         <glowColor>(227,233,168,0)</glowColor>
       </li>
-      <li Class="CompProperties_Refuelable">
-        <fuelConsumptionRate>24.0</fuelConsumptionRate>
-        <fuelCapacity>1000.0</fuelCapacity>
-        <fuelFilter>
-          <thingDefs>
-            <li>Sarg pls make it human souls LOL</li>
-          </thingDefs>
-        </fuelFilter>
-        <showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
-      </li>
+     
     </comps>
     <thingSetMakerTags>
       <li>RewardStandardLowFreq</li>
