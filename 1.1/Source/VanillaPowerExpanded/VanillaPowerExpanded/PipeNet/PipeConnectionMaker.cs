@@ -106,15 +106,33 @@ namespace VanillaPowerExpanded
 
         public static bool ConnectToGas(Thing thing)
         {
-           
-                
-                for (int i = 0; i < thing.def.comps.Count; i++)
+            if (EverTransmitsGas(thing))
+            {
+                return false;
+            }
+
+            for (int i = 0; i < thing.def.comps.Count; i++)
                 {
                     if (thing.def.comps[i].compClass == typeof(CompPipeTank))
                     {
                         return true;
                     }
                     if (thing.def.comps[i].compClass == typeof(CompPipeTrader))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            
+        }
+
+        public static bool EverTransmitsGas(Thing thing)
+        {
+           
+                for (int i = 0; i < thing.def.comps.Count; i++)
+                {
+                    CompProperties_Pipe compProperties_Pipe = thing.def.comps[i] as CompProperties_Pipe;
+                    if (compProperties_Pipe != null && compProperties_Pipe.transmitsGas)
                     {
                         return true;
                     }
