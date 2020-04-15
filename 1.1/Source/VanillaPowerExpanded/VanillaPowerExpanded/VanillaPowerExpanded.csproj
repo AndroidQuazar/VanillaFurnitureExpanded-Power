@@ -315,6 +315,8 @@
     <Compile Include="PipeNet\CompPipeTransmitter.cs" />
     <Compile Include="PipeNet\CompProperties_Pipe.cs" />
     <Compile Include="PipeNet\CompProperties_PipeTank.cs" />
+    <Compile Include="PipeNet\GasExplosionUtility.cs" />
+    <Compile Include="PipeNet\IncidentWorker_GasExplosion.cs" />
     <Compile Include="PipeNet\IntermitentGasSprayer.cs" />
     <Compile Include="PipeNet\NutrientPipeNet.cs" />
     <Compile Include="PipeNet\PipeConnectionMaker.cs" />
