@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_NuclearGenerator</defName>
 		<label>nuclear reactor</label>
-		<description>Description here.</description>
+		<description>A large nuclear reactor repurposed from a ship power core. Consumes uranium to produce large amounts of power. Can be overloaded, resulting in even larger power output at the cost of local radiation.\n\nNuclear reactor will quickly overheat and should be cooled at all times.\n\nCannot be placed outdoors.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Nuclear/NuclearPowerPlant</texPath>
@@ -36,6 +36,8 @@
 		<size>(6,6)</size>
 		<costList>
 			<Steel>340</Steel>
+			<Plasteel>60</Plasteel>
+			<ComponentSpacer>6</ComponentSpacer>
 			<ComponentIndustrial>8</ComponentIndustrial>
 		</costList>
 		<comps>
@@ -91,6 +93,9 @@
 		</building>
 		<constructEffect>ConstructMetal</constructEffect>
 		<designationHotKey>Misc6</designationHotKey>
+    <researchPrerequisites>
+      <li>VFE_NuclearPower</li>
+    </researchPrerequisites>
 
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>

@@ -61,6 +61,9 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<designationCategory>Power</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
 		<clearBuildingArea>false</clearBuildingArea>
 		<designationHotKey>Misc1</designationHotKey>
 
@@ -183,6 +186,9 @@
 			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
 		<designationHotKey>Misc4</designationHotKey>
 		<canOverlapZones>false</canOverlapZones>
 
@@ -196,7 +202,7 @@
 		<graphicData>
 			<texPath>Things/Building/GasMachines/HelixienPump</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(5,5)</drawSize>
+			<drawSize>(7,7)</drawSize>
 
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
@@ -214,7 +220,7 @@
 		</statBases>
 		<tickerType>Normal</tickerType>
 		<canOverlapZones>false</canOverlapZones>
-		<size>(3,3)</size>
+		<size>(4,4)</size>
 		<costList>
 			<Steel>100</Steel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -225,14 +231,14 @@
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipePlant</compClass>
-				<basePowerConsumption>-4000</basePowerConsumption>
+				<basePowerConsumption>-3000</basePowerConsumption>
 				<transmitsGas>true</transmitsGas>
 			</li>
 			<li Class="CompProperties_Flickable" />
 
 			<li Class="CompProperties_Glower">
 				<glowRadius>6</glowRadius>
-				<glowColor>(217,112,33,0)</glowColor>
+				<glowColor>(90,140,90,0)</glowColor>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
@@ -244,7 +250,9 @@
 		<designationCategory>Power</designationCategory>
 		<designationHotKey>Misc3</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
-
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 	</ThingDef>
 
@@ -296,7 +304,7 @@
 
 			<li Class="CompProperties_Glower">
 				<glowRadius>6</glowRadius>
-				<glowColor>(80,112,180,0)</glowColor>
+				<glowColor>(90,140,90,0)</glowColor>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
@@ -322,7 +330,7 @@
 		<designationHotKey>Misc4</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
 		<researchPrerequisites>
-			<li>Electricity</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 	</ThingDef>
@@ -375,7 +383,7 @@
 
 			<li Class="CompProperties_Glower">
 				<glowRadius>8</glowRadius>
-				<glowColor>(80,112,180,0)</glowColor>
+				<glowColor>(90,140,90,0)</glowColor>
 			</li>
 			<li Class="CompProperties_HeatPusher">
 				<compClass>CompHeatPusherPowered</compClass>
@@ -399,6 +407,7 @@
 		<constructEffect>ConstructMetal</constructEffect>
 		<researchPrerequisites>
 			<li>VFE_IndustrialGenerators</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
 	</ThingDef>
@@ -484,7 +493,7 @@
 		</placeWorkers>
 		<designationHotKey>Misc5</designationHotKey>
 		<researchPrerequisites>
-			<li>Electricity</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 	</ThingDef>
 
@@ -564,7 +573,7 @@
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
 		<researchPrerequisites>
-			<li>Electricity</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 	</ThingDef>
 
@@ -646,7 +655,7 @@
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
 		<researchPrerequisites>
-			<li>Electricity</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 	</ThingDef>
 
@@ -687,8 +696,8 @@
 			<li>BuildingsProduction</li>
 		</thingCategories>
 		<costList>
-			<Steel>200</Steel>
-			<ComponentIndustrial>4</ComponentIndustrial>
+			<Steel>100</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
 		</costList>
 		<placeWorkers>
 			<li>PlaceWorker_DeepDrill</li>
@@ -697,6 +706,7 @@
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
 			<li>DeepDrilling</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<statBases>
 			<MaxHitPoints>450</MaxHitPoints>
@@ -719,7 +729,189 @@
 		</comps>
 	</ThingDef>
 
-
+  <ThingDef ParentName="BuildingBase">
+    <defName>VPE_GasCooler</defName>
+    <label>gas cooler</label>
+    <description>An air-cooling machine that releases cooled air around itself. Can be used to create a walk-in freezer. Cannot be adjusted and will automatically lower temperature slightly below zero.</description>
+    <thingClass>Building_Cooler</thingClass>
+    <graphicData>
+      <texPath>Things/Building/GasMachines/GasCooler</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <drawRotated>false</drawRotated>
+      <allowFlip>false</allowFlip>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <blockWind>true</blockWind>
+	<rotatable>false</rotatable>
+    <fillPercent>0.5</fillPercent>
+    <coversFloor>true</coversFloor>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <statBases>
+      <WorkToBuild>1600</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <costList>
+      <Steel>90</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_CoolerSimple</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
+				<basePowerConsumption>250</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>-11</heatPerSecond>
+        <heatPushMinTemperature>-5</heatPushMinTemperature>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <designationCategory>Temperature</designationCategory>
+    <researchPrerequisites>
+	<li>VFE_GasExtraction</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VPE_GasHeater</defName>
+    <label>gas heater</label>
+    <description>A device that converts helixien gas into radiated heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
+    <thingClass>Building_Heater</thingClass>
+    <graphicData>
+      <texPath>Things/Building/GasMachines/GasHeater</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>40</pathCost>
+    <blockWind>true</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <thingCategories>
+      <li>BuildingsTemperature</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1000</WorkToBuild>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_Heater</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
+				<basePowerConsumption>150</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>21</energyPerSecond>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <designationCategory>Temperature</designationCategory>
+    <designationHotKey>Misc2</designationHotKey>
+    <researchPrerequisites>
+	<li>VFE_GasExtraction</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  <ThingDef ParentName="LampBase">
+    <defName>VPE_GasSunLamp</defName>
+    <label>gas sun lamp</label>
+    <description>An industrial lamp which lights an area brightly enough to grow crops, but consumes a medium amount of helixien gas. Automatically turns itself off at night.</description>
+    <thingClass>Building_SunLamp</thingClass>
+    <graphicData>
+      <texPath>Things/Building/GasMachines/GasSunLamp</texPath>
+    </graphicData>
+    <blockWind>true</blockWind>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <WorkToBuild>330</WorkToBuild>
+      <Mass>4.5</Mass>
+    </statBases>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>7.0</overlightRadius>
+        <glowRadius>14</glowRadius>
+        <glowColor>(90,140,90,0)</glowColor>
+      </li>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
+				<basePowerConsumption>1000</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+      <li Class="CompProperties_Schedule">
+        <!-- Match plant growing times -->
+        <startTime>0.25</startTime>
+        <endTime>0.8</endTime>
+        <offMessage>Off for plant resting period</offMessage>
+      </li>
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>3</heatPerSecond>
+      </li>
+    </comps>
+    <!-- Determined by trial and error
+    This value isn't perfect because these radii use different algorithms
+    but it matches in this case-->
+    <specialDisplayRadius>5.8</specialDisplayRadius>
+    <researchPrerequisites>
+	<li>VFE_GasExtraction</li>
+    </researchPrerequisites>
+  </ThingDef>
 
 
 

@@ -19,7 +19,7 @@
     <label>advanced battery</label>
     <description>Build ultratech batteries, capable of efficiently storing large amounts of energy.</description>
     <baseCost>2000</baseCost>
-    <techLevel>Ultra</techLevel>
+    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>Batteries</li>
     </prerequisites>
@@ -36,7 +36,7 @@
     <label>advanced power sources</label>
     <description>Construct ultratech green power generators, including advanced solar panels and wind turbines.</description>
     <baseCost>2500</baseCost>
-    <techLevel>Ultra</techLevel>
+    <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>MicroelectronicsBasics</li>
     </prerequisites>
@@ -46,6 +46,23 @@
     </requiredResearchFacilities>
   <researchViewX>11.00</researchViewX>
   <researchViewY>0.50</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_NuclearPower</defName>
+    <label>nuclear power</label>
+    <description>The ultimate power generation method, nuclear power is as sufficient as it is deadly.</description>
+    <baseCost>3500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>10.00</researchViewX>
+  <researchViewY>1.50</researchViewY>
   </ResearchProjectDef>
   
   <ResearchProjectDef>
@@ -59,6 +76,19 @@
     </prerequisites>
     <researchViewX>8.00</researchViewX>
     <researchViewY>3.60</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_GasExtraction</defName>
+    <label>gas extraction</label>
+    <description>Research the helixien gas and it's ability to act as a combustible fuel.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Industrial</techLevel>
+  <researchViewX>9.00</researchViewX>
+  <researchViewY>1.50</researchViewY>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
   </ResearchProjectDef>
 
 
