@@ -5,8 +5,10 @@
       <defName>VPE_SpawnHelixienVents</defName>
       <thingDef>VPE_HelixienGeyser</thingDef>
       <allowOnWater>false</allowOnWater>
-	  <numberToSpawn>3</numberToSpawn>
-      <terrainValidationDisallowed/>
+	  <numberToSpawn>1~2</numberToSpawn>
+      <terrainValidationDisallowed>
+		<li>Mud</li>
+	  </terrainValidationDisallowed>
       <terrainValidationAllowed/>
             
       <disallowedBiome>None</disallowedBiome>

@@ -295,6 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Batteries\Building_SmallBattery.cs" />
+    <Compile Include="GasDrill\WorkGiver_GasExcavator.cs" />
+    <Compile Include="Lightning\CompLightningPowerPlant.cs" />
+    <Compile Include="Lightning\WeatherEvent_CustomLightningStrike.cs" />
     <Compile Include="MapComponentExtender.cs" />
     <Compile Include="Nuclear\CompPlantHarmRadiusIfBroken.cs" />
     <Compile Include="Nuclear\CompPowerPlantNuclear.cs" />

@@ -7,7 +7,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasPipe</defName>
 		<label>gas pipe</label>
-		<description>Description here.</description>
+		<description>A pipe that transmits helixien gas.</description>
 		<thingClass>Building</thingClass>
 		<category>Building</category>
 		<graphicData>
@@ -67,7 +67,7 @@
 	</ThingDef>
 
 
-<!--	<ThingDef ParentName="BuildingBase">
+	<!--	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasPipeValve</defName>
 		<label>gas pipe valve</label>
 		<description>Switches gas flow on/off.</description>
@@ -122,7 +122,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasTank</defName>
 		<label>gas tank</label>
-		<description>Description here</description>
+		<description>A large steel tank for gas storage. Will explode if damaged.</description>
 		<thingClass>VanillaPowerExpanded.Building_Tank</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasTank</texPath>
@@ -156,8 +156,7 @@
 
 		<size>(1,2)</size>
 		<costList>
-			<Steel>70</Steel>
-			<ComponentIndustrial>2</ComponentIndustrial>
+			<Steel>100</Steel>
 		</costList>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_PipeTank">
@@ -165,6 +164,16 @@
 				<efficiency>0.5</efficiency>
 				<shortCircuitInRain>false</shortCircuitInRain>
 				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
 			</li>
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
@@ -182,7 +191,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_HelixienPump</defName>
 		<label>helixien pump</label>
-		<description>Description here</description>
+		<description>An extractor machine mounted on helixien gas geyser. Self-powered, this machine pumps out valuable gas and needs to be connected to other gas-based utilities using the pipe network.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/HelixienPump</texPath>
@@ -208,7 +217,7 @@
 		<size>(3,3)</size>
 		<costList>
 			<Steel>100</Steel>
-			<ComponentIndustrial>2</ComponentIndustrial>
+			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
 		<placeWorkers>
 			<li>VanillaPowerExpanded.PlaceWorker_PipeUserOnGasGeyser</li>
@@ -231,7 +240,7 @@
 			</li>
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
-		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<designationCategory>Power</designationCategory>
 		<designationHotKey>Misc3</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
@@ -399,7 +408,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasCrematorium</defName>
 		<label>helixien gas crematorium</label>
-		<description>A huge stone crematorium which vaporizes corpses with extremely high temperatures.</description>
+		<description>A huge stone crematorium which vaporizes corpses with extremely high temperatures. Operates on helixien gas.</description>
 		<thingClass>Building_WorkTable_HeatPush</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasCrematorium</texPath>
@@ -481,8 +490,8 @@
 
 	<ThingDef ParentName="BenchBase">
 		<defName>VPE_GasSmelter</defName>
-		<label>electric smelter</label>
-		<description>Extracts usable metal from slag chunks and other mixed metal items. Consumes a lot of power.</description>
+		<description>Extracts usable metal from slag chunks and other mixed metal items. Operates on helixien gas.</description>
+		<label>helixien gas smelter</label>
 		<thingClass>Building_WorkTable_HeatPush</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasSmelter</texPath>
@@ -562,8 +571,8 @@
 
 	<ThingDef ParentName="BenchBase">
 		<defName>VPE_GasStove</defName>
-		<label>electric stove</label>
-		<description>An electrically-powered stove with an attached countertop for preparing meals.</description>
+		<label>helixien gas stove</label>
+		<description>A gas-powered stove with an attached countertop for preparing meals.</description>
 		<thingClass>Building_WorkTable_HeatPush</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/TableStoveGas</texPath>
@@ -639,6 +648,75 @@
 		<researchPrerequisites>
 			<li>Electricity</li>
 		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasDrill</defName>
+		<label>gas powered excavator</label>
+		<description>A deep-crust drilling excavator for extracting minerals from deep under the surface. Use a ground-penetrating scanner to detect the resources. This drill will yield stone chunks if no resources are present. Can be repositioned freely.</description>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Building/GasMachines/GasPoweredExcavator</texPath>
+			<drawSize>(2,2)</drawSize>
+			<drawRotated>false</drawRotated>
+			<shadowData>
+				<volume>(0.52, 0.53, 0.09)</volume>
+				<offset>(0,0,-0.43)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(2,2)</size>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<fillPercent>0.5</fillPercent>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<designationCategory>Production</designationCategory>
+		<designationHotKey>Misc12</designationHotKey>
+		<specialDisplayRadius>1.5</specialDisplayRadius>
+		<rotatable>true</rotatable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<uiIconOffset>(0, 0.03)</uiIconOffset>
+		<uiIconScale>0.85</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<building>
+			<uninstallWork>1800</uninstallWork>
+		</building>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>200</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<placeWorkers>
+			<li>PlaceWorker_DeepDrill</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>DeepDrilling</li>
+		</researchPrerequisites>
+		<statBases>
+			<MaxHitPoints>450</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Flammability>0.75</Flammability>
+			<Beauty>-25</Beauty>
+			<Mass>35</Mass>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li Class="CompProperties_Flickable"/>
+			
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
+				<basePowerConsumption>300</basePowerConsumption>
+				<transmitsGas>true</transmitsGas>
+			</li>
+			<li Class="CompProperties_DeepDrill" />
+			<li Class="CompProperties_CreatesInfestations" />
+		</comps>
 	</ThingDef>
 
 

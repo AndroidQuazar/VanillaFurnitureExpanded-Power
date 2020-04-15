@@ -54,7 +54,8 @@ namespace VanillaPowerExpanded
                     bool canSpawn = true;
                     if (spawnCounter == 0)
                     {
-                        spawnCounter = element.numberToSpawn;
+                        spawnCounter = Rand.RangeInclusive(element.numberToSpawn.min, element.numberToSpawn.max);
+                   
                     }
                     foreach (IntVec3 c in tmpTerrain)
                     {

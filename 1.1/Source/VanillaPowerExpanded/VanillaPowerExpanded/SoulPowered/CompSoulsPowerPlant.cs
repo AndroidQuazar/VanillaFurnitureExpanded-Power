@@ -88,7 +88,7 @@ namespace VanillaPowerExpanded
                 text = text + "VPE_SoulsTime".Translate() + numTicks.ToStringTicksToPeriod(true, false, true, true) + "\n";
                 text += "VPE_Producing".Translate(base.DesiredPowerOutput);
             }
-            else text += "VPE_Producing".Translate();
+            else text += "VPE_NotProducing".Translate();
 
 
             return text;
