@@ -120,7 +120,7 @@
   </ThingDef>
   
   <ThingDef ParentName="BuildingBase">
-    <defName>VFE_ArchotechViolenceGenerator</defName>
+    <defName>VPE_ArchotechViolenceGenerator</defName>
     <label>archotech violence generator</label>
     <description>This device taps into psychic energy leaving the bodies of surrounding humanoids, changing it directly into usable energy. This technology is developed by archotechs, and is beyond even most glitterworld societies. It is not known why, but some unspeakable power causes humans around to slowly go insane.</description>
     <graphicData>

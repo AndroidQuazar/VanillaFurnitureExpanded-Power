@@ -27,6 +27,11 @@
 	<!-- Violence Generator -->
 	<VPE_SoulsTime>Souls stored for: </VPE_SoulsTime>
 	<VPE_Producing>Producing {0} W of electricity</VPE_Producing>
-	<VPE_Producing>No souls absorbed. The Machine Gods are hungry for human souls.</VPE_Producing>
+	<VPE_NotProducing>No souls absorbed. The Machine Gods are hungry for human souls.</VPE_NotProducing>
+	
+	<!-- Lightning Generator -->
+	<VPE_LightningTime>Lightning energy stored for: </VPE_LightningTime>
+	<VPE_Producing>Producing {0} W of electricity</VPE_Producing>
+	<VPE_NotLightningProducing>Lightning electricity depleted. Looks like you'll have to wait for the next thunderstorm.</VPE_NotLightningProducing>
 
 </LanguageData>

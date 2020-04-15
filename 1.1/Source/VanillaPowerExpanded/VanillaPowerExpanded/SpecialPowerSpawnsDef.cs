@@ -10,7 +10,7 @@ namespace VanillaPowerExpanded
     {
         public ThingDef thingDef;
         public bool allowOnWater;
-        public int numberToSpawn;
+        public IntRange numberToSpawn;
         public List<string> terrainValidationAllowed;
         public List<string> terrainValidationDisallowed;
         public string disallowedBiome;
