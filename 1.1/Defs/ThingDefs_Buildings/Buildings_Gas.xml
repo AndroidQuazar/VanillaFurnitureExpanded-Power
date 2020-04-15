@@ -490,12 +490,8 @@
 
 	<ThingDef ParentName="BenchBase">
 		<defName>VPE_GasSmelter</defName>
-<<<<<<< HEAD
 		<description>Extracts usable metal from slag chunks and other mixed metal items. Operates on helixien gas.</description>
 		<label>helixien gas smelter</label>
-=======
-		<description>Extracts usable metal from slag chunks and other mixed metal items. Consumes a lot of gas.</description>
->>>>>>> 050168ec97039390f9f61dbccf4430cdd9c993e7
 		<thingClass>Building_WorkTable_HeatPush</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasSmelter</texPath>
