@@ -150,7 +150,7 @@ namespace VanillaPowerExpanded
             {
                 if (this.powerComps.Contains(comp))
                 {
-                    Log.Error("PowerNet adding powerComp " + comp + " which it already has.", false);
+                    //Log.Error("PowerNet adding powerComp " + comp + " which it already has.", false);
                 }
                 else
                 {
@@ -162,7 +162,7 @@ namespace VanillaPowerExpanded
             {
                 if (this.batteryComps.Contains(comp2))
                 {
-                    Log.Error("PowerNet adding batteryComp " + comp2 + " which it already has.", false);
+                    //Log.Error("PowerNet adding batteryComp " + comp2 + " which it already has.", false);
                 }
                 else
                 {

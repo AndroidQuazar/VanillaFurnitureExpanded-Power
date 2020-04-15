@@ -94,7 +94,7 @@ namespace VanillaPowerExpanded
                     List<Thing> thingList = b.parent.Map.thingGrid.ThingsListAt(c);
                     for (int i = 0; i < thingList.Count; i++)
                     {
-                        if (thingList[i].def.ConnectToPower)
+                        if (ConnectToGas(thingList[i]))
                         {
                             yield return ((Building)thingList[i]).GetComp<CompPipe>();
                         }
@@ -102,6 +102,25 @@ namespace VanillaPowerExpanded
                 }
             }
             yield break;
+        }
+
+        public static bool ConnectToGas(Thing thing)
+        {
+           
+                
+                for (int i = 0; i < thing.def.comps.Count; i++)
+                {
+                    if (thing.def.comps[i].compClass == typeof(CompPipeTank))
+                    {
+                        return true;
+                    }
+                    if (thing.def.comps[i].compClass == typeof(CompPipeTrader))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            
         }
 
         public static CompPipe BestTransmitterForConnector(IntVec3 connectorPos, Map map, List<GasPipeNet> disallowedNets = null)
