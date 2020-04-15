@@ -8,7 +8,30 @@
 	  <numberToSpawn>1~2</numberToSpawn>
       <terrainValidationDisallowed>
 		<li>Mud</li>
+		<li>Marsh</li>
 	  </terrainValidationDisallowed>
+      <terrainValidationAllowed/>
+	  <biomesWithExtraGeneration/>
+            
+      <disallowedBiome>None</disallowedBiome>
+   </VanillaPowerExpanded.SpecialPowerSpawnsDef>
+   
+   <VanillaPowerExpanded.SpecialPowerSpawnsDef>
+      <defName>VPE_SpawnChemfuelPonds</defName>
+      <thingDef>VPE_ChemfuelPond</thingDef>
+      <allowOnWater>false</allowOnWater>
+	  <numberToSpawn>1~3</numberToSpawn>
+      <terrainValidationDisallowed>
+		<li>Mud</li>
+		<li>Marsh</li>
+	  </terrainValidationDisallowed>
+	  <biomesWithExtraGeneration>
+		<li>Desert</li>
+		<li>ExtremeDesert</li>
+		<li>AB_GallatrossGraveyard</li>
+		<li>AB_RockyCrags</li>
+	  </biomesWithExtraGeneration>
+	  <extraGeneration>1</extraGeneration>
       <terrainValidationAllowed/>
             
       <disallowedBiome>None</disallowedBiome>

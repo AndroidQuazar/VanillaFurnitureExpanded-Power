@@ -295,6 +295,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Batteries\Building_SmallBattery.cs" />
+    <Compile Include="Chemfuel\CompChemfuelPump.cs" />
+    <Compile Include="Chemfuel\CompProperties_ChemfuelPump.cs" />
+    <Compile Include="Chemfuel\Building_ChemfuelPond.cs" />
+    <Compile Include="Chemfuel\PlaceWorker_OnChemfuelPond.cs" />
     <Compile Include="GasDrill\WorkGiver_GasExcavator.cs" />
     <Compile Include="Lightning\CompLightningPowerPlant.cs" />
     <Compile Include="Lightning\WeatherEvent_CustomLightningStrike.cs" />

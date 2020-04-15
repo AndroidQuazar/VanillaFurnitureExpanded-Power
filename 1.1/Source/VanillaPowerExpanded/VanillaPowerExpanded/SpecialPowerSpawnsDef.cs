@@ -13,6 +13,8 @@ namespace VanillaPowerExpanded
         public IntRange numberToSpawn;
         public List<string> terrainValidationAllowed;
         public List<string> terrainValidationDisallowed;
+        public List<string> biomesWithExtraGeneration;
+        public int extraGeneration = 0;
         public string disallowedBiome;
 
     }

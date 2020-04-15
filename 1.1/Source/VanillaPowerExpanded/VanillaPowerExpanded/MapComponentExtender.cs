@@ -51,10 +51,20 @@ namespace VanillaPowerExpanded
             
                 foreach (SpecialPowerSpawnsDef element in DefDatabase<SpecialPowerSpawnsDef>.AllDefs.Where(element => element.disallowedBiome != map.Biome.defName))
                 {
+                    int extraGeneration = 0;
+                    foreach (string biome in element.biomesWithExtraGeneration)
+                    {
+                        if (map.Biome.defName == biome)
+                        {
+                            extraGeneration = element.extraGeneration;
+                        }
+                       
+                    }
                     bool canSpawn = true;
                     if (spawnCounter == 0)
                     {
-                        spawnCounter = Rand.RangeInclusive(element.numberToSpawn.min, element.numberToSpawn.max);
+                        spawnCounter = Rand.RangeInclusive(element.numberToSpawn.min, element.numberToSpawn.max) + extraGeneration;
+                    //Log.Message(spawnCounter.ToString());
                    
                     }
                     foreach (IntVec3 c in tmpTerrain)
@@ -73,7 +83,7 @@ namespace VanillaPowerExpanded
                         }
                         foreach (string notAllowed in element.terrainValidationDisallowed)
                         {
-                            if (terrain.HasTag(notAllowed))
+                            if (terrain.defName == notAllowed)
                             {
                                 canSpawn = false;
                                 break;
@@ -85,6 +95,7 @@ namespace VanillaPowerExpanded
 
                             Thing thing = (Thing)ThingMaker.MakeThing(element.thingDef, null);
                             CellRect occupiedRect = GenAdj.OccupiedRect(c, thing.Rotation, thing.def.Size);
+                           
                             if (occupiedRect.InBounds(map))
                             {
                                 GenSpawn.Spawn(thing, c, map);

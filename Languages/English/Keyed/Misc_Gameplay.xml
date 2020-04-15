@@ -43,5 +43,14 @@
 	<VPE_GasExplosionLWasLarge>This large amount of gas has created an explosion of considerable size.</VPE_GasExplosionLWasLarge>
 	<VPE_GasExplosionLWasHuge>That really is a huge explosion. Wow.</VPE_GasExplosionLWasHuge>
 	<VPE_LetterLabelGasExplosion>Kaboom!</VPE_LetterLabelGasExplosion>
+	
+	<!-- Chemfuel Pond -->
+
+	<VPE_PondHasFuel>This chemfuel pond has {0} units of chemfuel left</VPE_PondHasFuel>
+	<VPE_PondNoFuel>This chemfuel pond is depleted</VPE_PondNoFuel>
+	<VPE_MustPlaceOnChemfuelPond>The chemfuel pump needs to be built on top of a chemfuel pond</VPE_MustPlaceOnChemfuelPond>
+	<VPE_PumpProducing>The pump will produce {0} units of chemfuel in {1}</VPE_PumpProducing>
+
+
 
 </LanguageData>
