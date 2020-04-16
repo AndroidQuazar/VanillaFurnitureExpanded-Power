@@ -4,11 +4,11 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VPE_LightningRod</defName>
     <label>lightning rod</label>
-    <description>.</description>
+    <description>An advanced technology allows this device to harness the power of lightning and place it as a ready-to-use charge in the batteries.</description>
     <graphicData>
       <texPath>Things/Building/Power/Lightning/LightningRod</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(4,4)</drawSize>
+      <drawSize>(5,5)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
@@ -16,7 +16,7 @@
         <cornerBR>Damage/Corner</cornerBR>
       </damageData>
     </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
     <pathCost>70</pathCost>
     <fillPercent>0.4</fillPercent>
     <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
@@ -62,7 +62,9 @@
 		<designationHotKey>Misc6</designationHotKey>
    
     <minifiedDef>MinifiedThing</minifiedDef>
-    
+    		<researchPrerequisites>
+			<li>VFE_AdvancedPowerSources</li>
+		</researchPrerequisites>
   </ThingDef>
 
   

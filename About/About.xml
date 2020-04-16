@@ -2,12 +2,17 @@
 
 <ModMetaData>
 	<name>Vanilla Furniture Expanded - Power</name>
-	<author>Oskar Potocki, Sarg Bjornson, Kikohi</author>
+	<author>Oskar Potocki, Sarg Bjornson</author>
 	<url></url>
     <supportedVersions>
         <li>1.1</li>
         <li>1.0</li>
     </supportedVersions>
     <packageId>VanillaExpanded.VFEPower</packageId>
-    <description>TBD</description>
+    <description>Vanilla power generation is somewhat lackluster late game - Not only the game strongly encourages the use of solar panels and wind turbines as they provide significantly more energy at the cost of no fuel, but it also stops there - there is no technological progression in regards to power. Whether you’re an early industrial colony, or a spacer super-empire (and we all like to roleplay different ways), you’re bound to use the same power sources.
+
+Vanilla Furniture Expanded - Power module adds a plethora of new power sources, ranging all the way from small portable generators and large scale industrial ones, all the way to advanced spacer-tech green energy sources and a unique, and yet easy to understand nuclear generator. A selection of new batteries will help you with storing the power, whist the new utilities like a lightning rod and chemfuel pump will give you brand new ways of obtaining power and fuel.
+
+A new, vanilla-fitting energy chain has been added in the form of helixien gas - a combustible substance found mostly on the planets on the galaxy rim. It can be used to power a vast array of new gas-operated structures, making them completely immune from solar flares! Helixien gas can be stored in gas tanks for later use, uses a gas pipe system for connecting to structures and can easily be turned into electricity using gas-operated generators!
+</description>
 </ModMetaData>

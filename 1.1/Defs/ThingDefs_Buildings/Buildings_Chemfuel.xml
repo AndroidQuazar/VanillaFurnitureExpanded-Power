@@ -4,7 +4,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_ChemfuelPump</defName>
 		<label>chemfuel pump</label>
-		<description>.</description>
+		<description>An industrial style pump capable of extracting chemfuel from underground pockets. After the chemfuel is fully extracted, chemfuel pump can be safely deconstructed.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/ChemfuelPump/ChemfuelPump</texPath>
