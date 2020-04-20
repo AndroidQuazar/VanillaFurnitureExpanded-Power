@@ -11,6 +11,10 @@
 	<VPE_NutrientNeeded>Gas needed</VPE_NutrientNeeded>
 	<VPE_LiquidOutput>Gas output</VPE_LiquidOutput>
 	<VPE_MustPlaceOnGasGeyser>This building must be placed on top of a helixien gas geyser</VPE_MustPlaceOnGasGeyser>
+	<VPE_PlugHole>Fill hole</VPE_PlugHole>
+	<VPE_PlugHoleDesc>Fill hole with dirt. WARNING: this will destroy the geyser or pond. Only do this if it is no longer useable or if you need the space.</VPE_PlugHoleDesc>
+	<VPE_CancelPlugHole>Cancel fill hole</VPE_CancelPlugHole>
+	<VPE_CancelPlugHoleDesc>Cancels the hole filling job.</VPE_CancelPlugHoleDesc>
 
 	<!-- Nucular Reactor -->
 	<VPE_RadiationProduced>Warning: Reactor producing radiation in a {0} meters radius</VPE_RadiationProduced>
@@ -50,6 +54,10 @@
 	<VPE_PondNoFuel>This chemfuel pond is depleted</VPE_PondNoFuel>
 	<VPE_MustPlaceOnChemfuelPond>The chemfuel pump needs to be built on top of a chemfuel pond</VPE_MustPlaceOnChemfuelPond>
 	<VPE_PumpProducing>The pump will produce {0} units of chemfuel in {1}</VPE_PumpProducing>
+	
+	<!-- Tidal power plant -->
+	
+	<VPE_NeedsWater>This power plant must be built on water</VPE_NeedsWater>
 
 
 

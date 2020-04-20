@@ -33,7 +33,7 @@
   <ThingDef ParentName="BuildingNaturalBase">
     <defName>VPE_ChemfuelPond</defName>
     <label>chemfuel pond</label>
-    <description>.</description>
+    <description>A natural source of chemfuel, more common in arid biomes. A chemfuel pump can be installed here to extract the chemfuel. The pond will run out eventually.</description>
     <thingClass>VanillaPowerExpanded.Building_ChemfuelPond</thingClass>
     <graphicData>
       <texPath>Things/Building/Natural/ChemfuelPond</texPath>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+
+	<JobDef>
+		<defName>VPE_JobPlugHole</defName>
+		<driverClass>VanillaPowerExpanded.JobDriver_PlugHole</driverClass>
+		<reportString>destroying hole.</reportString>
+	</JobDef>
+
+
+
+</Defs>

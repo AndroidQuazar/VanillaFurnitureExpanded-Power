@@ -311,7 +311,22 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
   
-  <ThingDef ParentName="BuildingBase">
+   <ThingDef Name="VPE_WaterBuildingBase" Abstract="True">
+    <category>Building</category>
+    <thingClass>Building</thingClass>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <selectable>true</selectable>
+    <drawerType>MapMeshAndRealTime</drawerType>
+   
+    <repairEffect>Repair</repairEffect>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <statBases>
+      <SellPriceFactor>0.70</SellPriceFactor>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="VPE_WaterBuildingBase">
     <defName>VFE_TidalGenerator</defName>
     <label>tidal generator</label>
     <description>Produces electricity from moving masses of water, particularly tides. Must be placed on water.</description>
@@ -356,7 +371,10 @@
       <li Class="CompProperties_Breakdownable"/>
     </comps>
     <rotatable>false</rotatable>
-    <terrainAffordanceNeeded>ShallowWater</terrainAffordanceNeeded>
+    <placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_Tidal</li>
+	</placeWorkers>
+	
     <designationCategory>Power</designationCategory>
     <building>
       <ai_chillDestination>false</ai_chillDestination>

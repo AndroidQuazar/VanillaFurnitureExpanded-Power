@@ -12,7 +12,7 @@ namespace VanillaPowerExpanded
 
         private Sustainer wickSustainer;
 
-        private static readonly Vector2 BarSize = new Vector2(1.6f, 0.6f);
+        private static readonly Vector2 BarSize = new Vector2(1.6f, 0.2f);
 
         private const float MinEnergyToExplode = 500f;
 

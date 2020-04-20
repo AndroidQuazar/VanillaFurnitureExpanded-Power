@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.0.0.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.0.0.9\lib\net472\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -300,6 +304,9 @@
     <Compile Include="Chemfuel\Building_ChemfuelPond.cs" />
     <Compile Include="Chemfuel\PlaceWorker_OnChemfuelPond.cs" />
     <Compile Include="GasDrill\WorkGiver_GasExcavator.cs" />
+    <Compile Include="GraphicsCache.cs" />
+    <Compile Include="GrowingLamp\VPE_GrowLampPatch.cs" />
+    <Compile Include="ITabBills_Inherit.cs" />
     <Compile Include="Lightning\CompLightningPowerPlant.cs" />
     <Compile Include="Lightning\WeatherEvent_CustomLightningStrike.cs" />
     <Compile Include="MapComponentExtender.cs" />
@@ -338,9 +345,17 @@
     <Compile Include="Solar\CompPowerAdvancedSolar.cs" />
     <Compile Include="SoulPowered\CompSoulsPowerPlant.cs" />
     <Compile Include="SpecialPowerSpawnsDef.cs" />
+    <Compile Include="TempControl\Building_GasHeater.cs" />
+    <Compile Include="TempControl\CompHeatPusherGas.cs" />
+    <Compile Include="Tidal\PlaceWorker_Tidal.cs" />
     <Compile Include="Watermill\CompPowerAdvancedWater.cs" />
+    <Compile Include="Watermill\PlaceWorker_AdvancedWatermill.cs" />
     <Compile Include="Wind\CompPowerAdvancedWind.cs" />
+    <Compile Include="WorkGivers and JobDrivers\JobDriver_PlugHole.cs" />
+    <Compile Include="WorkGivers and JobDrivers\WorkGiver_PlugPonds.cs" />
+    <Compile Include="WorkGivers and JobDrivers\WorkGiver_PlugHoles.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

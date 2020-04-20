@@ -50,7 +50,7 @@ namespace VanillaPowerExpanded
             GenDraw.DrawFillableBar(r);
         }
 
-        private const float FullSunPower = 2600f;
+        private const float FullSunPower = 3000f;
 
         private const float NightPower = 0f;
 

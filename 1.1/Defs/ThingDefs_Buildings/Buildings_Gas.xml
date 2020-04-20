@@ -68,6 +68,71 @@
 		<designationHotKey>Misc1</designationHotKey>
 
 	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPipeSub</defName>
+		<label>subterranean gas pipe</label>
+		<description>A pipe that transmits helixien gas. This pipe is hidden from view and is protected from gas explosions. Much more expensive to build than regular pipes</description>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Special/Fluid/VPE_BlankTransmitterAtlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom6</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/GasPipe_MenuIcon</uiIconPath>
+		<uiIconScale>1</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/GasPipe_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<WorkToBuild>120</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>5</Steel>
+		</costList>
+		<comps>
+			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
+				<compClass>VanillaPowerExpanded.CompPipeTransmitter</compClass>
+				<transmitsGas>true</transmitsGas>
+
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_Pipe</li>
+		</placeWorkers>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+
+	</ThingDef>
 
 
 	<!--	<ThingDef ParentName="BuildingBase">
@@ -130,7 +195,7 @@
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasTank</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(3.5,3.5)</drawSize>
+			<drawSize>(2.5,2.5)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -202,7 +267,7 @@
 		<graphicData>
 			<texPath>Things/Building/GasMachines/HelixienPump</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>(7,7)</drawSize>
+			<drawSize>(6,6)</drawSize>
 
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
@@ -341,7 +406,7 @@
 		<description>Produces a large amount of power by consuming helixien gas. Must be connected to a gas pipe network.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
-			<texPath>Things/Building/IndustrialGenerators/IndustrialChemfuelPoweredGenerator</texPath>
+			<texPath>Things/Building/IndustrialGenerators/IndustrialHelixienPoweredGenerator</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(3,3)</drawSize>
 			<shadowData>
@@ -458,14 +523,9 @@
 		<canOverlapZones>false</canOverlapZones>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		<recipes>
-			<li>CremateCorpse</li>
-			<li>BurnApparel</li>
-			<li>BurnWeapon</li>
-			<li>BurnDrugs</li>
-		</recipes>
+		
 		<inspectorTabs>
-			<li>ITab_Bills</li>
+			<li>VanillaPowerExpanded.ITab_BillsInherit</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -537,15 +597,9 @@
 		<surfaceType>Item</surfaceType>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		<recipes>
-			<li>ExtractMetalFromSlag</li>
-			<li>SmeltWeapon</li>
-			<li>SmeltApparel</li>
-			<li>DestroyWeapon</li>
-			<li>DestroyApparel</li>
-		</recipes>
+		
 		<inspectorTabs>
-			<li>ITab_Bills</li>
+			<li>VanillaPowerExpanded.ITab_BillsInherit</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -617,20 +671,9 @@
 		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		<recipes>
-			<li>CookMealSimple</li>
-			<li>CookMealFine</li>
-			<li>CookMealLavish</li>
-			<li>CookMealSurvival</li>
-			<li>CookMealSimpleBulk</li>
-			<li>CookMealFineBulk</li>
-			<li>CookMealLavishBulk</li>
-			<li>CookMealSurvivalBulk</li>
-			<li>Make_Pemmican</li>
-			<li>Make_PemmicanBulk</li>
-		</recipes>
+		
 		<inspectorTabs>
-			<li>ITab_Bills</li>
+			<li>VanillaPowerExpanded.ITab_BillsInherit</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -718,7 +761,7 @@
 		<comps>
 			<li Class="CompProperties_Forbiddable"/>
 			<li Class="CompProperties_Flickable"/>
-			
+
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
 				<basePowerConsumption>300</basePowerConsumption>
@@ -729,189 +772,187 @@
 		</comps>
 	</ThingDef>
 
-  <ThingDef ParentName="BuildingBase">
-    <defName>VPE_GasCooler</defName>
-    <label>gas cooler</label>
-    <description>An air-cooling machine that releases cooled air around itself. Can be used to create a walk-in freezer. Cannot be adjusted and will automatically lower temperature slightly below zero.</description>
-    <thingClass>Building_Cooler</thingClass>
-    <graphicData>
-      <texPath>Things/Building/GasMachines/GasCooler</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <damageData>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-      <drawRotated>false</drawRotated>
-      <allowFlip>false</allowFlip>
-    </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <blockWind>true</blockWind>
-	<rotatable>false</rotatable>
-    <fillPercent>0.5</fillPercent>
-    <coversFloor>true</coversFloor>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
-    <castEdgeShadows>true</castEdgeShadows>
-    <staticSunShadowHeight>0.5</staticSunShadowHeight>
-    <statBases>
-      <WorkToBuild>1600</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>0.7</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <costList>
-      <Steel>90</Steel>
-      <ComponentIndustrial>3</ComponentIndustrial>
-    </costList>
-    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-    <placeWorkers>
-      <li>PlaceWorker_CoolerSimple</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <building>
-      <canPlaceOverWall>true</canPlaceOverWall>
-    </building>
-    <comps>
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasCooler</defName>
+		<label>gas cooler</label>
+		<description>An air-cooling machine that releases cooled air around itself. Can be used to create a walk-in freezer. Cannot be adjusted and will automatically lower temperature slightly below zero.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasCooler</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<blockWind>true</blockWind>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<statBases>
+			<WorkToBuild>1600</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.7</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<costList>
+			<Steel>90</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_CoolerSimple</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<building>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
 				<basePowerConsumption>250</basePowerConsumption>
 				<transmitsGas>true</transmitsGas>
 			</li>
-      <li Class="CompProperties_Flickable"/>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>-11</heatPerSecond>
-        <heatPushMinTemperature>-5</heatPushMinTemperature>
-      </li>
-      <li Class="CompProperties_Breakdownable"/>
-    </comps>
-    <designationCategory>Temperature</designationCategory>
-    <researchPrerequisites>
-	<li>VFE_GasExtraction</li>
-    </researchPrerequisites>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-  </ThingDef>
-  
-  <ThingDef ParentName="BuildingBase">
-    <defName>VPE_GasHeater</defName>
-    <label>gas heater</label>
-    <description>A device that converts helixien gas into radiated heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
-    <thingClass>Building_Heater</thingClass>
-    <graphicData>
-      <texPath>Things/Building/GasMachines/GasHeater</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shadowData>
-        <volume>(0.5,0.3,0.7)</volume>
-        <offset>(0,0,-0.15)</offset>
-      </shadowData>
-      <damageData>
-        <rect>(0.234375,0,0.515625,0.984375)</rect>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
-      </damageData>
-    </graphicData>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <altitudeLayer>Building</altitudeLayer>
-    <passability>PassThroughOnly</passability>
-    <pathCost>40</pathCost>
-    <blockWind>true</blockWind>
-    <rotatable>false</rotatable>
-    <fillPercent>0.4</fillPercent>
-    <thingCategories>
-      <li>BuildingsTemperature</li>
-    </thingCategories>
-    <statBases>
-      <WorkToBuild>1000</WorkToBuild>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Mass>6</Mass>
-      <Flammability>0.5</Flammability>
-    </statBases>
-    <tickerType>Rare</tickerType>
-    <costList>
-      <Steel>50</Steel>
-      <ComponentIndustrial>1</ComponentIndustrial>
-    </costList>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <placeWorkers>
-      <li>PlaceWorker_Heater</li>
-    </placeWorkers>
-    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-    <comps>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>VanillaPowerExpanded.CompHeatPusherGas</compClass>
+				<heatPerSecond>-11</heatPerSecond>
+				<heatPushMinTemperature>-5</heatPushMinTemperature>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<designationCategory>Temperature</designationCategory>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasHeater</defName>
+		<label>gas heater</label>
+		<description>A device that converts helixien gas into radiated heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
+		<thingClass>VanillaPowerExpanded.Building_GasHeater</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasHeater</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.5,0.3,0.7)</volume>
+				<offset>(0,0,-0.15)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.234375,0,0.515625,0.984375)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>40</pathCost>
+		<blockWind>true</blockWind>
+		<rotatable>false</rotatable>
+		<fillPercent>0.4</fillPercent>
+		<thingCategories>
+			<li>BuildingsTemperature</li>
+		</thingCategories>
+		<statBases>
+			<WorkToBuild>1000</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>6</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_Heater</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
 				<basePowerConsumption>150</basePowerConsumption>
 				<transmitsGas>true</transmitsGas>
 			</li>
-      <li Class="CompProperties_Flickable"/>
-      <li Class="CompProperties_TempControl">
-        <energyPerSecond>21</energyPerSecond>
-      </li>
-      <li Class="CompProperties_Glower">
-        <glowRadius>3</glowRadius>
-        <glowColor>(255,150,100,0)</glowColor>
-      </li>
-      <li Class="CompProperties_Breakdownable"/>
-    </comps>
-    <designationCategory>Temperature</designationCategory>
-    <designationHotKey>Misc2</designationHotKey>
-    <researchPrerequisites>
-	<li>VFE_GasExtraction</li>
-    </researchPrerequisites>
-    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
-  </ThingDef>
-  
-  <ThingDef ParentName="LampBase">
-    <defName>VPE_GasSunLamp</defName>
-    <label>gas sun lamp</label>
-    <description>An industrial lamp which lights an area brightly enough to grow crops, but consumes a medium amount of helixien gas. Automatically turns itself off at night.</description>
-    <thingClass>Building_SunLamp</thingClass>
-    <graphicData>
-      <texPath>Things/Building/GasMachines/GasSunLamp</texPath>
-    </graphicData>
-    <blockWind>true</blockWind>
-    <tickerType>Rare</tickerType>
-    <statBases>
-      <WorkToBuild>330</WorkToBuild>
-      <Mass>4.5</Mass>
-    </statBases>
-    <costList>
-      <Steel>50</Steel>
-    </costList>
-    <comps>
-      <li Class="CompProperties_Glower">
-        <overlightRadius>7.0</overlightRadius>
-        <glowRadius>14</glowRadius>
-        <glowColor>(90,140,90,0)</glowColor>
-      </li>
+			<li Class="CompProperties_Flickable"/>
+			<li Class="CompProperties_TempControl">
+				<energyPerSecond>21</energyPerSecond>
+			</li>
+			
+			<li Class="CompProperties_Breakdownable"/>
+		</comps>
+		<designationCategory>Temperature</designationCategory>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="LampBase">
+		<defName>VPE_GasSunLamp</defName>
+		<label>gas sun lamp</label>
+		<description>An industrial lamp which lights an area brightly enough to grow crops, but consumes a medium amount of helixien gas. Automatically turns itself off at night.</description>
+		<thingClass>Building_SunLamp</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasSunLamp</texPath>
+		</graphicData>
+		<blockWind>true</blockWind>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<WorkToBuild>330</WorkToBuild>
+			<Mass>4.5</Mass>
+		</statBases>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<overlightRadius>7.0</overlightRadius>
+				<glowRadius>14</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
 				<basePowerConsumption>1000</basePowerConsumption>
 				<transmitsGas>true</transmitsGas>
 			</li>
-      <li Class="CompProperties_Schedule">
-        <!-- Match plant growing times -->
-        <startTime>0.25</startTime>
-        <endTime>0.8</endTime>
-        <offMessage>Off for plant resting period</offMessage>
-      </li>
-      <li Class="CompProperties_HeatPusher">
-        <compClass>CompHeatPusherPowered</compClass>
-        <heatPerSecond>3</heatPerSecond>
-      </li>
-    </comps>
-    <!-- Determined by trial and error
+			<li Class="CompProperties_Schedule">
+				<!-- Match plant growing times -->
+				<startTime>0.25</startTime>
+				<endTime>0.8</endTime>
+				<offMessage>Off for plant resting period</offMessage>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>3</heatPerSecond>
+			</li>
+		</comps>
+		<!-- Determined by trial and error
     This value isn't perfect because these radii use different algorithms
     but it matches in this case-->
-    <specialDisplayRadius>5.8</specialDisplayRadius>
-    <researchPrerequisites>
-	<li>VFE_GasExtraction</li>
-    </researchPrerequisites>
-  </ThingDef>
+		<specialDisplayRadius>5.8</specialDisplayRadius>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+	</ThingDef>
 
 
 

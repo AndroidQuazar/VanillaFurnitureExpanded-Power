@@ -94,7 +94,7 @@ namespace VanillaPowerExpanded
                     List<Thing> thingList = b.parent.Map.thingGrid.ThingsListAt(c);
                     for (int i = 0; i < thingList.Count; i++)
                     {
-                        if (ConnectToGas(thingList[i]))
+                        if (thingList[i].def.ConnectToPower)
                         {
                             yield return ((Building)thingList[i]).GetComp<CompPipe>();
                         }

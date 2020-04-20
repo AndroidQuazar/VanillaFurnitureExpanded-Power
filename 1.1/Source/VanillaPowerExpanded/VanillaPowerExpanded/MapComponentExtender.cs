@@ -69,7 +69,8 @@ namespace VanillaPowerExpanded
                     }
                     foreach (IntVec3 c in tmpTerrain)
                     {
-
+                        if (!c.CloseToEdge(map, 15))
+                        {
                         TerrainDef terrain = c.GetTerrain(map);
 
                         foreach (string allowed in element.terrainValidationAllowed)
@@ -95,7 +96,7 @@ namespace VanillaPowerExpanded
 
                             Thing thing = (Thing)ThingMaker.MakeThing(element.thingDef, null);
                             CellRect occupiedRect = GenAdj.OccupiedRect(c, thing.Rotation, thing.def.Size);
-                           
+
                             if (occupiedRect.InBounds(map))
                             {
                                 GenSpawn.Spawn(thing, c, map);
@@ -108,6 +109,8 @@ namespace VanillaPowerExpanded
                             spawnCounter = 0;
                             break;
                         }
+                    }
+                        
                     }
 
 
