@@ -86,22 +86,25 @@ namespace VanillaPowerExpanded
             Func<List<FloatMenuOption>> recipeOptionsMaker = delegate
             {
                 List<FloatMenuOption> list = new List<FloatMenuOption>();
-                // ITab_BillsInherit tab_Bills = default(ITab_BillsInherit);
+                ITab_BillsInherit tab_Bills = default(ITab_BillsInherit);
                 RecipeDef recipe = default(RecipeDef);
                 for (int i = 0; i < ThingDef.Named(billsOriginator).AllRecipes.Count; i++)
                 {
-
+                    tab_Bills = this;
                     if (ThingDef.Named(billsOriginator).AllRecipes[i].AvailableNow)
                     {
                         recipe = ThingDef.Named(billsOriginator).AllRecipes[i];
+                       
                         list.Add(new FloatMenuOption(recipe.LabelCap, delegate
                         {
-                            if (!this.SelTable.Map.mapPawns.FreeColonists.Any((Pawn col) => recipe.PawnSatisfiesSkillRequirements(col)))
+                            if (!tab_Bills.SelTable.Map.mapPawns.FreeColonists.Any((Pawn col) => recipe.PawnSatisfiesSkillRequirements(col)))
                             {
                                 Bill.CreateNoPawnsWithSkillDialog(recipe);
                             }
                             Bill bill2 = recipe.MakeNewBill();
-                            this.SelTable.billStack.AddBill(bill2);
+
+                            tab_Bills.SelTable.billStack.AddBill(bill2);
+                           
                             if (recipe.conceptLearned != null)
                             {
                                 PlayerKnowledgeDatabase.KnowledgeDemonstrated(recipe.conceptLearned, KnowledgeAmount.Total);

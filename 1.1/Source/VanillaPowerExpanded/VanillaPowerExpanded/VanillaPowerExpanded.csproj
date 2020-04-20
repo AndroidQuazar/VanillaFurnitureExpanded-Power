@@ -310,6 +310,7 @@
     <Compile Include="Lightning\CompLightningPowerPlant.cs" />
     <Compile Include="Lightning\WeatherEvent_CustomLightningStrike.cs" />
     <Compile Include="MapComponentExtender.cs" />
+    <Compile Include="NonPublicFields.cs" />
     <Compile Include="Nuclear\CompPlantHarmRadiusIfBroken.cs" />
     <Compile Include="Nuclear\CompPowerPlantNuclear.cs" />
     <Compile Include="Nuclear\CompProperties_PlantHarmRadiusIfBroken.cs" />
@@ -345,8 +346,10 @@
     <Compile Include="Solar\CompPowerAdvancedSolar.cs" />
     <Compile Include="SoulPowered\CompSoulsPowerPlant.cs" />
     <Compile Include="SpecialPowerSpawnsDef.cs" />
+    <Compile Include="StaticConstructorClass.cs" />
     <Compile Include="TempControl\Building_GasHeater.cs" />
     <Compile Include="TempControl\CompHeatPusherGas.cs" />
+    <Compile Include="ThingDefExtension.cs" />
     <Compile Include="Tidal\PlaceWorker_Tidal.cs" />
     <Compile Include="Watermill\CompPowerAdvancedWater.cs" />
     <Compile Include="Watermill\PlaceWorker_AdvancedWatermill.cs" />

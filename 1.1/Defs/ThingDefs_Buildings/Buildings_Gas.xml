@@ -68,7 +68,7 @@
 		<designationHotKey>Misc1</designationHotKey>
 
 	</ThingDef>
-	
+
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasPipeSub</defName>
 		<label>subterranean gas pipe</label>
@@ -523,9 +523,9 @@
 		<canOverlapZones>false</canOverlapZones>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		
+
 		<inspectorTabs>
-			<li>VanillaPowerExpanded.ITab_BillsInherit</li>
+			<li>ITab_Bills</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -555,6 +555,14 @@
 		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>ElectricCrematorium</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<ThingDef ParentName="BenchBase">
@@ -597,9 +605,9 @@
 		<surfaceType>Item</surfaceType>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		
+
 		<inspectorTabs>
-			<li>VanillaPowerExpanded.ITab_BillsInherit</li>
+			<li>ITab_Bills</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -629,6 +637,14 @@
 		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>ElectricSmelter</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 
@@ -671,9 +687,9 @@
 		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<surfaceType>Item</surfaceType>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
-		
+
 		<inspectorTabs>
-			<li>VanillaPowerExpanded.ITab_BillsInherit</li>
+			<li>ITab_Bills</li>
 		</inspectorTabs>
 		<comps>
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
@@ -700,6 +716,14 @@
 		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>FueledStove</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 	<ThingDef ParentName="BuildingBase">
@@ -894,7 +918,7 @@
 			<li Class="CompProperties_TempControl">
 				<energyPerSecond>21</energyPerSecond>
 			</li>
-			
+
 			<li Class="CompProperties_Breakdownable"/>
 		</comps>
 		<designationCategory>Temperature</designationCategory>
@@ -928,7 +952,7 @@
 				<glowRadius>14</glowRadius>
 				<glowColor>(90,140,90,0)</glowColor>
 			</li>
-			
+
 			<li Class="VanillaPowerExpanded.CompProperties_Pipe">
 				<compClass>VanillaPowerExpanded.CompPipeTrader</compClass>
 				<basePowerConsumption>1000</basePowerConsumption>
