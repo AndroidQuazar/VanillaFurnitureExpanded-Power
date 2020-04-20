@@ -107,49 +107,37 @@ namespace VanillaPowerExpanded
                 Building building = this.parent as Building;
                 if (building.Map != null)
                 {
-                    CellRect rect = GenAdj.OccupiedRect(building.Position, building.Rotation, IntVec2.One);
-                    rect = rect.ExpandedBy(radius);
-
-                    foreach (IntVec3 current in rect.Cells)
+                    foreach (Thing thing in GenRadial.RadialDistinctThingsAround(building.Position, building.Map, radius, true))
                     {
-                        if (current.InBounds(building.Map))
+                        Corpse corpse = thing as Corpse;
+                        if (corpse != null)
                         {
-                            HashSet<Thing> hashSet = new HashSet<Thing>(current.GetThingList(building.Map));
-                            if (hashSet != null)
+                            // Log.Message(corpse.def.defName);
+                            if (corpse.InnerPawn.def.race.Humanlike)
                             {
-                                foreach (Thing thingInCell in hashSet)
+
+
+                                CompRottable compRottable = corpse.TryGetComp<CompRottable>();
+                                if (compRottable.Stage == RotStage.Fresh)
                                 {
-                                    Corpse corpse = thingInCell as Corpse;
-                                   
-                                    if (corpse != null)
-                                    {
-                                       // Log.Message(corpse.def.defName);
-                                        if (corpse.InnerPawn.def.race.Humanlike)
-                                        {
-
-                                            
-                                            CompRottable compRottable = corpse.TryGetComp<CompRottable>();
-                                            if (compRottable.Stage == RotStage.Fresh)
-                                            {
-                                                this.fuel += 1;
-                                                //Log.Message(fuel.ToString());
-                                                compRottable.RotProgress += 100000;
-                                                flagOnce = true;
-                                            }
-
-                                            
-                                            
-
-                                        }
-
-                                    }
-
+                                    Log.Message("Found coprse named "+ corpse.def.defName);
+                                    this.fuel += 1;
+                                    //Log.Message(fuel.ToString());
+                                    compRottable.RotProgress += 1000000;
+                                    flagOnce = true;
                                 }
-                            }
-                        }
-                        if (flagOnce) { flagOnce = false; break; }
 
+
+
+
+                            }
+
+                            if (flagOnce) { flagOnce = false; break; }
+
+                        }
                     }
+
+                   
 
 
                 }
