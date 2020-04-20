@@ -120,7 +120,7 @@ namespace VanillaPowerExpanded
                                 CompRottable compRottable = corpse.TryGetComp<CompRottable>();
                                 if (compRottable.Stage == RotStage.Fresh)
                                 {
-                                    Log.Message("Found coprse named "+ corpse.def.defName);
+                                    //Log.Message("Found coprse named "+ corpse.def.defName);
                                     this.fuel += 1;
                                     //Log.Message(fuel.ToString());
                                     compRottable.RotProgress += 1000000;
