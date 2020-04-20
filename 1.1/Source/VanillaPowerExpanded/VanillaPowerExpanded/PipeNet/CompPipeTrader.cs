@@ -159,7 +159,11 @@ namespace VanillaPowerExpanded
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look<bool>(ref this.powerOnInt, "powerOn", true, false);
+            if (this.parent.def.defName != "VPE_HelixienGenerator")
+            {
+                Scribe_Values.Look<bool>(ref this.powerOnInt, "powerOn", true, false);
+            }
+           
         }
 
         public override void PostDraw()

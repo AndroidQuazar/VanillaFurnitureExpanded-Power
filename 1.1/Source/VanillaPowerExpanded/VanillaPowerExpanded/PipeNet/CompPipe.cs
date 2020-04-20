@@ -71,19 +71,23 @@ namespace VanillaPowerExpanded
         public override void PostExposeData()
         {
             Thing thing = null;
-            if (Scribe.mode == LoadSaveMode.Saving && this.connectParent != null)
+            if ((this.parent.def.defName != "VPE_HelixienGenerator")&& (this.parent.def.defName != "VPE_IndustrialHelixienGenerator"))
             {
-                thing = this.connectParent.parent;
+                if (Scribe.mode == LoadSaveMode.Saving && this.connectParent != null)
+                {
+                    thing = this.connectParent.parent;
+                }
+                Scribe_References.Look<Thing>(ref thing, "parentThing", false);
+                if (thing != null)
+                {
+                    this.connectParent = ((ThingWithComps)thing).GetComp<CompPipe>();
+                }
+                if (Scribe.mode == LoadSaveMode.PostLoadInit && this.connectParent != null)
+                {
+                    this.ConnectToTransmitter(this.connectParent, true);
+                }
             }
-            Scribe_References.Look<Thing>(ref thing, "parentThing", false);
-            if (thing != null)
-            {
-                this.connectParent = ((ThingWithComps)thing).GetComp<CompPipe>();
-            }
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && this.connectParent != null)
-            {
-                this.ConnectToTransmitter(this.connectParent, true);
-            }
+               
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
