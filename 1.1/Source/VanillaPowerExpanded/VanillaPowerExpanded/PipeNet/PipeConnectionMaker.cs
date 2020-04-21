@@ -8,15 +8,21 @@ namespace VanillaPowerExpanded
     {
         public static void ConnectAllConnectorsToTransmitter(CompPipe newTransmitter)
         {
-            if (newTransmitter != null) {
-                foreach (CompPipe compPipe in PipeConnectionMaker.PotentialConnectorsForTransmitter(newTransmitter))
+            try
+            {
+                if (newTransmitter != null)
                 {
-                    if (compPipe.connectParent == null)
+
+                    foreach (CompPipe compPipe in PipeConnectionMaker.PotentialConnectorsForTransmitter(newTransmitter))
                     {
-                        compPipe.ConnectToTransmitter(newTransmitter, false);
+                        if (compPipe.connectParent == null)
+                        {
+                            compPipe.ConnectToTransmitter(newTransmitter, false);
+                        }
                     }
                 }
             }
+            catch { }
             
         }
 

@@ -262,7 +262,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_HelixienPump</defName>
 		<label>helixien pump</label>
-		<description>An extractor machine mounted on helixien gas geyser. Self-powered, this machine pumps out valuable gas and needs to be connected to other gas-based utilities using the pipe network.</description>
+		<description>An extractor machine mounted on helixien gas geyser. Self-powered, this machine pumps out valuable gas and needs to be connected to other gas-based utilities using the pipe network. The pump needs at least two sections of pipe to be adjacent to it to extract gas from the geyser into a gas network.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/HelixienPump</texPath>

@@ -12,8 +12,9 @@ namespace VanillaPowerExpanded
 
         public int tickCounter = 0;
         public int tickCounterInterval = 6000;
-      
-        
+        private static readonly float BaseAlt = AltitudeLayer.MetaOverlays.AltitudeFor();
+        private static readonly Material OutOfLightning = MaterialPool.MatFrom("Things/Special/NoFuel/VPE_NoFuel", ShaderDatabase.MetaOverlay);
+
         private float fuel = 0f;
 
         public override void PostExposeData()
@@ -71,7 +72,13 @@ namespace VanillaPowerExpanded
             base.PostDraw();
             if (!this.HasFuel)
             {
-                this.parent.Map.overlayDrawer.DrawOverlay(this.parent, OverlayTypes.OutOfFuel);
+                Vector3 drawPos = parent.DrawPos;
+                drawPos.y = BaseAlt + 0.181818187f;
+                float num = ((float)Math.Sin((double)((Time.realtimeSinceStartup + 397f * (float)(parent.thingIDNumber % 571)) * 4f)) + 1f) * 0.5f;
+                num = 0.3f + num * 0.7f;
+                Material material = FadedMaterialPool.FadedVersionOf(OutOfLightning, num);
+                Graphics.DrawMesh(MeshPool.plane08, drawPos, Quaternion.identity, material, 0);
+               // this.parent.Map.overlayDrawer.DrawOverlay(this.parent, OverlayTypes.OutOfFuel);
             }
 
         }
