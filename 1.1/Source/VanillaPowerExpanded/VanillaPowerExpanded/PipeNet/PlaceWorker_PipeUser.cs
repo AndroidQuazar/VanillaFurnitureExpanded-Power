@@ -18,7 +18,7 @@ namespace VanillaPowerExpanded
 
                     if (thingList[i].def.HasComp(typeof(CompPipe)) || thingList[i].def.HasComp(typeof(CompPipeTank)) || thingList[i].def.HasComp(typeof(CompPipeTrader)) || thingList[i].def.HasComp(typeof(CompPipeTransmitter)) || thingList[i].def.HasComp(typeof(CompPipePlant)))
                     {
-                        return false;
+                        return "VPE_MustPlaceAdjacentToPipe".Translate();
                     }
 
                 }

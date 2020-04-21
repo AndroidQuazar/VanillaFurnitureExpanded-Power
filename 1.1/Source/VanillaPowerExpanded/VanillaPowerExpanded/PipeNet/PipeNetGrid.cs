@@ -82,7 +82,7 @@ namespace VanillaPowerExpanded
                 }
                 else
                 {
-                    Log.Warning("Multiple nets on the same cell " + list[i] + ". This is probably a result of an earlier error.", false);
+                    //Log.Warning("Multiple nets on the same cell " + list[i] + ". This is probably a result of an earlier error.", false);
                 }
             }
             this.powerNetCells.Remove(deadNet);

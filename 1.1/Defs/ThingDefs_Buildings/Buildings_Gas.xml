@@ -466,6 +466,9 @@
 				<wickTicks>70~150</wickTicks>
 			</li>
 		</comps>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
+		</placeWorkers>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<designationCategory>Power</designationCategory>
 		<designationHotKey>Misc4</designationHotKey>
@@ -548,8 +551,10 @@
 			<heatPerTickWhileWorking>0.32</heatPerTickWhileWorking>
 			<forceShowRoomStats>true</forceShowRoomStats>
 		</building>
+		
 		<placeWorkers>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<designationHotKey>Misc5</designationHotKey>
 		<researchPrerequisites>
@@ -633,6 +638,7 @@
 		<designationHotKey>Misc10</designationHotKey>
 		<placeWorkers>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
@@ -712,6 +718,7 @@
 		<designationHotKey>Misc8</designationHotKey>
 		<placeWorkers>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
@@ -769,6 +776,7 @@
 		<placeWorkers>
 			<li>PlaceWorker_DeepDrill</li>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
@@ -836,6 +844,7 @@
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<placeWorkers>
 			<li>PlaceWorker_CoolerSimple</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<building>
@@ -906,6 +915,7 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<placeWorkers>
 			<li>PlaceWorker_Heater</li>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
@@ -969,6 +979,10 @@
 				<heatPerSecond>3</heatPerSecond>
 			</li>
 		</comps>
+		<placeWorkers>
+			
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
+		</placeWorkers>
 		<!-- Determined by trial and error
     This value isn't perfect because these radii use different algorithms
     but it matches in this case-->

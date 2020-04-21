@@ -15,6 +15,7 @@
 	<VPE_PlugHoleDesc>Fill hole with dirt. WARNING: this will destroy the geyser or pond. Only do this if it is no longer useable or if you need the space.</VPE_PlugHoleDesc>
 	<VPE_CancelPlugHole>Cancel fill hole</VPE_CancelPlugHole>
 	<VPE_CancelPlugHoleDesc>Cancels the hole filling job.</VPE_CancelPlugHoleDesc>
+	<VPE_MustPlaceAdjacentToPipe>Gas powered buildings must be placed adjacent to gas pipes, not on top</VPE_MustPlaceAdjacentToPipe>
 
 	<!-- Nucular Reactor -->
 	<VPE_RadiationProduced>Warning: Reactor producing radiation in a {0} meters radius</VPE_RadiationProduced>
