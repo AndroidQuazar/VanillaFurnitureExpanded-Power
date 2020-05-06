@@ -36,6 +36,7 @@ namespace VanillaPowerExpanded
 
         public override void PostExposeData()
         {
+            base.PostExposeData();
             Scribe_Values.Look<float>(ref this.radiationRadius, "radiationRadius", 0, false);
             Scribe_Values.Look<int>(ref this.tickRadiation, "tickRadiation", 0, false);
             Scribe_Values.Look<bool>(ref this.signalMeltdown, "signalMeltdown", false, false);

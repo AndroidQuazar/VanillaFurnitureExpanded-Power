@@ -30,6 +30,7 @@ namespace VanillaPowerExpanded
 
         public override void PostExposeData()
         {
+            base.PostExposeData();
             Scribe_Values.Look<int>(ref this.ticksActive, "ticksActive", 0, false);
             Scribe_Values.Look<int>(ref this.ticksToPlantHarm, "ticksToPlantHarm", 0, false);
         }

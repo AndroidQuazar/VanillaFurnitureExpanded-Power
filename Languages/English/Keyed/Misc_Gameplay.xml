@@ -3,6 +3,7 @@
 
 
 	<!-- Gas pipe system -->
+	<VPE_HelixienPumpProducing>The pump will produce {0} helixien gas canisters in {1}</VPE_HelixienPumpProducing>
 	<VPE_PipesNotConnected>Pipes not connected to generator or tanks</VPE_PipesNotConnected>
 	<VPE_PipeConnectedRateStored>Pipe grid excess/stored: {0} ml / {1} ml-d</VPE_PipeConnectedRateStored>
 	<VPE_LiquidTankStored>Gas stored</VPE_LiquidTankStored>
@@ -59,6 +60,7 @@
 	<!-- Tidal power plant -->
 	
 	<VPE_NeedsWater>This power plant must be built on water</VPE_NeedsWater>
+	<VPE_NeedsDistance>Tidal power plants must be built with at least 40 tiles of separation of each other</VPE_NeedsDistance>
 
 
 

@@ -1,8 +1,8 @@
 ﻿using RimWorld;
 using Verse;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace VanillaPowerExpanded
 {
@@ -17,8 +17,36 @@ namespace VanillaPowerExpanded
                     return new AcceptanceReport("VPE_NeedsWater".Translate());
                 }
             }
+            foreach (Thing generator in GenRadial.RadialDistinctThingsAround(loc, map, 40, true))
+            {
+                Building generatorBuilding = generator as Building;
+                if (generatorBuilding != null && generatorBuilding.def.defName== "VFE_TidalGenerator")
+                { return new AcceptanceReport("VPE_NeedsDistance".Translate()); }
 
-            return true;
+
+
+            }
+
+
+
+                return true;
         }
+
+        public override void DrawGhost(ThingDef def, IntVec3 loc, Rot4 rot, Color ghostCol, Thing thing = null)
+        {
+           
+            Color color2 = new Color(0f, 0.6f, 0f);
+
+            GenDraw.DrawRadiusRing(loc, 40, color2);
+
+        }
+
+      
+
+
     }
+
+
 }
+
+

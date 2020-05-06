@@ -37,8 +37,8 @@ namespace VanillaPowerExpanded
                 Building building = allBuildingsColonist[i];
                 if (building.def == ThingDef.Named("VPE_GasDrill"))
                 {
-                    CompPipeTrader comp = building.GetComp<CompPipeTrader>();
-                    if ((comp == null || comp.PowerOn) && building.Map.designationManager.DesignationOn(building, DesignationDefOf.Uninstall) == null)
+                    CompRefuelable comp = building.GetComp<CompRefuelable>();
+                    if ((comp == null || comp.HasFuel) && building.Map.designationManager.DesignationOn(building, DesignationDefOf.Uninstall) == null)
                     {
                         return false;
                     }
