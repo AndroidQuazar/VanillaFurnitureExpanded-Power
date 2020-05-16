@@ -15,6 +15,7 @@
 			<li>WaterShallow</li>
 			<li>WaterOceanShallow</li>
 			<li>WaterMovingShallow</li>
+			<li>EmptySpace</li>
 		</terrainValidationDisallowed>
 		<terrainValidationAllowed/>
 		<biomesWithExtraGeneration/>
@@ -36,6 +37,7 @@
 			<li>WaterShallow</li>
 			<li>WaterOceanShallow</li>
 			<li>WaterMovingShallow</li>
+			<li>EmptySpace</li>
 		</terrainValidationDisallowed>
 		<biomesWithExtraGeneration>
 			<li>Desert</li>
