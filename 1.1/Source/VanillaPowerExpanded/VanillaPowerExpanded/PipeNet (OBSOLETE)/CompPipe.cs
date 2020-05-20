@@ -94,7 +94,7 @@ namespace VanillaPowerExpanded
         {
             
             base.PostSpawnSetup(respawningAfterLoad);
-            if (this.Props.transmitsGas)
+          /*  if (this.Props.transmitsGas)
             {
                 this.parent.Map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlag.PowerGrid, true, false);
                 if (this.Props.transmitsGas)
@@ -102,12 +102,9 @@ namespace VanillaPowerExpanded
                    
                     this.parent.Map.GetComponent<PipeMapComponent>().Notify_TransmitterSpawned(this);
                 }
-                /*if (this.parent.def.ConnectToPower)
-                {
-                    this.parent.Map.GetComponent<PipeMapComponent>().Notify_ConnectorWantsConnect(this);
-                }*/
+               
                 this.SetUpPowerVars();
-            }
+            }*/
         }
 
         public override void PostDeSpawn(Map map)
@@ -199,7 +196,7 @@ namespace VanillaPowerExpanded
             }
         }
 
-        public override string CompInspectStringExtra()
+       /* public override string CompInspectStringExtra()
         {
             if (this.GasPipeNet == null)
             {
@@ -208,7 +205,7 @@ namespace VanillaPowerExpanded
             string value = (this.GasPipeNet.CurrentEnergyGainRate() / CompPipe.WattsToWattDaysPerTick).ToString("F0");
             string value2 = this.GasPipeNet.CurrentStoredEnergy().ToString("F0");
             return "VPE_PipeConnectedRateStored".Translate(value, value2);
-        }
+        }*/
 
        
     }

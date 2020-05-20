@@ -146,7 +146,7 @@ namespace VanillaPowerExpanded
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            this.flickableComp = this.parent.GetComp<CompFlickable>();
+            //this.flickableComp = this.parent.GetComp<CompFlickable>();
         }
 
         public override void PostDeSpawn(Map map)
@@ -180,10 +180,7 @@ namespace VanillaPowerExpanded
                     if (!this.PowerOn)
                     {
 
-                        /* Vector3 drawPos = parent.DrawPos;
-
-                         drawPos.y = BaseAlt + 0.181818187f;
-                         Graphics.DrawMesh(MeshPool.plane05, drawPos, Quaternion.identity, OutOfGas, 0);*/
+                      
 
                         Vector3 drawPos = parent.DrawPos;
                         drawPos.y = BaseAlt + 0.181818187f;
@@ -235,7 +232,7 @@ namespace VanillaPowerExpanded
             this.PowerOn = false;
         }
 
-        public override string CompInspectStringExtra()
+       /* public override string CompInspectStringExtra()
         {
             string str;
             if (this.powerLastOutputted)
@@ -247,7 +244,7 @@ namespace VanillaPowerExpanded
                 str = "VPE_NutrientNeeded".Translate() + ": " + (-this.PowerOutput).ToString("#####0") + " ml";
             }
             return str + "\n" + base.CompInspectStringExtra();
-        }
+        }*/
 
         private void StartSustainerPoweredIfInactive()
         {

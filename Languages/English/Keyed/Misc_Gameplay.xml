@@ -3,7 +3,6 @@
 
 
 	<!-- Gas pipe system -->
-	<VPE_HelixienPumpProducing>The pump will produce {0} helixien gas canisters in {1}</VPE_HelixienPumpProducing>
 	<VPE_PipesNotConnected>Pipes not connected to generator or tanks</VPE_PipesNotConnected>
 	<VPE_PipeConnectedRateStored>Pipe grid excess/stored: {0} ml / {1} ml-d</VPE_PipeConnectedRateStored>
 	<VPE_LiquidTankStored>Gas stored</VPE_LiquidTankStored>
@@ -17,6 +16,20 @@
 	<VPE_CancelPlugHole>Cancel fill hole</VPE_CancelPlugHole>
 	<VPE_CancelPlugHoleDesc>Cancels the hole filling job.</VPE_CancelPlugHoleDesc>
 	<VPE_MustPlaceAdjacentToPipe>Gas powered buildings must be placed adjacent to gas pipes, not on top</VPE_MustPlaceAdjacentToPipe>
+	
+	
+	<Fluffy.GasNetwork.GasNetworkInspectString>Gas excess/stored: {0} / {1}</Fluffy.GasNetwork.GasNetworkInspectString>
+    <Fluffy.GasNetwork.Stored>Gas stored: {0}/{1}</Fluffy.GasNetwork.Stored>
+    <Fluffy.GasNetwork.Production>Gas produced: {0}</Fluffy.GasNetwork.Production>
+    <Fluffy.GasNetwork.Consumption>Gas consumed: {0}</Fluffy.GasNetwork.Consumption>
+    <Fluffy.GasNetwork.GasOff>Gas turned off.</Fluffy.GasNetwork.GasOff>
+    <Fluffy.GasNetwork.NoNetwork>Not connected to gas network.</Fluffy.GasNetwork.NoNetwork>
+    <Fluffy.GasNetwork.ValveOpen>Valve is open.</Fluffy.GasNetwork.ValveOpen>
+    <Fluffy.GasNetwork.ValveClosed>Valve is closed.</Fluffy.GasNetwork.ValveClosed>
+    <Fluffy.GasNetwork.CommandToggleGas.Label>Toggle gas flow</Fluffy.GasNetwork.CommandToggleGas.Label>
+    <Fluffy.GasNetwork.CommandToggleGas.Desc>Designate gas flow to be toggle on or off. A colonist will come soon to flick the switch.</Fluffy.GasNetwork.CommandToggleGas.Desc>
+	
+	
 
 	<!-- Nucular Reactor -->
 	<VPE_RadiationProduced>Warning: Reactor producing radiation in a {0} meters radius</VPE_RadiationProduced>

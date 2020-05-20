@@ -23,8 +23,6 @@ namespace VanillaPowerExpanded
 
         }
 
-       
-
         public override string GetInspectString()
         {
             base.GetInspectString();

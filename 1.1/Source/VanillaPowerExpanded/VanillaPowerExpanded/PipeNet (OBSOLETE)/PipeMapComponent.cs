@@ -63,8 +63,8 @@ namespace VanillaPowerExpanded
 
         public override void MapComponentTick()
         {
-            this.UpdatePipeNetsAndConnections_First();
-            this.PowerNetsTick();
+           // this.UpdatePipeNetsAndConnections_First();
+          //  this.PowerNetsTick();
             base.MapComponentTick();
             
         }

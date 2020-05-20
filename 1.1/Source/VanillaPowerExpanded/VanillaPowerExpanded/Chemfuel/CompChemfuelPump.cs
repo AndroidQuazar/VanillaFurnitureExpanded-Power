@@ -22,7 +22,7 @@ namespace VanillaPowerExpanded
             }
         }
 
-       
+
 
 
 
@@ -41,8 +41,9 @@ namespace VanillaPowerExpanded
             if (ticksCounter > ticksInADay * Props.fuelInterval)
             {
                 this.chemfuelPond = (Building_ChemfuelPond)parent.Map.thingGrid.ThingAt(parent.Position, ThingDef.Named("VPE_ChemfuelPond"));
-                if (chemfuelPond.fuelLeft > 0) {
-                    
+                if (chemfuelPond.fuelLeft > 0)
+                {
+
                     chemfuelPond.fuelLeft -= Props.fuelProduced;
                     Thing thing = ThingMaker.MakeThing(ThingDefOf.Chemfuel, null);
                     thing.stackCount = this.Props.fuelProduced;
@@ -50,7 +51,7 @@ namespace VanillaPowerExpanded
                     ticksCounter = 0;
 
                 }
-                
+
             }
 
 
@@ -59,14 +60,14 @@ namespace VanillaPowerExpanded
 
         }
 
-      
-      
+
+
 
         public override string CompInspectStringExtra()
         {
             StringBuilder stringBuilder = new StringBuilder();
             chemfuelPond = (Building_ChemfuelPond)parent.Map.thingGrid.ThingAt(parent.Position, ThingDef.Named("VPE_ChemfuelPond"));
-            if (chemfuelPond !=null && chemfuelPond.fuelLeft>0)
+            if (chemfuelPond != null && chemfuelPond.fuelLeft > 0)
             {
                 stringBuilder.Append("VPE_PondHasFuel".Translate(chemfuelPond.fuelLeft));
                 stringBuilder.AppendLine();
