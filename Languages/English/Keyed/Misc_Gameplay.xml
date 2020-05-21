@@ -74,6 +74,11 @@
 	
 	<VPE_NeedsWater>This power plant must be built on water</VPE_NeedsWater>
 	<VPE_NeedsDistance>Tidal power plants must be built with at least 40 tiles of separation of each other</VPE_NeedsDistance>
+	
+	<!-- Update Letter -->
+	
+	<VPE_GasUpdateNoticeLetterLabel>Power Mod Update</VPE_GasUpdateNoticeLetterLabel>
+	<VPE_GasUpdateNoticeLetterText>The Vanilla Furniture Expanded: Power mod has been update with a very important update regarding the Helixien Gas Network.\n\nThe original code was made by me (Sarg Bjornson) and it was quite sloppy, causing a lot of bugs and inconsistent behaviour. Thanks to the amazing Fluffy, the whole gas network code has been rewritten, and it should work perfectly now.\n\nNOTE: since most of the classes controlling the Gas Network have changed, you should re-make any gas network components you have on an existing save. You can replace buildings without cost by using Dev Mode. Enable development mode in RimWorld Options. This will make 9 buttons appear at the top of the screen. You need to use the fourth button, and then the interesting commands are "Destroy" to remove buildings and "Try Place Direct Thing" to place them again.</VPE_GasUpdateNoticeLetterText>
 
 
 

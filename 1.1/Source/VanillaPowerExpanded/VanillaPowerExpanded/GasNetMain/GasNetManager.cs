@@ -10,6 +10,17 @@ namespace GasNetwork
 {
     public class GasNetManager : MapComponent
     {
+
+        public bool sentUpdateLetter = false;
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look<bool>(ref this.sentUpdateLetter, "sentUpdateLetter", false, false);
+            
+
+        }
+
         public GasNetManager( Map map ) : base( map )
         {
         }
@@ -40,6 +51,12 @@ namespace GasNetwork
         public override void MapComponentTick()
         {
             base.MapComponentTick();
+            if (!sentUpdateLetter)
+            {
+                Find.LetterStack.ReceiveLetter("VPE_GasUpdateNoticeLetterLabel".Translate(), "VPE_GasUpdateNoticeLetterText".Translate(), DefDatabase<LetterDef>.GetNamed("VPE_GasUpdateNoticeLetter"));
+                sentUpdateLetter = true;
+            }
+
             foreach ( var net in GasNetworks )
                 if ( net.IsHashIntervalTick( 30 ) )
                     net.GasNetTick( 30 );

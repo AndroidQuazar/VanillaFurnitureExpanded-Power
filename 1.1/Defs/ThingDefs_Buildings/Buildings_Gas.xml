@@ -228,7 +228,7 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasStorage">
 				<compClass>GasNetwork.CompGasStorage</compClass>
-				<capacity>1000</capacity>
+				<capacity>100</capacity>
 			</li>
 			<li Class="CompProperties_Explosive">
 				<explosiveRadius>0</explosiveRadius>

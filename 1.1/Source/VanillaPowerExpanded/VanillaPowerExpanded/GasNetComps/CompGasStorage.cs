@@ -109,6 +109,6 @@ namespace GasNetwork
     }
     public class CompProperties_GasStorage : CompProperties_Gas
     {
-        public int capacity = 1000;
+        public int capacity = 100;
     }
 }

@@ -2,7 +2,7 @@
 <Defs> 
 
 
-
+<!--
 
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasPipe</defName>
@@ -135,7 +135,7 @@
 	</ThingDef>
 
 
-	<!--	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasPipeValve</defName>
 		<label>gas pipe valve</label>
 		<description>Switches gas flow on/off.</description>
@@ -184,7 +184,7 @@
 		
 	</ThingDef>
 
--->
+
 
 
 	<ThingDef ParentName="BuildingBase">
@@ -969,7 +969,7 @@
 				<transmitsGas>true</transmitsGas>
 			</li>
 			<li Class="CompProperties_Schedule">
-				<!-- Match plant growing times -->
+				
 				<startTime>0.25</startTime>
 				<endTime>0.8</endTime>
 				<offMessage>Off for plant resting period</offMessage>
@@ -983,9 +983,7 @@
 			
 			<li>VanillaPowerExpanded.PlaceWorker_PipeUser</li>
 		</placeWorkers>
-		<!-- Determined by trial and error
-    This value isn't perfect because these radii use different algorithms
-    but it matches in this case-->
+	
 		<specialDisplayRadius>5.8</specialDisplayRadius>
 		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
@@ -993,7 +991,7 @@
 	</ThingDef>
 
 
-
+-->
 
 
 
