@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/DesignationCategoryDef[defName="Power"]/specialDesignatorClasses</xpath>
+		<value>
+			<li>GasNetwork.Designator_DeconstructGasNetwork</li>
+		</value>
+	</Operation>
+	
+</Patch>
