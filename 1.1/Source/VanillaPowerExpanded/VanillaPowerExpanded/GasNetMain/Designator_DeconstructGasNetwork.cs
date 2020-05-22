@@ -27,7 +27,8 @@ namespace GasNetwork
 
         public Designator_DeconstructGasNetwork()
         {
-            this.defaultLabel = "Deconstruct Gas Network";
+            this.defaultLabel = "VPE_DeconstructGasPipes".Translate();
+            this.defaultDesc = "VPE_DeconstructGasPipesDesc".Translate();
             this.icon = ContentFinder<Texture2D>.Get("Things/Building/Linked/GasPipe_MenuIcon", true);
             this.hotKey = null;
         }

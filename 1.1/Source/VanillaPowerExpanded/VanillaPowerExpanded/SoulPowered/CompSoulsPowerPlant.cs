@@ -11,8 +11,8 @@ namespace VanillaPowerExpanded
     {
 
         public int tickCounter = 0;
-        public int tickCounterInterval = 60;
-        public int radius = 50;
+        public int tickCounterInterval = 300;
+        public int radius = 25;
         public bool flagOnce = false;
         private float fuel;
 
@@ -121,7 +121,7 @@ namespace VanillaPowerExpanded
                                 if (compRottable.Stage == RotStage.Fresh)
                                 {
                                     //Log.Message("Found coprse named "+ corpse.def.defName);
-                                    this.fuel += 1;
+                                    this.fuel += 2;
                                     //Log.Message(fuel.ToString());
                                     compRottable.RotProgress += 1000000;
                                     flagOnce = true;

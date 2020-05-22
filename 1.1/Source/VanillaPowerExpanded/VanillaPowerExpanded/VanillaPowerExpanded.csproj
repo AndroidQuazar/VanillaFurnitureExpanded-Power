@@ -303,6 +303,7 @@
     <Compile Include="Chemfuel\CompProperties_ChemfuelPump.cs" />
     <Compile Include="Chemfuel\Building_ChemfuelPond.cs" />
     <Compile Include="Chemfuel\PlaceWorker_OnChemfuelPond.cs" />
+    <Compile Include="GasNetMain\Designator_DeconstructGasNetwork.cs" />
     <Compile Include="PipeNet %28obsolete%29\Building_GasHeater.cs" />
     <Compile Include="PipeNet %28obsolete%29\WorkGiver_GasExcavator.cs" />
     <Compile Include="GasNetComps\CompGas.cs" />

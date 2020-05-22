@@ -23,7 +23,12 @@ namespace VanillaPowerExpanded
         }
 
 
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_Values.Look<int>(ref this.ticksCounter, "ticksCounter", 0, false);
 
+        }
 
 
         public override void PostSpawnSetup(bool respawningAfterLoad)

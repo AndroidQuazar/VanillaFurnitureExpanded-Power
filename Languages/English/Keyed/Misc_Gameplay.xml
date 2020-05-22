@@ -16,6 +16,8 @@
 	<VPE_CancelPlugHole>Cancel fill hole</VPE_CancelPlugHole>
 	<VPE_CancelPlugHoleDesc>Cancels the hole filling job.</VPE_CancelPlugHoleDesc>
 	<VPE_MustPlaceAdjacentToPipe>Gas powered buildings must be placed adjacent to gas pipes, not on top</VPE_MustPlaceAdjacentToPipe>
+	<VPE_DeconstructGasPipes>Deconstruct Gas Network</VPE_DeconstructGasPipes>
+	<VPE_DeconstructGasPipesDesc>Deconstruct only gas pipes and subterranean gas pipes</VPE_DeconstructGasPipesDesc>
 	
 	
 	<Fluffy.GasNetwork.GasNetworkInspectString>Gas excess/stored: {0} / {1}</Fluffy.GasNetwork.GasNetworkInspectString>
