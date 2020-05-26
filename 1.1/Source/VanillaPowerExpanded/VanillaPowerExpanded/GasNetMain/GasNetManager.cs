@@ -51,11 +51,11 @@ namespace GasNetwork
         public override void MapComponentTick()
         {
             base.MapComponentTick();
-            if (!sentUpdateLetter)
+           /* if (!sentUpdateLetter)
             {
                 Find.LetterStack.ReceiveLetter("VPE_GasUpdateNoticeLetterLabel".Translate(), "VPE_GasUpdateNoticeLetterText".Translate(), DefDatabase<LetterDef>.GetNamed("VPE_GasUpdateNoticeLetter"));
                 sentUpdateLetter = true;
-            }
+            }*/
 
             foreach ( var net in GasNetworks )
                 if ( net.IsHashIntervalTick( 30 ) )
