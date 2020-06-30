@@ -87,9 +87,11 @@ namespace GasNetwork
         {
             if ( parent.TryGetComp<CompFlickable>( out var flickable ) && !flickable.SwitchIsOn )
                 parent.Map.overlayDrawer.DrawOverlay( parent, GasOverlays.GasOff );
+          
+            if ( !GasOn && WantsToBeOn) {
+                parent.Map.overlayDrawer.DrawOverlay(parent, GasOverlays.NeedsGas);
 
-            if ( !GasOn && WantsToBeOn )
-                parent.Map.overlayDrawer.DrawOverlay( parent, GasOverlays.NeedsGas );
+            }
         }
 
         private int lastUsed;

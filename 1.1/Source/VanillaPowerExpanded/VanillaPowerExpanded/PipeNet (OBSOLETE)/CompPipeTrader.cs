@@ -169,31 +169,7 @@ namespace VanillaPowerExpanded
         public override void PostDraw()
         {
             base.PostDraw();
-            if (!this.parent.IsBrokenDown())
-            {
-                if (this.flickableComp != null && !this.flickableComp.SwitchIsOn)
-                {
-                    this.parent.Map.overlayDrawer.DrawOverlay(this.parent, OverlayTypes.PowerOff);
-                }
-                else if (FlickUtility.WantsToBeOn(this.parent))
-                {
-                    if (!this.PowerOn)
-                    {
-
-                      
-
-                        Vector3 drawPos = parent.DrawPos;
-                        drawPos.y = BaseAlt + 0.181818187f;
-                        float num = ((float)Math.Sin((double)((Time.realtimeSinceStartup + 397f * (float)(parent.thingIDNumber % 571)) * 4f)) + 1f) * 0.5f;
-                        num = 0.3f + num * 0.7f;
-                        Material material = FadedMaterialPool.FadedVersionOf(OutOfGas, num);
-                        Graphics.DrawMesh(MeshPool.plane08, drawPos, Quaternion.identity, material, 0);
-
-
-                        //this.parent.Map.overlayDrawer.DrawOverlay(this.parent, OverlayTypes.NeedsPower);
-                    }
-                }
-            }
+            
         }
 
         private void RenderPulsingOverlayInternal(Thing thing, Material mat, Vector3 drawPos, Mesh mesh)
