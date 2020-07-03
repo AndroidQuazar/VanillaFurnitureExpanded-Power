@@ -24,7 +24,7 @@
 		<blockWind>true</blockWind>
 		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<fillPercent>1.0</fillPercent>
-		<blockLight>true</blockLight>
+		<blockLight>false</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
