@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  
+  <RoomRoleDef>
+    <defName>VPE_ReactorRoom</defName>
+    <label>Reactor Room</label>
+    <workerClass>VanillaPowerExpanded.RoomRoleWorker_ReactorRoom</workerClass>
+    <relatedStats>
+      <li>Cleanliness</li>
+    </relatedStats>
+  </RoomRoleDef>
+  
+ 
+</Defs>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+	<!-- Workbenches -->
+
+	<WorkGiverDef>
+		<defName>VPE_DoBillsGasCrematorium</defName>
+		<label>works at gas powered crematorium</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VPE_GasCrematorium</li>
+		</fixedBillGiverDefs>
+		<verb>work at gas powered crematorium</verb>
+		<gerund>working at gas powered crematorium</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VPE_DoBillsGasSmelter</defName>
+		<label>works at gas smelter</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VPE_GasSmelter</li>
+		</fixedBillGiverDefs>
+		<verb>work at gas smelter</verb>
+		<gerund>working at gas smelter</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VPE_DoBillsGasStove</defName>
+		<label>cook meals at stove</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Cooking</workType>
+		<priorityInType>100</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VPE_GasStove</li>
+		</fixedBillGiverDefs>
+		<verb>cook</verb>
+		<gerund>cooking at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+
+
+
+	<WorkGiverDef>
+		<defName>VPE_WorkAtGasExcavator</defName>
+		<label>drill at gas excavator</label>
+		<giverClass>VanillaPowerExpanded.WorkGiver_GasExcavator</giverClass>
+
+		<workType>Mining</workType>
+		<priorityInType>50</priorityInType>
+		<verb>excavate with gas excavator</verb>
+		<gerund>excavating with gas excavator</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VPE_WorkGiverPluggingHole</defName>
+		<label>plug hole</label>
+		<giverClass>VanillaPowerExpanded.WorkGiver_PlugHoles</giverClass>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>19</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VPE_WorkGiverPluggingPond</defName>
+		<label>plug pond</label>
+		<giverClass>VanillaPowerExpanded.WorkGiver_PlugPonds</giverClass>
+		<workType>Hauling</workType>
+		<verb>fill</verb>
+		<gerund>filling</gerund>
+		<priorityInType>19</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+
+
+
+
+</Defs>

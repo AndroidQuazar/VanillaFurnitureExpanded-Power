@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<VanillaPowerExpanded.SpecialPowerSpawnsDef>
+		<defName>VPE_SpawnHelixienVents</defName>
+		<thingDef>VPE_HelixienGeyser</thingDef>
+		<allowOnWater>false</allowOnWater>
+		<numberToSpawn>1~2</numberToSpawn>
+		<terrainValidationDisallowed>
+			<li>Mud</li>
+			<li>Marsh</li>
+			<li>WaterDeep</li>
+			<li>WaterOceanDeep</li>
+			<li>WaterMovingChestDeep</li>
+			<li>WaterShallow</li>
+			<li>WaterOceanShallow</li>
+			<li>WaterMovingShallow</li>
+			<li>EmptySpace</li>
+			<li>FakeFloorInsideShip</li>
+			<li>ShipWreckageTerrain</li>
+			<li>FakeFloorInsideShipMech</li>
+			<li>SoilShip</li>
+			<li>AB_LiquidSlime</li>
+			<li>GU_Piping</li>
+			<li>GU_RedWaterShallow</li>
+			<li>GU_RedWaterDeep</li>
+			<li>AB_PropaneLake</li>
+			<li>AB_LiquidLava</li>
+			<li>AB_Tar</li>
+			<li>RG-T_ToxicWaste</li>
+		</terrainValidationDisallowed>
+		<terrainValidationAllowed/>
+		<biomesWithExtraGeneration/>
+
+		<disallowedBiome>None</disallowedBiome>
+	</VanillaPowerExpanded.SpecialPowerSpawnsDef>
+
+	<VanillaPowerExpanded.SpecialPowerSpawnsDef>
+		<defName>VPE_SpawnChemfuelPonds</defName>
+		<thingDef>VPE_ChemfuelPond</thingDef>
+		<allowOnWater>false</allowOnWater>
+		<numberToSpawn>1~3</numberToSpawn>
+		<terrainValidationDisallowed>
+			<li>Mud</li>
+			<li>Marsh</li>
+			<li>WaterDeep</li>
+			<li>WaterOceanDeep</li>
+			<li>WaterMovingChestDeep</li>
+			<li>WaterShallow</li>
+			<li>WaterOceanShallow</li>
+			<li>WaterMovingShallow</li>
+			<li>EmptySpace</li>
+			<li>FakeFloorInsideShip</li>
+			<li>ShipWreckageTerrain</li>
+			<li>FakeFloorInsideShipMech</li>
+			<li>SoilShip</li>
+			<li>AB_LiquidSlime</li>
+			<li>GU_Piping</li>
+			<li>GU_RedWaterShallow</li>
+			<li>GU_RedWaterDeep</li>
+			<li>AB_PropaneLake</li>
+			<li>AB_LiquidLava</li>
+			<li>AB_Tar</li>
+			<li>RG-T_ToxicWaste</li>
+		</terrainValidationDisallowed>
+		<biomesWithExtraGeneration>
+			<li>Desert</li>
+			<li>ExtremeDesert</li>
+			<li>AB_GallatrossGraveyard</li>
+			<li>AB_RockyCrags</li>
+		</biomesWithExtraGeneration>
+		<extraGeneration>1</extraGeneration>
+		<terrainValidationAllowed/>
+
+		<disallowedBiome>None</disallowedBiome>
+	</VanillaPowerExpanded.SpecialPowerSpawnsDef>
+
+
+
+</Defs>

@@ -64,7 +64,7 @@
 		<designationHotKey>Misc3</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
 		<researchPrerequisites>
-			<li>VFE_GasExtraction</li>
+			<li>BiofuelRefining</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
 	</ThingDef>

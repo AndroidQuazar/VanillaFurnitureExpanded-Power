@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VPE_LightningRod</defName>
+    <label>lightning rod</label>
+    <description>An advanced technology allows this device to harness the power of lightning and place it as a ready-to-use charge in the batteries.</description>
+    <graphicData>
+      <texPath>Things/Building/Power/Lightning/LightningRod</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <pathCost>70</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+  
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>8</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2, 2)</size>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+	<comps>
+      <li Class="CompProperties_Power">
+        <compClass>VanillaPowerExpanded.CompLightningPowerPlant</compClass>
+        <basePowerConsumption>-200</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(227,233,168,0)</glowColor>
+      </li>
+    </comps>
+	<rotatable>false</rotatable>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+		</building>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc6</designationHotKey>
+   
+    <minifiedDef>MinifiedThing</minifiedDef>
+    		<researchPrerequisites>
+			<li>VFE_AdvancedPowerSources</li>
+		</researchPrerequisites>
+  </ThingDef>
+
+  
+
+</Defs>

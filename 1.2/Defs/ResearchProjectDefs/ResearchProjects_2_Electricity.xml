@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>VFE_IndustrialGenerators</defName>
+    <label>industrial generators</label>
+    <description>Build industrial-grade generators, capable of storing significantly more fuel and producing higher power.</description>
+    <baseCost>1800</baseCost>
+	<tab>VanillaExpanded</tab>
+    <techLevel>Industrial</techLevel>
+  <researchViewX>3.00</researchViewX>
+  <researchViewY>3.55</researchViewY>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_AdvancedBatteries</defName>
+    <label>advanced battery</label>
+    <description>Build spacertech batteries, capable of efficiently storing large amounts of energy.</description>
+    <baseCost>2000</baseCost>
+	<tab>VanillaExpanded</tab>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Batteries</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>4.00</researchViewX>
+  <researchViewY>4.30</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_AdvancedPowerSources</defName>
+    <label>advanced power sources</label>
+    <description>Construct spacertech green power generators, including advanced solar panels and wind turbines.</description>
+    <baseCost>2500</baseCost>
+	<tab>VanillaExpanded</tab>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>4.00</researchViewX>
+  <researchViewY>3.55</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_NuclearPower</defName>
+    <label>nuclear power</label>
+    <description>The ultimate power generation method, nuclear power is as sufficient as it is deadly.</description>
+    <baseCost>3500</baseCost>
+	<tab>VanillaExpanded</tab>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+  <researchViewX>6.00</researchViewX>
+  <researchViewY>3.60</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_TidalPower</defName>
+    <label>tidal power</label>
+    <description>Build tidal generators on water to produce a large volume of sustainable green energy.</description>
+    <baseCost>3200</baseCost>
+	<tab>VanillaExpanded</tab>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+  <researchViewX>4.00</researchViewX>
+  <researchViewY>3.00</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>VFE_GasExtraction</defName>
+    <label>gas extraction</label>
+	<tab>VanillaExpanded</tab>
+    <description>Research the helixien gas and it's ability to act as a combustible fuel.</description>
+    <baseCost>1800</baseCost>
+    <techLevel>Industrial</techLevel>
+  <researchViewX>3.00</researchViewX>
+  <researchViewY>3.00</researchViewY>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+
+</Defs>
+

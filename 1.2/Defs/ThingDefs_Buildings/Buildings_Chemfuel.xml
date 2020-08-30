@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_ChemfuelPump</defName>
+		<label>chemfuel pump</label>
+		<description>An industrial style pump capable of extracting chemfuel from underground pockets. After the chemfuel is fully extracted, chemfuel pump can be safely deconstructed.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/ChemfuelPump/ChemfuelPump</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(4,4)</drawSize>
+
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<castEdgeShadows>false</castEdgeShadows>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Flammability>1.5</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(4,4)</size>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_OnChemfuelPond</li>
+		</placeWorkers>
+		<comps>
+
+			<li Class="VanillaPowerExpanded.CompProperties_ChemfuelPump">
+				<fuelProduced>75</fuelProduced>
+				<fuelInterval>5</fuelInterval>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(166, 20, 20,0)</glowColor>
+			</li>
+			
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
+			</li>
+			
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc3</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>BiofuelRefining</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+	</ThingDef>
+
+</Defs>
