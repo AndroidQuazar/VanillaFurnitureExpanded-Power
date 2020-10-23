@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
 
@@ -18,20 +18,23 @@
 	<VPE_MustPlaceAdjacentToPipe>Gas powered buildings must be placed adjacent to gas pipes, not on top</VPE_MustPlaceAdjacentToPipe>
 	<VPE_DeconstructGasPipes>Deconstruct Gas Network</VPE_DeconstructGasPipes>
 	<VPE_DeconstructGasPipesDesc>Deconstruct only gas pipes and subterranean gas pipes</VPE_DeconstructGasPipesDesc>
-	
-	
-	<Fluffy.GasNetwork.GasNetworkInspectString>Gas excess/stored: {0} / {1}</Fluffy.GasNetwork.GasNetworkInspectString>
-    <Fluffy.GasNetwork.Stored>Gas stored: {0}/{1}</Fluffy.GasNetwork.Stored>
-    <Fluffy.GasNetwork.Production>Gas produced: {0}</Fluffy.GasNetwork.Production>
-    <Fluffy.GasNetwork.Consumption>Gas consumed: {0}</Fluffy.GasNetwork.Consumption>
-    <Fluffy.GasNetwork.GasOff>Gas turned off.</Fluffy.GasNetwork.GasOff>
-    <Fluffy.GasNetwork.NoNetwork>Not connected to gas network.</Fluffy.GasNetwork.NoNetwork>
-    <Fluffy.GasNetwork.ValveOpen>Valve is open.</Fluffy.GasNetwork.ValveOpen>
-    <Fluffy.GasNetwork.ValveClosed>Valve is closed.</Fluffy.GasNetwork.ValveClosed>
-    <Fluffy.GasNetwork.CommandToggleGas.Label>Toggle gas flow</Fluffy.GasNetwork.CommandToggleGas.Label>
-    <Fluffy.GasNetwork.CommandToggleGas.Desc>Designate gas flow to be toggle on or off. A colonist will come soon to flick the switch.</Fluffy.GasNetwork.CommandToggleGas.Desc>
-	
-	
+
+
+	<Fluffy.GasNetwork.GasNetworkInspectString>Gas excess (stored) in network: {0} ({1})</Fluffy.GasNetwork.GasNetworkInspectString>
+	<Fluffy.GasNetwork.Stored>Gas stored: {0}/{1}</Fluffy.GasNetwork.Stored>
+	<Fluffy.GasNetwork.Production>Gas produced: {0}</Fluffy.GasNetwork.Production>
+	<Fluffy.GasNetwork.Consumption>Gas consumed: {0}</Fluffy.GasNetwork.Consumption>
+	<Fluffy.GasNetwork.GasOff>Gas turned off.</Fluffy.GasNetwork.GasOff>
+	<Fluffy.GasNetwork.NoNetwork>Not connected to gas network.</Fluffy.GasNetwork.NoNetwork>
+	<Fluffy.GasNetwork.ValveOpen>Valve is open.</Fluffy.GasNetwork.ValveOpen>
+	<Fluffy.GasNetwork.ValveClosed>Valve is closed.</Fluffy.GasNetwork.ValveClosed>
+	<Fluffy.GasNetwork.CommandToggleGas.Label>Toggle gas flow</Fluffy.GasNetwork.CommandToggleGas.Label>
+	<Fluffy.GasNetwork.CommandToggleGas.Desc>Designate gas flow to be toggle on or off. A colonist will come soon to flick the switch.</Fluffy.GasNetwork.CommandToggleGas.Desc>
+	<Fluffy.GasNetwork.DesiredBuffer>Target gas storage: {0}/{1}</Fluffy.GasNetwork.DesiredBuffer>
+	<Fluffy.GasNetwork.BufferOff>Gas storage turned off.</Fluffy.GasNetwork.BufferOff>
+
+	<Fluffy.GasNetwork.Settings.Wind.WindSpeedUnit>Preferred unit of wind speed</Fluffy.GasNetwork.Settings.Wind.WindSpeedUnit>
+	<Fluffy.GasNetwork.Settings.Wind.Category>Wind Simulation</Fluffy.GasNetwork.Settings.Wind.Category>
 
 	<!-- Nucular Reactor -->
 	<VPE_RadiationProduced>Warning: Reactor producing radiation in a {0} meters radius</VPE_RadiationProduced>
@@ -64,24 +67,23 @@
 	<VPE_GasExplosionLWasLarge>This large amount of gas has created an explosion of considerable size.</VPE_GasExplosionLWasLarge>
 	<VPE_GasExplosionLWasHuge>That really is a huge explosion. Wow.</VPE_GasExplosionLWasHuge>
 	<VPE_LetterLabelGasExplosion>Kaboom!</VPE_LetterLabelGasExplosion>
-	
+
 	<!-- Chemfuel Pond -->
 
 	<VPE_PondHasFuel>This chemfuel pond has {0} units of chemfuel left</VPE_PondHasFuel>
 	<VPE_PondNoFuel>This chemfuel pond is depleted</VPE_PondNoFuel>
 	<VPE_MustPlaceOnChemfuelPond>The chemfuel pump needs to be built on top of a chemfuel pond</VPE_MustPlaceOnChemfuelPond>
 	<VPE_PumpProducing>The pump will produce {0} units of chemfuel in {1}</VPE_PumpProducing>
-	
+
 	<!-- Tidal power plant -->
-	
+
 	<VPE_NeedsWater>This power plant must be built on water</VPE_NeedsWater>
 	<VPE_NeedsDistance>Tidal power plants must be built with at least 40 tiles of separation of each other</VPE_NeedsDistance>
-	
+
 	<!-- Update Letter -->
-	
+
 	<VPE_GasUpdateNoticeLetterLabel>Power Mod Update</VPE_GasUpdateNoticeLetterLabel>
 	<VPE_GasUpdateNoticeLetterText>The Vanilla Furniture Expanded: Power mod has been updated with a very important update regarding the Helixien Gas Network.\n\nThe original code was made by me (Sarg Bjornson) and it was quite sloppy, causing a lot of bugs and inconsistent behaviour. Thanks to the amazing Fluffy, the whole gas network code has been rewritten, and it should work perfectly now.\n\nNOTE: since most of the classes controlling the Gas Network have changed, you should re-make any gas network components you have on an existing save. You can replace buildings without cost by accessing dev mode and turning on God mode. Then simply deconstruct your current gas network (with all gas-based objects), and replace it, for free.</VPE_GasUpdateNoticeLetterText>
-
 
 
 </LanguageData>

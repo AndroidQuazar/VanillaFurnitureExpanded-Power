@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BaseGas">
+        <thingClass>GasNetwork.Gas_Spreading</thingClass>
+        <defName>Gas_Helixien</defName>
+        <label>helixien gas</label>
+        <description>highly flammable, and highly toxic.</description>
+        <graphicData>
+            <graphicClass>GasNetwork.Graphic_GasSpreading</graphicClass>
+            <texPath>Things/Gas/Puff</texPath>
+            <drawSize>2.3</drawSize>
+            <color>(0.25,0.69,0.22,0.8)</color>
+        </graphicData>
+        <gas>
+            <blockTurretTracking>true</blockTurretTracking>
+            <accuracyPenalty>0.3</accuracyPenalty>
+            <rotationSpeed>15</rotationSpeed>
+        </gas>
+        <modExtensions>
+            <li Class="GasNetwork.DefModExtension_SpreadingGas">
+                <!-- Can this gas (violently) explode? -->
+                <flammable>true</flammable>
+
+                <!-- hediff to apply on exposure to this gas -->
+                <exposureHediff>ToxicBuildup</exposureHediff>
+
+                <!-- severity of hediff, at exposure to maximum density gas -->
+                <severityPerHourExposed>.3</severityPerHourExposed>
+
+                <!-- amount of gas in a cell to reach maximum density -->
+                <maxDensity>1000</maxDensity>
+
+                <!-- amount of gas that is dissipated every half second -->
+                <!-- TODO: refactor into dissipationTime? -->
+                <staticDissipation>10</staticDissipation>
+
+                <!-- amount of gas that can be dissipated by wind (moved, does not disappear) -->
+                <windDissipation>50</windDissipation>
+            </li>
+        </modExtensions>
+    </ThingDef>
+</Defs>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
 	<ThingDef ParentName="BuildingBase">
@@ -121,7 +121,7 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<designationCategory>Power</designationCategory>
 		<constructEffect>ConstructMetal</constructEffect>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<clearBuildingArea>false</clearBuildingArea>
@@ -246,7 +246,7 @@
 		<designationCategory>Power</designationCategory>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<constructEffect>ConstructMetal</constructEffect>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<designationHotKey>Misc4</designationHotKey>
@@ -288,7 +288,7 @@
 		<placeWorkers>
 			<li>VanillaPowerExpanded.PlaceWorker_PipeUserOnGasGeyser</li>
 		</placeWorkers>
-		
+
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
@@ -395,7 +395,7 @@
 		<designationCategory>Power</designationCategory>
 		<designationHotKey>Misc4</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
@@ -474,7 +474,7 @@
 		<designationCategory>Power</designationCategory>
 		<designationHotKey>Misc4</designationHotKey>
 		<constructEffect>ConstructMetal</constructEffect>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_IndustrialGenerators</li>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
@@ -651,15 +651,14 @@
 		<placeWorkers>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
-		</researchPrerequisites> 
+		</researchPrerequisites>
 		<modExtensions>
 			<li Class="VanillaPowerExpanded.ThingDefExtension">
 				<inheritRecipesFrom>
 					<li>ElectricSmelter</li>
 				</inheritRecipesFrom>
-
 			</li>
 		</modExtensions>
 	</ThingDef>
@@ -735,7 +734,7 @@
 		<placeWorkers>
 			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
 		</placeWorkers>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<modExtensions>
@@ -795,7 +794,7 @@
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
 		<researchPrerequisites>
 			<li>DeepDrilling</li>
-			 <li>VFE_GasExtraction</li>
+			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<statBases>
 			<MaxHitPoints>450</MaxHitPoints>
@@ -885,7 +884,7 @@
 			<li Class="CompProperties_Breakdownable" />
 		</comps>
 		<designationCategory>Temperature</designationCategory>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
@@ -959,9 +958,9 @@
 		</comps>
 		<designationCategory>Temperature</designationCategory>
 		<designationHotKey>Misc2</designationHotKey>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
-		</researchPrerequisites> 
+		</researchPrerequisites>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 	</ThingDef>
 
@@ -1008,9 +1007,9 @@
     but it matches in this case-->
 		<specialDisplayRadius>5.8</specialDisplayRadius>
 		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-		 <researchPrerequisites>
+		<researchPrerequisites>
 			<li>VFE_GasExtraction</li>
-		</researchPrerequisites> 
+		</researchPrerequisites>
 	</ThingDef>
 
 

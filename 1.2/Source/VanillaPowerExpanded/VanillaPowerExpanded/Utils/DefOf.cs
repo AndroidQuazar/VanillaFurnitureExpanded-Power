@@ -1,7 +1,4 @@
-﻿// DefOf.cs
-// Copyright Karel Kroeze, 2020-2020
-
-using Verse;
+﻿using Verse;
 
 namespace GasNetwork
 {
@@ -10,5 +7,6 @@ namespace GasNetwork
     {
         public static ThingDef VPE_GasPipe;
         public static ThingDef VPE_GasPipeSub;
+        public static SoundDef Explosion_Flame;
     }
 }

@@ -18,10 +18,11 @@
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -31,11 +32,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Lib.Harmony.2.0.1\lib\net472\0Harmony.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="0Harmony, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lib.Harmony.2.0.2\lib\net472\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
@@ -303,31 +304,42 @@
     <Compile Include="Chemfuel\CompProperties_ChemfuelPump.cs" />
     <Compile Include="Chemfuel\Building_ChemfuelPond.cs" />
     <Compile Include="Chemfuel\PlaceWorker_OnChemfuelPond.cs" />
-    <Compile Include="GasNetMain\Designator_DeconstructGasNetwork.cs" />
+    <Compile Include="GasNet\Comps\CompGasTrader_Buffer.cs" />
+    <Compile Include="GasNet\Comps\CompGasVent.cs" />
+    <Compile Include="GasNet\Designator_DeconstructGasNetwork.cs" />
+    <Compile Include="GasNet\Gas\DefModExtension_SpreadingGas.cs" />
+    <Compile Include="GasNet\Gas\Gas_Spreading.cs" />
+    <Compile Include="GasNet\Gas\MapComponent_GasDanger.cs" />
+    <Compile Include="GasNet\Graphics\Graphic_GasSpreading.cs" />
+    <Compile Include="GasNet\Gas\MapComponent_WindDirection.cs" />
+    <Compile Include="GasNet\Patches\Region.cs" />
+    <Compile Include="GasNet\PlaceWorkers\PlaceWorker_GasVent.cs" />
+    <Compile Include="GasNet\Patches\GlobalControlsUtility.cs" />
+    <Compile Include="GasNet\Patches\PathGrid.cs" />
     <Compile Include="PipeNet %28obsolete%29\Building_GasHeater.cs" />
     <Compile Include="PipeNet %28obsolete%29\WorkGiver_GasExcavator.cs" />
-    <Compile Include="GasNetComps\CompGas.cs" />
-    <Compile Include="GasNetComps\CompGasHeatPusher.cs" />
-    <Compile Include="GasNetComps\CompGasPowerPlant.cs" />
-    <Compile Include="GasNetComps\CompGasStorage.cs" />
-    <Compile Include="GasNetComps\CompGasTrader.cs" />
-    <Compile Include="GasNetComps\CompGasValve.cs" />
-    <Compile Include="GasNetMain\GasNet.cs" />
-    <Compile Include="GasNetMain\GasNetManager.cs" />
-    <Compile Include="GasNetMain\Mod.cs" />
-    <Compile Include="GasNetMain\Building_WorkTable_Gas.cs" />
-    <Compile Include="GasNetMain\PlaceWorker_Pipe.cs" />
+    <Compile Include="GasNet\Comps\CompGas.cs" />
+    <Compile Include="GasNet\Comps\CompGasHeatPusher.cs" />
+    <Compile Include="GasNet\Comps\CompGasPowerPlant.cs" />
+    <Compile Include="GasNet\Comps\CompGasStorage.cs" />
+    <Compile Include="GasNet\Comps\CompGasTrader.cs" />
+    <Compile Include="GasNet\Comps\CompGasValve.cs" />
+    <Compile Include="GasNet\GasNet.cs" />
+    <Compile Include="GasNet\GasNetManager.cs" />
+    <Compile Include="GasNet\Mod.cs" />
+    <Compile Include="GasNet\Buildings\Building_WorkTable_Gas.cs" />
+    <Compile Include="GasNet\PlaceWorkers\PlaceWorker_Pipe.cs" />
     <Compile Include="Graphics\GraphicsCache.cs" />
-    <Compile Include="Graphics\Graphic_LinkedGas.cs" />
-    <Compile Include="Graphics\Graphic_LinkedGasOverlay.cs" />
-    <Compile Include="Graphics\SectionLayer_GasNetwork.cs" />
+    <Compile Include="GasNet\Graphics\Graphic_LinkedGas.cs" />
+    <Compile Include="GasNet\Graphics\Graphic_LinkedGasOverlay.cs" />
+    <Compile Include="GasNet\Graphics\SectionLayer_GasNetwork.cs" />
     <Compile Include="PipeNet %28obsolete%29\VPE_GrowLampPatch.cs" />
     <Compile Include="BillInheritance\ITabBills_Inherit.cs" />
-    <Compile Include="HarmonyPatches\CompGlower.cs" />
-    <Compile Include="HarmonyPatches\Designators.cs" />
-    <Compile Include="HarmonyPatches\GenConstruct.cs" />
-    <Compile Include="HarmonyPatches\GenSpawn.cs" />
-    <Compile Include="HarmonyPatches\OverlayDrawer.cs" />
+    <Compile Include="GasNet\Patches\CompGlower.cs" />
+    <Compile Include="GasNet\Patches\Designators.cs" />
+    <Compile Include="GasNet\Patches\GenConstruct.cs" />
+    <Compile Include="GasNet\Patches\GenSpawn.cs" />
+    <Compile Include="GasNet\Patches\OverlayDrawer.cs" />
     <Compile Include="Lightning\CompLightningPowerPlant.cs" />
     <Compile Include="Lightning\WeatherEvent_CustomLightningStrike.cs" />
     <Compile Include="SpecialSpawns\MapComponentExtender.cs" />
@@ -337,7 +349,7 @@
     <Compile Include="Nuclear\CompProperties_PlantHarmRadiusIfBroken.cs" />
     <Compile Include="Nuclear\CompProperties_VariableHeatPusher.cs" />
     <Compile Include="Nuclear\CompVariableHeatPusher.cs" />
-    <Compile Include="GasNetMain\Building_GasGeyser.cs" />
+    <Compile Include="GasNet\Buildings\Building_GasGeyser.cs" />
     <Compile Include="PipeNet %28obsolete%29\Building_GasValve.cs" />
     <Compile Include="PipeNet %28obsolete%29\Building_Tank.cs" />
     <Compile Include="PipeNet %28obsolete%29\CompGasPowerPlant.cs" />
@@ -350,7 +362,7 @@
     <Compile Include="PipeNet %28obsolete%29\CompProperties_PipeTank.cs" />
     <Compile Include="PipeNet %28obsolete%29\GasExplosionUtility.cs" />
     <Compile Include="PipeNet %28obsolete%29\IncidentWorker_GasExplosion.cs" />
-    <Compile Include="GasNetMain\IntermitentGasSprayer.cs" />
+    <Compile Include="GasNet\Buildings\IntermitentGasSprayer.cs" />
     <Compile Include="PipeNet %28obsolete%29\NutrientPipeNet.cs" />
     <Compile Include="PipeNet %28obsolete%29\PipeConnectionMaker.cs" />
     <Compile Include="PipeNet %28obsolete%29\PipeMapComponent.cs" />
@@ -358,7 +370,7 @@
     <Compile Include="PipeNet %28obsolete%29\PipeNetGrid.cs" />
     <Compile Include="PipeNet %28obsolete%29\PipeNetMaker.cs" />
     <Compile Include="PipeNet %28obsolete%29\PipeOverlayMats.cs" />
-    <Compile Include="GasNetMain\PlaceWorker_PipeUserOnGasGeyser.cs" />
+    <Compile Include="GasNet\PlaceWorkers\PlaceWorker_PipeUserOnGasGeyser.cs" />
     <Compile Include="PipeNet %28obsolete%29\PlaceWorker_PipeUser.cs" />
     <Compile Include="PipeNet %28obsolete%29\PlaceWorker_Pipe.cs" />
     <Compile Include="Nuclear\PlacementWorker_MustBeRoofed.cs" />
@@ -368,12 +380,13 @@
     <Compile Include="SoulPowered\CompSoulsPowerPlant.cs" />
     <Compile Include="SpecialSpawns\SpecialPowerSpawnsDef.cs" />
     <Compile Include="BillInheritance\StaticConstructorClass.cs" />
-    <Compile Include="GasNetMain\Building_NewGasHeater.cs" />
+    <Compile Include="GasNet\Buildings\Building_NewGasHeater.cs" />
     <Compile Include="PipeNet %28obsolete%29\CompHeatPusherGas.cs" />
     <Compile Include="BillInheritance\ThingDefExtension.cs" />
     <Compile Include="Tidal\PlaceWorker_Tidal.cs" />
     <Compile Include="Utils\DebugLog.cs" />
     <Compile Include="Utils\DefOf.cs" />
+    <Compile Include="Utils\GenGas.cs" />
     <Compile Include="Utils\I18n.cs" />
     <Compile Include="Utils\Resources.cs" />
     <Compile Include="Utils\Utilities.cs" />
