@@ -23,7 +23,9 @@ namespace VanillaPowerExpanded
                 if (generatorBuilding != null && generatorBuilding.def.defName == "VFE_TidalGenerator")
                 { return new AcceptanceReport("VPE_NeedsDistance".Translate()); }
 
-
+                Thing generatorBuildingBlueprint = generator as Thing;
+                if (generatorBuildingBlueprint != null && (generatorBuildingBlueprint.def.IsBlueprint || generatorBuildingBlueprint.def.IsFrame) && generatorBuildingBlueprint.def.entityDefToBuild.defName == "VFE_TidalGenerator")
+                { return new AcceptanceReport("VPE_NeedsDistance".Translate()); }
 
             }
 
