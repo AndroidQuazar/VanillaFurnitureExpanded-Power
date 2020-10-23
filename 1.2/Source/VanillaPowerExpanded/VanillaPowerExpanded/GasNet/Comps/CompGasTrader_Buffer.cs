@@ -85,7 +85,18 @@ namespace GasNetwork
                 sb.AppendLine(I18n.DesiredBuffer(desired, Props.maxBuffer));
             }
 
-            return sb.ToString();
+            return sb.ToString().Trim();
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (var gizmo in base.CompGetGizmosExtra())
+            {
+                yield return gizmo;
+            }
+
+            // TODO: Add buffer toggle gizmo.
+            // TODO: Add buffer size gizmo.
         }
 
         public override void PostExposeData()
