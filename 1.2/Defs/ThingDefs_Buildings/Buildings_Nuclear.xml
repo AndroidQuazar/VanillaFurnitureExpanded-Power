@@ -43,7 +43,7 @@
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>VanillaPowerExpanded.CompPowerPlantNuclear</compClass>
-				<basePowerConsumption>-10000</basePowerConsumption>
+				<basePowerConsumption>-20000</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
 			<li Class="CompProperties_Breakdownable"/>

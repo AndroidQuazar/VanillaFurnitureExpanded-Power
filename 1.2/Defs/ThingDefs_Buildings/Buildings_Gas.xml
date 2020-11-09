@@ -1282,7 +1282,7 @@
 				<compClass>GasNetwork.CompGasVent</compClass>
 				<!-- This is also the amount of gas that is vented. See the maxDensity setting in the gas def for balancing options.
 				I would recommend a very high consumption and maxDensity, as this is going to be quite overpowered. -->
-				<gasConsumptionWhenUsed>500</gasConsumptionWhenUsed>
+				<gasConsumptionWhenUsed>100</gasConsumptionWhenUsed>
 
 				<!-- Ventingradius only directly affects the placeWorker graphic, actual gas buildup is determined by the amount of 
 				gas released, dissipation rates (both settable in the gas def), and wind speed and direction. -->
