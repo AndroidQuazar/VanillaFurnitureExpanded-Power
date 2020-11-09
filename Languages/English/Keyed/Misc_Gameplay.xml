@@ -52,6 +52,9 @@
 	<VPE_SoulsTime>Souls stored for: </VPE_SoulsTime>
 	<VPE_Producing>Producing {0} W of electricity</VPE_Producing>
 	<VPE_NotProducing>No souls absorbed. The Machine Gods are hungry for human souls.</VPE_NotProducing>
+	<VPE_ToggleViolenceGenerator>Switch Generator</VPE_ToggleViolenceGenerator>
+	<VPE_ToggleViolenceGeneratorDesc>Switch Generator between a working and an inactive state</VPE_ToggleViolenceGeneratorDesc>
+	<VPE_GeneratorIsOff>Violence generator is toggled off and inactive right now</VPE_GeneratorIsOff>
 
 	<!-- Lightning Generator -->
 	<VPE_LightningTime>Lightning energy stored for: </VPE_LightningTime>

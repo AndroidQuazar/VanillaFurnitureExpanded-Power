@@ -11,7 +11,7 @@ namespace VanillaPowerExpanded
 {
     public class Building_ChemfuelPond : Building
     {
-        public int fuelLeft = 750;
+        public int fuelLeft = 7500;
 
         public bool HoleNeedsPluggingSir = false;
 

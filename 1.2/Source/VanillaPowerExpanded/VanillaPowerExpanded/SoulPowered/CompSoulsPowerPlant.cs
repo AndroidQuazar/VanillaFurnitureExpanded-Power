@@ -3,6 +3,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using System.Collections.Generic;
+using Verse.Sound;
 
 namespace VanillaPowerExpanded
 {
@@ -15,19 +16,24 @@ namespace VanillaPowerExpanded
         public int radius = 25;
         public bool flagOnce = false;
         private float fuel;
+        private Texture2D cachedCommandTex;
+        public bool SwitchIsOn = false;
+
 
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look<float>(ref this.fuel, "fuel", 0f, false);
-           
+            Scribe_Values.Look<bool>(ref this.SwitchIsOn, "SwitchIsOn", false, false);
+
+
         }
 
         protected override float DesiredPowerOutput
         {
             get
             {
-                if (HasFuel)
+                if (HasFuel && !SwitchIsOn)
                 {
                     return base.DesiredPowerOutput;
                 }
@@ -82,71 +88,121 @@ namespace VanillaPowerExpanded
             {
                
             });
-            if (this.HasFuel)
-            {
-                int numTicks = (int)(this.fuel / 24f * 60000f);
-                text = text + "VPE_SoulsTime".Translate() + numTicks.ToStringTicksToPeriod(true, false, true, true) + "\n";
-                text += "VPE_Producing".Translate(base.DesiredPowerOutput);
+            if (SwitchIsOn) {
+                text += "VPE_GeneratorIsOff".Translate();
+            } else {
+                if (this.HasFuel)
+                {
+                    int numTicks = (int)(this.fuel / 24f * 60000f);
+                    text = text + "VPE_SoulsTime".Translate() + numTicks.ToStringTicksToPeriod(true, false, true, true) + "\n";
+                    text += "VPE_Producing".Translate(base.DesiredPowerOutput);
+                }
+                else text += "VPE_NotProducing".Translate();
+
             }
-            else text += "VPE_NotProducing".Translate();
+            
 
 
             return text;
         }
 
+        private Texture2D CommandTex
+        {
+            get
+            {
+                if (this.cachedCommandTex == null)
+                {
+                    this.cachedCommandTex = ContentFinder<Texture2D>.Get("UI/Commands/DesirePower", true);
+                }
+                return this.cachedCommandTex;
+            }
+        }
+
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+
+            
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            {
+                yield return gizmo;
+            }
+            
+            if (this.parent.Faction == Faction.OfPlayer)
+            {
+                yield return new Command_Toggle
+                {
+                    hotKey = KeyBindingDefOf.Command_TogglePower,
+                    icon = this.CommandTex,
+                    defaultLabel = "VPE_ToggleViolenceGenerator".Translate(),
+                    defaultDesc = "VPE_ToggleViolenceGeneratorDesc".Translate(),
+                    isActive = (() => this.SwitchIsOn),
+                    toggleAction = delegate ()
+                    {
+                        this.SwitchIsOn = !this.SwitchIsOn;
+                        SoundDefOf.FlickSwitch.PlayOneShot(new TargetInfo(this.parent.Position, this.parent.Map, false));
+                    }
+                };
+            }
+           
+        }
+          
+
 
         public override void CompTick()
         {
             base.CompTick();
-            ConsumeFuel(ConsumptionRatePerTick);
-            tickCounter++;
-           
-            if (tickCounter > tickCounterInterval)
-            {
+            if (!SwitchIsOn) {
+                ConsumeFuel(ConsumptionRatePerTick);
+                tickCounter++;
 
-                Building building = this.parent as Building;
-                if (building.Map != null)
+                if ((tickCounter > tickCounterInterval))
                 {
-                    foreach (Thing thing in GenRadial.RadialDistinctThingsAround(building.Position, building.Map, radius, true))
+
+                    Building building = this.parent as Building;
+                    if (building.Map != null)
                     {
-                        Corpse corpse = thing as Corpse;
-                        if (corpse != null)
+                        foreach (Thing thing in GenRadial.RadialDistinctThingsAround(building.Position, building.Map, radius, true))
                         {
-                            // Log.Message(corpse.def.defName);
-                            if (corpse.InnerPawn.def.race.Humanlike)
+                            Corpse corpse = thing as Corpse;
+                            if (corpse != null)
                             {
-
-
-                                CompRottable compRottable = corpse.TryGetComp<CompRottable>();
-                                if (compRottable.Stage == RotStage.Fresh)
+                                // Log.Message(corpse.def.defName);
+                                if (corpse.InnerPawn.def.race.Humanlike)
                                 {
-                                    //Log.Message("Found coprse named "+ corpse.def.defName);
-                                    this.fuel += 2;
-                                    //Log.Message(fuel.ToString());
-                                    compRottable.RotProgress += 1000000;
-                                    flagOnce = true;
+
+
+                                    CompRottable compRottable = corpse.TryGetComp<CompRottable>();
+                                    if (compRottable.Stage == RotStage.Fresh)
+                                    {
+                                        //Log.Message("Found coprse named "+ corpse.def.defName);
+                                        this.fuel += 2;
+                                        //Log.Message(fuel.ToString());
+                                        compRottable.RotProgress += 1000000;
+                                        flagOnce = true;
+                                    }
+
+
+
+
                                 }
 
-
-
+                                if (flagOnce) { flagOnce = false; break; }
 
                             }
-
-                            if (flagOnce) { flagOnce = false; break; }
-
                         }
+
+
+
+
                     }
 
-                   
 
 
+
+                    tickCounter = 0;
                 }
-
-
-
-
-                tickCounter = 0;
             }
+            
         }
     }
 }
