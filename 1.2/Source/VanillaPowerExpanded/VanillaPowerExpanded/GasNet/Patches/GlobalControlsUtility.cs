@@ -19,7 +19,7 @@ namespace GasNetwork.Patches
     {
         public static void Postfix(float leftX, float width, ref float curBaseY)
         {
-            if (Event.current.type != EventType.Repaint
+            /*if (Event.current.type != EventType.Repaint
              || WorldRendererUtility.WorldRenderedNow
              || Find.CurrentMap == null)
             {
@@ -33,7 +33,7 @@ namespace GasNetwork.Patches
             Widgets.Label(rect.LeftPartPixels(width - 26), Find.CurrentMap.windSpeedString(Mod.Settings.unit));
             Text.Anchor = TextAnchor.UpperLeft;
 
-            WindExtensions.DrawWindVector(Find.CurrentMap, rect.RightPartPixels(24));
+            WindExtensions.DrawWindVector(Find.CurrentMap, rect.RightPartPixels(24));*/
         }
     }
 }
