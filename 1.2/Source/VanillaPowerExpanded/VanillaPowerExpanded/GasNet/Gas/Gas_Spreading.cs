@@ -2,6 +2,7 @@
 // VanillaPowerExpanded/VanillaPowerExpanded/Gas_Spreading.cs
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -26,6 +27,10 @@ namespace GasNetwork
 
         public override string LabelMouseover => $"{LabelCap} ({Density.ToStringPercent()})";
         public override Graphic Graphic => _graphic ??= DefaultGraphic;
+
+        private static List<Gas_Spreading> gases = new List<Gas_Spreading>();
+
+        public static bool AnyGases => gases.Count > 0;
 
         public void UpdateGraphic()
         {
@@ -199,6 +204,7 @@ namespace GasNetwork
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
+            gases.Add(this);
             base.SpawnSetup(map, respawningAfterLoad);
             MapComponent_GasDanger.GetCachedComp(map).RegisterAt(this, Position);
             UpdateDanger(map);
@@ -206,6 +212,7 @@ namespace GasNetwork
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
+            gases.Remove(this);
             var map = Map;
             MapComponent_GasDanger.GetCachedComp(map).Deregister(this, Position);
             base.DeSpawn(mode);

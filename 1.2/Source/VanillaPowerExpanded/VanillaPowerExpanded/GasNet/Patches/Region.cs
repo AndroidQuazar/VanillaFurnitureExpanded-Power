@@ -22,9 +22,12 @@ namespace GasNetwork.Patches
     {
         public static void Postfix(ref Danger __result, Verse.Region __instance)
         {
-            var danger = MapComponent_GasDanger.GetCachedComp(__instance.Map)?.DangerIn(__instance) ?? Danger.None;
-            //  result is highest level of danger.
-            __result = danger > __result ? danger : __result;
+            if (Gas_Spreading.AnyGases)
+            {
+                var danger = MapComponent_GasDanger.GetCachedComp(__instance.Map)?.DangerIn(__instance) ?? Danger.None;
+                //  result is highest level of danger.
+                __result = danger > __result ? danger : __result;
+            }
         }
     }
 }
