@@ -18,14 +18,19 @@ namespace GasNetwork
         private static MapComponent_GasDanger[] comps = new MapComponent_GasDanger[20];
 
         private int[] grid;
-        private List<Gas_Spreading>[] gridThings;
+        private List<Gas_Spreading>[] things;
+        private List<Gas_Spreading>[] cumulativeThings;
 
         public MapComponent_GasDanger(Map map) : base(map)
         {
             grid = new int[map.cellIndices.NumGridCells];
-            gridThings = new List<Gas_Spreading>[map.cellIndices.NumGridCells];
-            for (int i = 0; i < gridThings.Length; i++)
-                gridThings[i] = new List<Gas_Spreading>();
+            things = new List<Gas_Spreading>[map.cellIndices.NumGridCells];
+            cumulativeThings = new List<Gas_Spreading>[map.cellIndices.NumGridCells];
+            for (int i = 0; i < cumulativeThings.Length; i++)
+            {
+                cumulativeThings[i] = new List<Gas_Spreading>();
+                things[i] = new List<Gas_Spreading>();
+            }
             if (map.Index >= 0 && map.Index < 20)
             {
                 maps[map.Index] = map;
@@ -55,7 +60,7 @@ namespace GasNetwork
 
         public List<Gas_Spreading> GasesAt(int index)
         {
-            return gridThings[index];
+            return cumulativeThings[index];
         }
 
         public void RegisterAt(Gas_Spreading gas, IntVec3 cell)
@@ -66,6 +71,7 @@ namespace GasNetwork
         public void RegisterAt(Gas_Spreading gas, int index)
         {
             var c = map.cellIndices.IndexToCell(index);
+            things[index].Add(gas);
             foreach (var offset in GenAdj.AdjacentCellsAndInside)
             {
                 var cell = c + offset;
@@ -75,8 +81,8 @@ namespace GasNetwork
                     continue;
                 }
                 var i = map.cellIndices.CellToIndex(c + offset);
-                gridThings[i].Add(gas);
-                grid[i] = gridThings[index].Count;
+                cumulativeThings[i].Add(gas);
+                grid[i] = cumulativeThings[index].Count;
             }
         }
 
@@ -88,6 +94,7 @@ namespace GasNetwork
         public void Deregister(Gas_Spreading gas, int index)
         {
             var c = map.cellIndices.IndexToCell(index);
+            things[index].RemoveAll(g => g == gas);
             foreach (var offset in GenAdj.AdjacentCellsAndInside)
             {
                 var cell = c + offset;
@@ -97,8 +104,8 @@ namespace GasNetwork
                     continue;
                 }
                 var i = map.cellIndices.CellToIndex(c + offset);
-                gridThings[i].RemoveAll(g => g == gas);
-                grid[i] = gridThings[index].Count;
+                cumulativeThings[i].RemoveAll(g => g == gas);
+                grid[i] = cumulativeThings[index].Count;
             }
         }
 
@@ -126,9 +133,9 @@ namespace GasNetwork
             foreach (var cell in cells)
             {
                 var index = map.cellIndices.CellToIndex(cell);
-                if (grid[index] > 0)
+                if (things[index].Count > 0)
                 {
-                    totalDensity += gridThings[index].Sum(g => g.Density) / cells.Count();
+                    totalDensity += things[index].Sum(g => g.Density) / cells.Count();
                 }
             }
             danger = totalDensity > .2 ? Danger.Deadly : totalDensity > .05 ? Danger.Some : Danger.None;
