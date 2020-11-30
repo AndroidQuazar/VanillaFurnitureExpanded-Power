@@ -22,8 +22,7 @@ namespace GasNetwork.Patches
     {
         public static void Postfix(ref Danger __result, Verse.Region __instance)
         {
-            var danger = __instance.Map.GetComponent<MapComponent_GasDanger>()?.DangerIn(__instance) ?? Danger.None;
-
+            var danger = MapComponent_GasDanger.GetCachedComp(__instance.Map)?.DangerIn(__instance) ?? Danger.None;
             //  result is highest level of danger.
             __result = danger > __result ? danger : __result;
         }

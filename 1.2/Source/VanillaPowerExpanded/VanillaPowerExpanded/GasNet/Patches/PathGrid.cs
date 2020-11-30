@@ -18,30 +18,49 @@ namespace GasNetwork.HarmonyPatches
             // this is analogous to the vanilla code for fire.
             if (perceivedStatic)
             {
-                var before = __result;
-                foreach (var offset in GenAdj.AdjacentCellsAndInside)
+                //var before = __result;
+                //
+                var comp = MapComponent_GasDanger.GetCachedComp(___map);
+                var gases = comp.GasesAt(c);
+
+                foreach (var gas in gases)
                 {
-                    var cell   = c + offset;
-                    var center = cell.Equals(c);
-                    if (!cell.InBounds(___map))
+                    if (gas.Flammable)
                     {
-                        continue;
+                        __result += (int)Mathf.Clamp01(gas.Density) * (gas.Position == c ? 1000 : 150);
                     }
 
-                    var gases = ___map.thingGrid.ThingsListAtFast(c + offset).OfType<Gas_Spreading>();
-                    foreach (var gas in gases)
+                    if (gas.Toxic)
                     {
-                        if (gas.Flammable)
-                        {
-                            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 1000 : 150));
-                        }
-
-                        if (gas.Toxic)
-                        {
-                            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 500 : 75));
-                        }
+                        __result += (int)Mathf.Clamp01(gas.Density) * (gas.Position == c ? 500 : 75);
                     }
                 }
+
+                //
+                //foreach (var offset in GenAdj.AdjacentCellsAndInside)
+                //{
+                //    var cell = c + offset;
+                //    var center = cell.Equals(c);
+                //    if (!cell.InBounds(___map))
+                //    {
+                //        continue;
+                //    }
+                //
+                //    var gases = comp.GasesAt(c + offset);
+                //    // var gases = ___map.thingGrid.ThingsListAtFast(c + offset).OfType<Gas_Spreading>();
+                //    foreach (var gas in gases)
+                //    {
+                //        if (gas.Flammable)
+                //        {
+                //            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 1000 : 150));
+                //        }
+                //
+                //        if (gas.Toxic)
+                //        {
+                //            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 500 : 75));
+                //        }
+                //    }
+                //}
             }
         }
     }

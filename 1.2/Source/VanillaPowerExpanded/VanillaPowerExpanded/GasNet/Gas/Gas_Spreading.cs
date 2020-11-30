@@ -14,18 +14,18 @@ namespace GasNetwork
         private DefModExtension_SpreadingGas _gasProps;
 
         private Graphic _graphic;
-        public  float   Density;
+        public float Density;
 
         public DefModExtension_SpreadingGas GasProps =>
             _gasProps ??= def.GetModExtension<DefModExtension_SpreadingGas>();
 
         public bool Flammable => GasProps?.flammable ?? false;
-        public bool Toxic     => GasProps.exposureHediff != null && GasProps.severityPerHourExposed > 0;
+        public bool Toxic => GasProps.exposureHediff != null && GasProps.severityPerHourExposed > 0;
 
         public override Color DrawColor => def.graphicData.color * new Color(1, 1, 1, Density);
 
-        public override string  LabelMouseover => $"{LabelCap} ({Density.ToStringPercent()})";
-        public override Graphic Graphic        => _graphic ??= DefaultGraphic;
+        public override string LabelMouseover => $"{LabelCap} ({Density.ToStringPercent()})";
+        public override Graphic Graphic => _graphic ??= DefaultGraphic;
 
         public void UpdateGraphic()
         {
@@ -45,7 +45,7 @@ namespace GasNetwork
                 : Mathf.Clamp((1 - Density) * GasProps.maxDensity, 0, amount);
 
             Density += fillAmount / GasProps.maxDensity;
-            amount  -= fillAmount;
+            amount -= fillAmount;
         }
 
         public override void Tick()
@@ -84,7 +84,7 @@ namespace GasNetwork
                             foreach (var pawn in things.OfType<Pawn>().Where(p => p.RaceProps.IsFlesh))
                             {
                                 HealthUtility.AdjustSeverity(pawn, GasProps.exposureHediff,
-                                                             (float) GenTicks.TicksPerRealSecond /
+                                                             (float)GenTicks.TicksPerRealSecond /
                                                              GenDate.TicksPerHour *
                                                              // wind effects can cause a density > 1, we don't want pawn 
                                                              // instagibs or weird buggy healing, so clamp to 0-1.
@@ -111,7 +111,7 @@ namespace GasNetwork
             var roofed = Position.Roofed(Map);
 
             // dissipate
-            Density -= (float) GasProps.staticDissipation / GasProps.maxDensity;
+            Density -= (float)GasProps.staticDissipation / GasProps.maxDensity;
             if (Density <= 0)
             {
                 return;
@@ -137,10 +137,10 @@ namespace GasNetwork
 
                 // TODO: wind dissipation can probably use some balancing passes
                 // have a look at fluid dynamics for a simplified but proper algorithm?
-                var windNorth = Mathf.Clamp((Vector2.up    * wind).y, .1f, float.MaxValue) * GasProps.windDissipation;
-                var windEast  = Mathf.Clamp((Vector2.right * wind).x, .1f, float.MaxValue) * GasProps.windDissipation;
-                var windSouth = Mathf.Clamp((Vector2.down  * wind).y, .1f, float.MaxValue) * GasProps.windDissipation;
-                var windWest  = Mathf.Clamp((Vector2.left  * wind).x, .1f, float.MaxValue) * GasProps.windDissipation;
+                var windNorth = Mathf.Clamp((Vector2.up * wind).y, .1f, float.MaxValue) * GasProps.windDissipation;
+                var windEast = Mathf.Clamp((Vector2.right * wind).x, .1f, float.MaxValue) * GasProps.windDissipation;
+                var windSouth = Mathf.Clamp((Vector2.down * wind).y, .1f, float.MaxValue) * GasProps.windDissipation;
+                var windWest = Mathf.Clamp((Vector2.left * wind).x, .1f, float.MaxValue) * GasProps.windDissipation;
 
                 // normalize dissipation so that no gas is created out of nothing
                 var sum = windNorth + windEast + windSouth + windWest;
@@ -148,9 +148,9 @@ namespace GasNetwork
                 {
                     var factor = Density * GasProps.maxDensity / sum;
                     windNorth *= factor;
-                    windEast  *= factor;
+                    windEast *= factor;
                     windSouth *= factor;
-                    windWest  *= factor;
+                    windWest *= factor;
                 }
 
                 // north
@@ -194,27 +194,28 @@ namespace GasNetwork
         public override void ExposeData()
         {
             base.ExposeData();
-
             Scribe_Values.Look(ref Density, "density");
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+            MapComponent_GasDanger.GetCachedComp(map).RegisterAt(this, Position);
             UpdateDanger(map);
         }
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             var map = Map;
+            MapComponent_GasDanger.GetCachedComp(map).Deregister(this, Position);
             base.DeSpawn(mode);
             UpdateDanger(map);
         }
 
         public virtual void DoExplode()
         {
-            var range  = Mathf.Clamp01(Density) * 3;
-            var damage = (int) (Mathf.Clamp01(Density) * 20);
+            var range = Mathf.Clamp01(Density) * 3;
+            var damage = (int)(Mathf.Clamp01(Density) * 20);
             if (Position.Roofed(Map))
             {
                 // a contained explosion does MUCH more damage, discourage indoor use as a gas chamber

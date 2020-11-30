@@ -18,8 +18,30 @@ namespace GasNetwork
         // wind direction in radians.
         public float windDirection;
 
+        private static Map[] maps = new Map[20];
+        private static MapComponent_WindDirection[] comps = new MapComponent_WindDirection[20];
+
         public MapComponent_WindDirection(Map map) : base(map)
         {
+            if (map.Index >= 0 && map.Index < 20)
+            {
+                maps[map.Index] = map;
+                comps[map.Index] = this;
+            }
+        }
+
+        public static MapComponent_WindDirection GetCachedComp(Map map)
+        {
+            var index = map.Index;
+            if (index >= 0 && index < 20)
+            {
+                if (maps[index] == map) return comps[index];
+
+                maps[index] = map;
+                return comps[index] = map.GetComponent<MapComponent_WindDirection>();
+            }
+            Log.Warning($"MapComponent_GasDanger not found for map with strange index of {index}");
+            return map.GetComponent<MapComponent_WindDirection>();
         }
 
         public override void ExposeData()
@@ -96,10 +118,10 @@ namespace GasNetwork
             return unit switch
             {
                 WindSpeedUnit.MetersPerSecond => kph / 3.6f,
-                WindSpeedUnit.MilesPerHour    => kph / 1.609f,
-                WindSpeedUnit.Knots           => kph / 1.852f,
-                WindSpeedUnit.FeetPerSecond   => kph / 1.097f,
-                _                             => throw new ArgumentOutOfRangeException(nameof(unit), unit, null)
+                WindSpeedUnit.MilesPerHour => kph / 1.609f,
+                WindSpeedUnit.Knots => kph / 1.852f,
+                WindSpeedUnit.FeetPerSecond => kph / 1.097f,
+                _ => throw new ArgumentOutOfRangeException(nameof(unit), unit, null)
             };
         }
 
@@ -113,13 +135,13 @@ namespace GasNetwork
             var speed = windSpeed(map, unit);
             return unit switch
             {
-                WindSpeedUnit.Beaufort          => $"{speed:F0} bft",
-                WindSpeedUnit.MetersPerSecond   => $"{speed:F1} m/s",
+                WindSpeedUnit.Beaufort => $"{speed:F0} bft",
+                WindSpeedUnit.MetersPerSecond => $"{speed:F1} m/s",
                 WindSpeedUnit.KilometersPerHour => $"{speed:F0} km/h",
-                WindSpeedUnit.MilesPerHour      => $"{speed:F0} mph",
-                WindSpeedUnit.Knots             => $"{speed:F0} kts",
-                WindSpeedUnit.FeetPerSecond     => $"{speed:F0} f/s",
-                _                               => throw new ArgumentOutOfRangeException(nameof(unit), unit, null)
+                WindSpeedUnit.MilesPerHour => $"{speed:F0} mph",
+                WindSpeedUnit.Knots => $"{speed:F0} kts",
+                WindSpeedUnit.FeetPerSecond => $"{speed:F0} f/s",
+                _ => throw new ArgumentOutOfRangeException(nameof(unit), unit, null)
             };
         }
 
@@ -127,7 +149,7 @@ namespace GasNetwork
         {
             var rectSize = Mathf.Min(rect.width, rect.height);
             var iconSize = Mathf.Min(Resources.WindVector.width, Resources.WindVector.height);
-            var scale    = Mathf.Clamp(map.windSpeed(WindSpeedUnit.Beaufort) / 8f, .3f, 1.1f) * (rectSize / iconSize);
+            var scale = Mathf.Clamp(map.windSpeed(WindSpeedUnit.Beaufort) / 8f, .3f, 1.1f) * (rectSize / iconSize);
             Widgets.DrawTextureRotated(rect.center, Resources.WindVector, map.windDirection() * RAD_2_DEGREE + 90,
                                        scale);
         }
