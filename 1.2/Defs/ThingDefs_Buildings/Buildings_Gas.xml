@@ -1230,7 +1230,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasVent</defName>
 		<label>helixien gas vent</label>
-		<description>A wall-mounted vent capable of releasing toxic compounds of helixien gas into the targeted area. It drains helixien gas supply rapidly, and dissipates quickly. It needs a gas valve installed in the same network to limit the flow of gas.</description>
+		<description>A wall-mounted vent capable of releasing toxic compounds of helixien gas into the targeted area. It drains helixien gas supply rapidly, and dissipates quickly. It needs a gas valve installed in the same network to limit the flow of gas. Helixien gas is very volatile and will travel with wind.</description>
 		<thingClass>Building</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasVent</texPath>
