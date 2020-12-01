@@ -21,7 +21,7 @@
 		</requiredCapacities>
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
-	
+
 	<WorkGiverDef>
 		<defName>VPE_BurnGasCrematorium</defName>
 		<label>burn at gas powered crematorium</label>
@@ -67,6 +67,40 @@
 		</fixedBillGiverDefs>
 		<verb>cook</verb>
 		<gerund>cooking at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VPE_DoBillsGasSmithy</defName>
+		<label>make weapons</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Smithing</workType>
+		<priorityInType>115</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VPE_GasSmithy</li>
+		</fixedBillGiverDefs>
+		<verb>smith</verb>
+		<gerund>smithing at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>VPE_DoBillsGasRefinery</defName>
+		<label>work at refinery</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>97</priorityInType>
+		<fixedBillGiverDefs>
+			<li>VPE_GasBiofuelRefinery</li>
+		</fixedBillGiverDefs>
+		<verb>refine chemicals</verb>
+		<gerund>refining chemicals at</gerund>
 		<requiredCapacities>
 			<li>Manipulation</li>
 		</requiredCapacities>
