@@ -228,7 +228,7 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasStorage">
 				<compClass>GasNetwork.CompGasStorage</compClass>
-				<capacity>100</capacity>
+				<capacity>1000</capacity>
 			</li>
 			<li Class="CompProperties_Explosive">
 				<explosiveRadius>0</explosiveRadius>
@@ -357,7 +357,7 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>50</gasConsumption>
+				<gasConsumption>25</gasConsumption>
 			</li>
 			<li Class="CompProperties_Power">
 				<transmitsPower>true</transmitsPower>
@@ -437,7 +437,7 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>100</gasConsumption>
+				<gasConsumption>75</gasConsumption>
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>GasNetwork.CompGasPowerPlant</compClass>
