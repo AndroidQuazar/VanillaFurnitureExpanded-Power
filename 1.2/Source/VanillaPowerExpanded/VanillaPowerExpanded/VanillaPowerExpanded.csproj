@@ -318,7 +318,7 @@
     <Compile Include="GasNet\Patches\GlobalControlsUtility.cs" />
     <Compile Include="GasNet\Patches\PathGrid.cs" />
     <Compile Include="PipeNet %28obsolete%29\Building_GasHeater.cs" />
-    <Compile Include="PipeNet %28obsolete%29\WorkGiver_GasExcavator.cs" />
+    <Compile Include="GasNet\WorkGiver_GasExcavator.cs" />
     <Compile Include="GasNet\Comps\CompGas.cs" />
     <Compile Include="GasNet\Comps\CompGasHeatPusher.cs" />
     <Compile Include="GasNet\Comps\CompGasPowerPlant.cs" />

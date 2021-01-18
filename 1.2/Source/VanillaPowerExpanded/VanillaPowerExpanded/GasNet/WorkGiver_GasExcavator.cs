@@ -4,7 +4,7 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 
-namespace VanillaPowerExpanded
+namespace GasNetwork
 {
     public class WorkGiver_GasExcavator : WorkGiver_Scanner
     {
@@ -37,8 +37,8 @@ namespace VanillaPowerExpanded
                 Building building = allBuildingsColonist[i];
                 if (building.def == ThingDef.Named("VPE_GasDrill"))
                 {
-                    CompPipeTrader comp = building.GetComp<CompPipeTrader>();
-                    if ((comp == null || comp.PowerOn) && building.Map.designationManager.DesignationOn(building, DesignationDefOf.Uninstall) == null)
+                    CompGasTrader comp = building.GetComp<CompGasTrader>();
+                    if ((comp == null || comp.GasOn) && building.Map.designationManager.DesignationOn(building, DesignationDefOf.Uninstall) == null)
                     {
                         return false;
                     }

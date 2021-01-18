@@ -25,6 +25,15 @@
 						</li>
 					</value>
 				</li>
+				
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName = "VPE_GasSmithy"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+					<value>
+						
+								<li>VFE_SmithyCabinet</li>
+						
+					</value>
+				</li>
 
 
 

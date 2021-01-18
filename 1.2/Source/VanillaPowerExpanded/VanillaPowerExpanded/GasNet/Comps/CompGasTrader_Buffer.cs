@@ -131,7 +131,7 @@ namespace GasNetwork
 
     public class CompProperties_GasTrader_Buffer : CompProperties_GasTrader
     {
-        public float maxBuffer        = 50;
+        public float maxBuffer        = 125;
         public bool  showBufferSlider = true;
         public bool  showBufferToggle = true;
     }

@@ -242,7 +242,7 @@
     </building>
     <constructEffect>ConstructMetal</constructEffect>
     <designationHotKey>Misc6</designationHotKey>
-    <researchPrerequisites><li>GeothermalPower</li></researchPrerequisites>
+    <researchPrerequisites><li>GeothermalPower</li><li>VFE_AdvancedPowerSources</li></researchPrerequisites>
     <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
   </ThingDef>
 

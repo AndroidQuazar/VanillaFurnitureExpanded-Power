@@ -113,7 +113,7 @@
 	<WorkGiverDef>
 		<defName>VPE_WorkAtGasExcavator</defName>
 		<label>drill at gas excavator</label>
-		<giverClass>VanillaPowerExpanded.WorkGiver_GasExcavator</giverClass>
+		<giverClass>GasNetwork.WorkGiver_GasExcavator</giverClass>
 
 		<workType>Mining</workType>
 		<priorityInType>50</priorityInType>

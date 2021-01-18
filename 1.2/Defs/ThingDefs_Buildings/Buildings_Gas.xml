@@ -28,7 +28,7 @@
 				<texPath>Things/Building/Linked/GasPipe_Blueprint_Atlas</texPath>
 			</blueprintGraphicData>
 		</building>
-		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<altitudeLayer>SmallWire</altitudeLayer>
 		<passability>Standable</passability>
 		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
 		<statBases>
@@ -535,8 +535,8 @@
 
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>1</gasConsumption>
-				<gasConsumptionWhenUsed>25</gasConsumptionWhenUsed>
+				<gasConsumption>25</gasConsumption>
+				<gasConsumptionWhenUsed>26</gasConsumptionWhenUsed>
 			</li>
 
 			<li Class="CompProperties_Flickable">
@@ -624,8 +624,8 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>10</gasConsumption>
-				<gasConsumptionWhenUsed>75</gasConsumptionWhenUsed>
+				<gasConsumption>75</gasConsumption>
+				<gasConsumptionWhenUsed>76</gasConsumptionWhenUsed>
 			</li>
 
 			<li Class="CompProperties_Flickable">
@@ -716,8 +716,8 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>1</gasConsumption>
-				<gasConsumptionWhenUsed>40</gasConsumptionWhenUsed>
+				<gasConsumption>40</gasConsumption>
+				<gasConsumptionWhenUsed>41</gasConsumptionWhenUsed>
 			</li>
 
 			<li Class="CompProperties_Flickable">
@@ -760,14 +760,14 @@
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 			<texPath>Things/Building/GasMachines/GasPoweredExcavator</texPath>
-			<drawSize>(2,2)</drawSize>
+			<drawSize>(1,1)</drawSize>
 			<drawRotated>false</drawRotated>
 			<shadowData>
 				<volume>(0.52, 0.53, 0.09)</volume>
 				<offset>(0,0,-0.43)</offset>
 			</shadowData>
 		</graphicData>
-		<size>(2,2)</size>
+		<size>(1,1)</size>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<pathCost>70</pathCost>
@@ -776,7 +776,7 @@
 		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
 		<designationCategory>Production</designationCategory>
 		<designationHotKey>Misc12</designationHotKey>
-		<specialDisplayRadius>1.5</specialDisplayRadius>
+		<specialDisplayRadius>2.6</specialDisplayRadius>
 		<rotatable>true</rotatable>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
@@ -1023,7 +1023,7 @@
 		<defName>VPE_GasSmithy</defName>
 		<label>helixien gas smithy</label>
 		<description>A gas-powered station for smithing non-mechanical weapons and tools.</description>
-		<thingClass>Building_WorkTable</thingClass>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasSmithy</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
@@ -1070,8 +1070,8 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>1</gasConsumption>
-				<gasConsumptionWhenUsed>50</gasConsumptionWhenUsed>
+				<gasConsumption>50</gasConsumption>
+				<gasConsumptionWhenUsed>51</gasConsumptionWhenUsed>
 			</li>
 			<li Class="CompProperties_Flickable" />
 			<li Class="CompProperties_AffectedByFacilities">
@@ -1126,6 +1126,42 @@
 	</ThingDef>
 
 	<ThingDef ParentName="StandingLampBase">
+		<defName>VPE_GasWallLight</defName>
+		<label>gas wall light</label>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/VPE_GasWallLight</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			 <shadowData>
+        <volume>(0, 0, 0)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+		</graphicData>
+		<altitudeLayer>Item</altitudeLayer>
+		<description>A gas-powered wall light that lights an area. People need light to move and work at full speed. Needs to be connected to the helixien gas network. Can be safely placed outdoors.</description>
+		<comps Inherit='False'>
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>1</gasConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+		</comps>
+		<building>
+			<isEdifice>false</isEdifice>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<rotatable>true</rotatable>
+		<clearBuildingArea>false</clearBuildingArea>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="StandingLampBase">
 		<defName>VPE_GasFloodlight</defName>
 		<label>gas floodlight</label>
 		<description>A gas-powered tall floodlight that lights a massive area. People need light to move and work at full speed. It doesn’t shine bright enough to grow crops. Needs to be connected to the helixien gas network. Can be safely placed outdoors.</description>
@@ -1157,7 +1193,7 @@
 		<defName>VPE_GasBiofuelRefinery</defName>
 		<label>gas-powered refinery</label>
 		<description>Refines biological matter like wood or plant matter into chemfuel. Needs to be connected to the helixien gas network.</description>
-		<thingClass>Building_WorkTable</thingClass>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<pathCost>50</pathCost>
@@ -1176,8 +1212,8 @@
 		<comps>
 			<li Class="GasNetwork.CompProperties_GasTrader">
 				<compClass>GasNetwork.CompGasTrader</compClass>
-				<gasConsumption>1</gasConsumption>
-				<gasConsumptionWhenUsed>50</gasConsumptionWhenUsed>
+				<gasConsumption>50</gasConsumption>
+				<gasConsumptionWhenUsed>51</gasConsumptionWhenUsed>
 			</li>
 			<li Class="CompProperties_Flickable" />
 			<li Class="CompProperties_Breakdownable" />
@@ -1332,7 +1368,7 @@
 				<compClass>GasNetwork.CompGasTrader_Buffer</compClass>
 
 				<!-- maximum buffer storage size -->
-				<maxBuffer>50</maxBuffer>
+				<maxBuffer>125</maxBuffer>
 
 				<!-- inherits from CompGasTrader, so all those props apply here too.
 					In the context of a buffer, gasConsumption becomes the refill rate.

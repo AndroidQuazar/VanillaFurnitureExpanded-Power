@@ -4,7 +4,7 @@ namespace GasNetwork
 {
     public static class I18n
     {
-        public const string Unit = " m³";
+        public const string Unit = " m3";
 
         public static readonly string GasOff                 = "GasOff".Translate();
         public static readonly string NoNetwork              = "NoNetwork".Translate();
