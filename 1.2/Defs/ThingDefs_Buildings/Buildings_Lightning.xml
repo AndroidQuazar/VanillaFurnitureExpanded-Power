@@ -8,7 +8,7 @@
     <graphicData>
       <texPath>Things/Building/Power/Lightning/LightningRod</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(5,5)</drawSize>
+      <drawSize>(7,7)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>
