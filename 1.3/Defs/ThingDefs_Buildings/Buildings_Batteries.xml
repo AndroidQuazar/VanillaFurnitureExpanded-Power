@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_LargeBattery</defName>
+    <label>large battery</label>
+    <description>Stores a large amount of electricity for later use. Charged large batteries explode when exposed to rain or fire.</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Batteries/BatteryLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>1400</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-15</Beauty>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>140</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>1400</storedEnergyMax>
+        <efficiency>0.5</efficiency>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>Batteries</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_SmallBattery</defName>
+    <label>small battery</label>
+    <description>Stores a small amount of electricity for later use. Charged batteries explode when exposed to rain or fire.</description>
+    <thingClass>VanillaPowerExpanded.Building_SmallBattery</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Batteries/BatterySmall</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <WorkToBuild>400</WorkToBuild>
+      <Mass>10</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-15</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>40</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>250</storedEnergyMax>
+        <efficiency>0.5</efficiency>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>Batteries</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_AdvancedBattery</defName>
+    <label>advanced battery</label>
+    <description>Stores electricity for later use. Due to technological advancements, this battery unit is significantly more efficient. Charged advanced batteries are waterproof and don't explode when exposed to rain.</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Batteries/AdvancedBattery/AdvancedBattery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>1800</WorkToBuild>
+      <Mass>16</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>80</Steel>
+	  <Plasteel>10</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>800</storedEnergyMax>
+        <efficiency>0.9</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(80,112,180,0)</glowColor>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>VFE_AdvancedBatteries</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_LargeAdvancedBattery</defName>
+    <label>large advanced battery</label>
+    <description>Stores large amounts of electricity for later use. Due to technological advancements, this battery unit is significantly more efficient. Charged large advanced batteries are waterproof and don't explode when exposed to rain.</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Batteries/AdvancedBatteryLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>240</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>32</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>150</Steel>
+	  <Plasteel>20</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>2000</storedEnergyMax>
+        <efficiency>0.9</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(80,112,180,0)</glowColor>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>VFE_AdvancedBatteries</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+</Defs>

@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPipe</defName>
+		<label>gas pipe</label>
+		<description>A pipe that transmits helixien gas.</description>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/Linked/GasPipe_Atlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom6</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/GasPipe_MenuIcon</uiIconPath>
+		<uiIconScale>1</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/GasPipe_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>SmallWire</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToBuild>35</WorkToBuild>
+			<Flammability>0.7</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>1</Steel>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_Gas">
+				<compClass>GasNetwork.CompGas</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>GasNetwork.PlaceWorker_Pipe</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPipeSub</defName>
+		<label>subterranean gas pipe</label>
+		<description>A pipe that transmits helixien gas. This pipe is hidden from view and is protected from gas explosions. Much more expensive to build than regular pipes</description>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Special/Fluid/VPE_BlankTransmitterAtlas</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom6</li>
+			</linkFlags>
+			<damageData>
+				<rect>(0,0.35,1,0.3)</rect>
+			</damageData>
+		</graphicData>
+		<uiIconPath>Things/Building/Linked/GasPipe_MenuIcon</uiIconPath>
+		<uiIconScale>1</uiIconScale>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+			<blueprintGraphicData>
+				<texPath>Things/Building/Linked/GasPipe_Blueprint_Atlas</texPath>
+			</blueprintGraphicData>
+		</building>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<WorkToBuild>120</WorkToBuild>
+			<Flammability>0</Flammability>
+			<Beauty>0</Beauty>
+		</statBases>
+		<placingDraggableDimensions>1</placingDraggableDimensions>
+		<costList>
+			<Steel>5</Steel>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_Gas">
+				<compClass>GasNetwork.CompGas</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>GasNetwork.PlaceWorker_Pipe</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<clearBuildingArea>false</clearBuildingArea>
+		<designationHotKey>Misc1</designationHotKey>
+
+	</ThingDef>
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPipeValve</defName>
+		<label>gas pipe valve</label>
+		<description>Switches gas flow on/off.</description>
+		<category>Building</category>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasSwitch</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+			<damageData>
+				<rect>(0.2,0.2,0.6,0.6)</rect>
+			</damageData>
+
+		</graphicData>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<allowWireConnection>false</allowWireConnection>
+		</building>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Standable</passability>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<WorkToBuild>200</WorkToBuild>
+			<Flammability>0.5</Flammability>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<placingDraggableDimensions>0</placingDraggableDimensions>
+		<costList>
+			<Steel>15</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_Gas">
+				<compClass>GasNetwork.CompGasValve</compClass>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+		</comps>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>false</neverMultiSelect>
+		<tickerType>Normal</tickerType>
+		<designationCategory>Power</designationCategory>
+		<constructEffect>ConstructMetal</constructEffect>
+		<designationHotKey>Misc2</designationHotKey>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<placeWorkers />
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasTank</defName>
+		<label>gas tank</label>
+		<description>A large steel tank for gas storage. Will explode if damaged.</description>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasTank</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2.5,2.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>0.40</fillPercent>
+
+		<tickerType>Normal</tickerType>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsPower</li>
+		</thingCategories>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>1.0</Flammability>
+			<Beauty>-15</Beauty>
+		</statBases>
+
+		<size>(1,2)</size>
+		<costList>
+			<Steel>100</Steel>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasStorage">
+				<compClass>GasNetwork.CompGasStorage</compClass>
+				<capacity>1000</capacity>
+			</li>
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+		</comps>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<designationHotKey>Misc4</designationHotKey>
+		<canOverlapZones>false</canOverlapZones>
+		<placeWorkers />
+
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_HelixienPump</defName>
+		<label>helixien pump</label>
+		<description>An extractor machine mounted on helixien gas geyser. Self-powered, this machine pumps out valuable gas and needs to be connected to other gas-based utilities using the pipe network.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/HelixienPump</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,6)</drawSize>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<castEdgeShadows>false</castEdgeShadows>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(4,4)</size>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</costList>
+		<placeWorkers>
+			<li>VanillaPowerExpanded.PlaceWorker_PipeUserOnGasGeyser</li>
+		</placeWorkers>
+
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>-300</gasConsumption>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>6</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+		</comps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc3</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_HelixienGenerator</defName>
+		<label>helixien gas powered generator</label>
+		<description>Produces power by consuming helixien gas. Must be connected to a gas pipe network.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/HelixienPoweredGenerator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.93,1,1.69)</volume>
+				<offset>(-0.03,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<WorkToBuild>2500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(2,2)</size>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>25</gasConsumption>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>true</transmitsPower>
+				<compClass>GasNetwork.CompGasPowerPlant</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>6</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
+			</li>
+		</comps>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc4</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_IndustrialHelixienGenerator</defName>
+		<label>industrial helixien gas powered generator</label>
+		<description>Produces a large amount of power by consuming helixien gas. Must be connected to a gas pipe network.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/IndustrialGenerators/IndustrialHelixienPoweredGenerator</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+			<shadowData>
+				<volume>(1.93,1,1.69)</volume>
+				<offset>(-0.03,0,-0.1)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>150</pathCost>
+		<blockWind>true</blockWind>
+		<fillPercent>1.0</fillPercent>
+		<rotatable>false</rotatable>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>3500</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Beauty>-20</Beauty>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(3,3)</size>
+		<costList>
+			<Steel>180</Steel>
+			<ComponentIndustrial>6</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>75</gasConsumption>
+			</li>
+			<li Class="CompProperties_Power">
+				<compClass>GasNetwork.CompGasPowerPlant</compClass>
+				<basePowerConsumption>-2400</basePowerConsumption>
+				<transmitsPower>true</transmitsPower>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>12</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+			<li Class="CompProperties_Explosive">
+				<explosiveRadius>0</explosiveRadius>
+				<explosiveExpandPerFuel>0.95</explosiveExpandPerFuel>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>2</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>70~150</wickTicks>
+			</li>
+		</comps>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Power</designationCategory>
+		<designationHotKey>Misc4</designationHotKey>
+		<constructEffect>ConstructMetal</constructEffect>
+		<researchPrerequisites>
+			<li>VFE_IndustrialGenerators</li>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasCrematorium</defName>
+		<label>helixien gas crematorium</label>
+		<description>A huge stone crematorium which vaporizes corpses with extremely high temperatures. Operates on helixien gas.</description>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasCrematorium</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,2)</drawSize>
+			<shadowData>
+				<volume>(1.95,0.5,1.3)</volume>
+			</shadowData>
+			<damageData>
+				<rect>(0.3,0.1,2.4,1.8)</rect>
+			</damageData>
+		</graphicData>
+		<stuffCategories>
+			<li>Stony</li>
+		</stuffCategories>
+		<costStuffCount>150</costStuffCount>
+		<costList>
+			<Steel>20</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>4500</WorkToBuild>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Cleanliness>-20</Cleanliness>
+			<Beauty>-10</Beauty>
+		</statBases>
+		<size>(3,2)</size>
+		<designationCategory>Production</designationCategory>
+		<fillPercent>1</fillPercent>
+		<passability>Impassable</passability>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<interactionCellIcon>DiningChair</interactionCellIcon>
+		<surfaceType>Item</surfaceType>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>25</gasConsumption>
+				<gasConsumptionWhenUsed>26</gasConsumptionWhenUsed>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(217,112,33,0)</glowColor>
+			</li>
+			<!-- how does that interact with heatPerTickWhileWorking? -->
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>12</heatPerSecond>
+			</li>
+		</comps>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.32</heatPerTickWhileWorking>
+			<forceShowRoomStats>true</forceShowRoomStats>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<designationHotKey>Misc5</designationHotKey>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>ElectricCrematorium</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>VPE_GasSmelter</defName>
+		<description>Extracts usable metal from slag chunks and other mixed metal items. Operates on helixien gas.</description>
+		<label>helixien gas smelter</label>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasSmelter</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,1.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<costList>
+			<Steel>170</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>3500</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>75</gasConsumption>
+				<gasConsumptionWhenUsed>76</gasConsumptionWhenUsed>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>6</glowRadius>
+				<glowColor>(217,112,33,0)</glowColor>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>9</heatPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+				</linkableFacilities>
+			</li>
+		</comps>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.32</heatPerTickWhileWorking>
+		</building>
+		<designationHotKey>Misc10</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>ElectricSmelter</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BenchBase">
+		<defName>VPE_GasStove</defName>
+		<label>helixien gas stove</label>
+		<description>A gas-powered stove with an attached countertop for preparing meals.</description>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/TableStoveGas</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,1.5)</drawSize>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+		<constructEffect>ConstructMetal</constructEffect>
+		<costList>
+			<Steel>80</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>2000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>40</gasConsumption>
+				<gasConsumptionWhenUsed>41</gasConsumptionWhenUsed>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>3</heatPerSecond>
+			</li>
+		</comps>
+		<building>
+			<isMealSource>true</isMealSource>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<heatPerTickWhileWorking>0.10</heatPerTickWhileWorking>
+		</building>
+		<designationHotKey>Misc8</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>FueledStove</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasDrill</defName>
+		<label>gas powered excavator</label>
+		<description>A deep-crust drilling excavator for extracting minerals from deep under the surface. Use a ground-penetrating scanner to detect the resources. This drill will yield stone chunks if no resources are present. Can be repositioned freely.</description>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Building/GasMachines/GasPoweredExcavator</texPath>
+			<drawSize>(1,1)</drawSize>
+			<drawRotated>false</drawRotated>
+			<shadowData>
+				<volume>(0.52, 0.53, 0.09)</volume>
+				<offset>(0,0,-0.43)</offset>
+			</shadowData>
+		</graphicData>
+		<size>(1,1)</size>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>70</pathCost>
+		<fillPercent>0.5</fillPercent>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<designationCategory>Production</designationCategory>
+		<designationHotKey>Misc12</designationHotKey>
+		<specialDisplayRadius>2.6</specialDisplayRadius>
+		<rotatable>true</rotatable>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<uiIconOffset>(0, 0.03)</uiIconOffset>
+		<uiIconScale>0.85</uiIconScale>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<building>
+			<uninstallWork>1800</uninstallWork>
+		</building>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<placeWorkers>
+			<li>PlaceWorker_DeepDrill</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>DeepDrilling</li>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<statBases>
+			<MaxHitPoints>450</MaxHitPoints>
+			<WorkToBuild>10000</WorkToBuild>
+			<Flammability>0.75</Flammability>
+			<Beauty>-25</Beauty>
+			<Mass>35</Mass>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable" />
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>30</gasConsumption>
+			</li>
+			<li Class="CompProperties_DeepDrill" />
+			<li Class="CompProperties_CreatesInfestations" />
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasCooler</defName>
+		<label>gas cooler</label>
+		<description>An air-cooling machine that releases cooled air around itself. Can be used to create a walk-in freezer. Cannot be adjusted and will automatically lower temperature slightly below zero.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasCooler</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+			<drawRotated>false</drawRotated>
+			<allowFlip>false</allowFlip>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<blockWind>true</blockWind>
+		<rotatable>false</rotatable>
+		<fillPercent>0.5</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>true</blockLight>
+		<canOverlapZones>false</canOverlapZones>
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<statBases>
+			<WorkToBuild>1600</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>0.7</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<costList>
+			<Steel>90</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_CoolerSimple</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<building>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>10</gasConsumption>
+			</li>
+
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>-11</heatPerSecond>
+				<heatPushMinTemperature>-5</heatPushMinTemperature>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+		</comps>
+		<designationCategory>Temperature</designationCategory>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasHeater</defName>
+		<label>gas heater</label>
+		<description>A device that converts helixien gas into radiated heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
+		<thingClass>GasNetwork.Building_NewGasHeater</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasHeater</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.5,0.3,0.7)</volume>
+				<offset>(0,0,-0.15)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.234375,0,0.515625,0.984375)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>40</pathCost>
+		<blockWind>true</blockWind>
+		<rotatable>false</rotatable>
+		<fillPercent>0.4</fillPercent>
+		<thingCategories>
+			<li>BuildingsTemperature</li>
+		</thingCategories>
+		<statBases>
+			<WorkToBuild>1000</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>6</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<tickerType>Rare</tickerType>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>PlaceWorker_Heater</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>10</gasConsumption>
+			</li>
+			<li Class="CompProperties_Flickable">
+				<commandTexture>Things/Special/Fluid/VPE_OverlayBase</commandTexture>
+				<commandLabelKey>Fluffy.GasNetwork.CommandToggleGas.Label</commandLabelKey>
+				<commandDescKey>Fluffy.GasNetwork.CommandToggleGas.Desc</commandDescKey>
+			</li>
+			<li Class="CompProperties_TempControl">
+				<energyPerSecond>21</energyPerSecond>
+			</li>
+			<li Class="CompProperties_Breakdownable" />
+		</comps>
+		<designationCategory>Temperature</designationCategory>
+		<designationHotKey>Misc2</designationHotKey>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="LampBase">
+		<defName>VPE_GasSunLamp</defName>
+		<label>gas sun lamp</label>
+		<description>An industrial lamp which lights an area brightly enough to grow crops, but consumes a medium amount of helixien gas. Automatically turns itself off at night.</description>
+		<thingClass>Building_SunLamp</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasSunLamp</texPath>
+		</graphicData>
+		<blockWind>true</blockWind>
+		<tickerType>Rare</tickerType>
+		<statBases>
+			<WorkToBuild>330</WorkToBuild>
+			<Mass>4.5</Mass>
+		</statBases>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<overlightRadius>7.0</overlightRadius>
+				<glowRadius>14</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>25</gasConsumption>
+			</li>
+			<li Class="CompProperties_Schedule">
+				<!-- Match plant growing times -->
+				<startTime>0.25</startTime>
+				<endTime>0.8</endTime>
+				<offMessage>Off for plant resting period</offMessage>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>GasNetwork.CompGasHeatPusher</compClass>
+				<heatPerSecond>3</heatPerSecond>
+			</li>
+		</comps>
+		<!-- Determined by trial and error
+    This value isn't perfect because these radii use different algorithms
+    but it matches in this case-->
+		<specialDisplayRadius>5.8</specialDisplayRadius>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BenchBase">
+		<defName>VPE_GasSmithy</defName>
+		<label>helixien gas smithy</label>
+		<description>A gas-powered station for smithing non-mechanical weapons and tools.</description>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasSmithy</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3.5,1.5)</drawSize>
+			<shadowData>
+				<volume>(2.8, 0.35, 0.59)</volume>
+				<offset>(0, 0, 0.08)</offset>
+			</shadowData>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<costList>
+			<Steel>100</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<constructEffect>ConstructWood</constructEffect>
+		<altitudeLayer>Building</altitudeLayer>
+		<fillPercent>0.5</fillPercent>
+		<useHitPoints>True</useHitPoints>
+		<statBases>
+			<WorkToBuild>3000</WorkToBuild>
+			<MaxHitPoints>180</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Cleanliness>-3</Cleanliness>
+		</statBases>
+		<size>(3,1)</size>
+		<designationCategory>Production</designationCategory>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>50</gasConsumption>
+				<gasConsumptionWhenUsed>51</gasConsumptionWhenUsed>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>ToolCabinet</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>4</heatPerSecond>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>Smithing</li>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>ElectricSmithy</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="StandingLampBase">
+		<defName>VPE_GasLamp</defName>
+		<label>standing gas lamp</label>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasLamp</texPath>
+		</graphicData>
+		<description>A gas-powered standing lamp that lights an area. People need light to move and work at full speed. Needs to be connected to the helixien gas network. Can be safely placed outdoors.</description>
+		<comps Inherit='False'>
+			<li Class="CompProperties_Glower">
+				<glowRadius>12</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>1</gasConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+		</comps>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="StandingLampBase">
+		<defName>VPE_GasWallLight</defName>
+		<label>gas wall light</label>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/VPE_GasWallLight</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			 <shadowData>
+        <volume>(0, 0, 0)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+		</graphicData>
+		<altitudeLayer>Item</altitudeLayer>
+		<description>A gas-powered wall light that lights an area. People need light to move and work at full speed. Needs to be connected to the helixien gas network. Can be safely placed outdoors.</description>
+		<comps Inherit='False'>
+			<li Class="CompProperties_Glower">
+				<glowRadius>8</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>1</gasConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+		</comps>
+		<building>
+			<isEdifice>false</isEdifice>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<rotatable>true</rotatable>
+		<clearBuildingArea>false</clearBuildingArea>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+	</ThingDef>
+
+	<ThingDef ParentName="StandingLampBase">
+		<defName>VPE_GasFloodlight</defName>
+		<label>gas floodlight</label>
+		<description>A gas-powered tall floodlight that lights a massive area. People need light to move and work at full speed. It doesn’t shine bright enough to grow crops. Needs to be connected to the helixien gas network. Can be safely placed outdoors.</description>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasFloodlight</texPath>
+			<drawSize>(2,3.5)</drawSize>
+		</graphicData>
+		<costList>
+			<Steel>80</Steel>
+		</costList>
+		<comps Inherit='False'>
+			<li Class="CompProperties_Glower">
+				<glowRadius>24</glowRadius>
+				<glowColor>(90,140,90,0)</glowColor>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>10</gasConsumption>
+			</li>
+			<li Class="CompProperties_Flickable" />
+		</comps>
+		<researchPrerequisites Inherit='False'>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<uiIconOffset>(0, 0.2)</uiIconOffset>
+	</ThingDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>VPE_GasBiofuelRefinery</defName>
+		<label>gas-powered refinery</label>
+		<description>Refines biological matter like wood or plant matter into chemfuel. Needs to be connected to the helixien gas network.</description>
+		<thingClass>GasNetwork.Building_WorkTable_Gas</thingClass>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>2000</WorkToBuild>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<minifiedDef />
+		<thingCategories Inherit="false" />
+		<size>(3,2)</size>
+		<costList>
+			<Steel>150</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
+		</costList>
+		<comps>
+			<li Class="GasNetwork.CompProperties_GasTrader">
+				<compClass>GasNetwork.CompGasTrader</compClass>
+				<gasConsumption>50</gasConsumption>
+				<gasConsumptionWhenUsed>51</gasConsumptionWhenUsed>
+			</li>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Breakdownable" />
+		</comps>
+		<castEdgeShadows>false</castEdgeShadows>
+		<staticSunShadowHeight>0</staticSunShadowHeight>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasPoweredRefinery</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3,2)</drawSize>
+			<shadowData>
+				<volume>(2.22, 0.8, 0.62)</volume>
+				<offset>(0, 0, -0.13)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.3,0.1,2.4,1.8)</rect>
+			</damageData>
+		</graphicData>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+		</building>
+		<fillPercent>0.5</fillPercent>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<hasInteractionCell>true</hasInteractionCell>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+		<designationCategory>Production</designationCategory>
+		<surfaceType>Item</surfaceType>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>BiofuelRefining</li>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<modExtensions>
+			<li Class="VanillaPowerExpanded.ThingDefExtension">
+				<inheritRecipesFrom>
+					<li>BiofuelRefinery</li>
+				</inheritRecipesFrom>
+
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasVent</defName>
+		<label>helixien gas vent</label>
+		<description>A wall-mounted vent capable of releasing toxic compounds of helixien gas into the targeted area. It drains helixien gas supply rapidly, and dissipates quickly. It needs a gas valve installed in the same network to limit the flow of gas. Helixien gas is very volatile and will travel with wind.</description>
+		<thingClass>Building</thingClass>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasVent</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>1</fillPercent>
+		<coversFloor>true</coversFloor>
+		<blockLight>true</blockLight>
+		<castEdgeShadows>true</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<statBases>
+			<WorkToBuild>400</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<costList>
+			<Steel>30</Steel>
+		</costList>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<placeWorkers>
+			<li>GasNetwork.PlaceWorker_GasVent</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<building>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<researchPrerequisites>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<designationCategory>Security</designationCategory>
+		<comps>
+			<li Class="CompProperties_Flickable">
+				<commandTexture>UI/Commands/Vent</commandTexture>
+				<commandLabelKey>CommandDesignateOpenCloseVentLabel</commandLabelKey>
+				<commandDescKey>CommandDesignateOpenCloseVentDesc</commandDescKey>
+			</li>
+			<li Class="GasNetwork.CompProperties_GasVent">
+				<compClass>GasNetwork.CompGasVent</compClass>
+				<!-- This is also the amount of gas that is vented. See the maxDensity setting in the gas def for balancing options.
+				I would recommend a very high consumption and maxDensity, as this is going to be quite overpowered. -->
+				<gasConsumptionWhenUsed>100</gasConsumptionWhenUsed>
+
+				<!-- Ventingradius only directly affects the placeWorker graphic, actual gas buildup is determined by the amount of 
+				gas released, dissipation rates (both settable in the gas def), and wind speed and direction. -->
+				<ventingRadius>5.4</ventingRadius>
+
+				<!-- def for the gas released. -->
+				<ventingGas>Gas_Helixien</ventingGas>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VPE_GasPodLauncher</defName>
+		<label>gas-operated pod launcher</label>
+		<description>A fueling port for launching one transport pod. Pod launchers can launch as a group - but the launchers must be placed adjacent to each other. Requires connection to a helixien gas system.</description>
+		<graphicData>
+			<texPath>Things/Building/GasMachines/GasPodLauncher</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2,3)</drawSize>
+		</graphicData>
+		<tickerType>Normal</tickerType>
+		<size>(1,2)</size>
+		<rotatable>true</rotatable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>1.0</fillPercent>
+		<designationCategory>Misc</designationCategory>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<building>
+			<hasFuelingPort>true</hasFuelingPort>
+		</building>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>3000</WorkToBuild>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<Steel>50</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<comps>
+			<!-- Note that this is ONLY hooked up for interactions with CompLaunchable, 
+				and will otherwise be non-functional. -->
+			<li Class="GasNetwork.CompProperties_GasTrader_Buffer">
+				<compClass>GasNetwork.CompGasTrader_Buffer</compClass>
+
+				<!-- maximum buffer storage size -->
+				<maxBuffer>125</maxBuffer>
+
+				<!-- inherits from CompGasTrader, so all those props apply here too.
+					In the context of a buffer, gasConsumption becomes the refill rate.
+					Consumption is automatically lowered/stopped when the buffer is full. -->
+				<gasConsumption>100</gasConsumption>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_FuelingPort</li>
+			<li>PlaceWorker_NotUnderRoof</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<researchPrerequisites>
+			<li>TransportPod</li>
+			<li>VFE_GasExtraction</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+		<uiIconScale>0.9</uiIconScale>
+	</ThingDef>
+
+
+</Defs>

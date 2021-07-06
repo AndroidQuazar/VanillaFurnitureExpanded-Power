@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+
+  <!--<IncidentDef>
+    <defName>VPE_GasExplosion</defName>
+    <label>gas explosion</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>VanillaPowerExpanded.IncidentWorker_GasExplosion</workerClass>
+    <baseChance>1.0</baseChance>
+    <minRefireDays>8</minRefireDays>
+  </IncidentDef>-->
+
+ 
+
+</Defs>

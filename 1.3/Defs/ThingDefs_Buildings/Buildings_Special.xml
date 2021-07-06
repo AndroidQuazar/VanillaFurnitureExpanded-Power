@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_SmallVanometricPowerCell</defName>
+    <label>small vanometric power cell</label>
+    <description>Generates a very small amount of free energy, forever, without using fuel. This technology is developed by archotechs, and is beyond even most glitterworld societies. While nobody knows exactly how it works, scholars believe it somehow extracts energy directly from fluctuations in the quantum foam.</description>
+    <graphicData>
+      <texPath>Things/Building/Special/VanometricPowerCellSmall</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>400</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>8</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(1, 1)</size>
+    <costList>
+      <Steel>70</Steel>
+      <ComponentSpacer>4</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-450</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(227,233,168,0)</glowColor>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>VFE_LargeVanometricPowerCell</defName>
+    <label>large vanometric power cell</label>
+    <description>Generates a large amount of free energy, forever, without using fuel. This technology is developed by archotechs, and is beyond even most glitterworld societies. While nobody knows exactly how it works, scholars believe it somehow extracts energy directly from fluctuations in the quantum foam.</description>
+    <graphicData>
+      <texPath>Things/Building/Special/VanometricPowerCellLarge</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>2400</MarketValue>
+      <MaxHitPoints>350</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>30</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2, 2)</size>
+    <costList>
+      <Steel>250</Steel>
+      <ComponentSpacer>12</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-2400</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(227,233,168,0)</glowColor>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardHighFreq</li>
+    </thingSetMakerTags>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>VPE_ArchotechViolenceGenerator</defName>
+    <label>archotech violence generator</label>
+    <description>This device taps into psychic energy leaving the bodies of surrounding humanoids, changing it directly into usable energy. This technology is developed by archotechs, and is beyond even most glitterworld societies.</description>
+    <graphicData>
+      <texPath>Things/Building/Special/ArchotechViolenceGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>150</pathCost>
+    <blockWind>true</blockWind>
+    <passability>Impassable</passability>
+    <fillPercent>1.0</fillPercent>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <thingCategories>
+      <li>BuildingsSpecial</li>
+    </thingCategories>
+    <statBases>
+      <MarketValue>3400</MarketValue>
+      <MaxHitPoints>1500</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Mass>30</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(5, 5)</size>
+    <costList>
+      <Steel>550</Steel>
+      <ComponentSpacer>18</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>VanillaPowerExpanded.CompSoulsPowerPlant</compClass>
+        <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(227,233,168,0)</glowColor>
+      </li>
+     
+    </comps>
+    <thingSetMakerTags>
+      <li>RewardStandardLowFreq</li>
+    </thingSetMakerTags>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticBuilding</li>
+    </tradeTags>
+    <building>
+      <soundAmbient>CrashedShipPart_Ambience</soundAmbient>
+    </building>
+  </ThingDef>
+
+</Defs>
