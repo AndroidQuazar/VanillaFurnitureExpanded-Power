@@ -19,20 +19,11 @@ namespace GasNetwork.Patches
         public static bool GasCheck(ThingDef constructible, ThingDef target)
         {
             Log.Debug($"c: {constructible.defName}, t: {target.defName}");
-            if (!constructible.EverTransmitsGas())
-            {
-                return false;
-            }
+            if (!constructible.EverTransmitsGas()) return false;
 
-            if (target != DefOf.VPE_GasPipe && target != DefOf.VPE_GasPipeSub)
-            {
-                return false;
-            }
+            if (target != DefOf.VPE_GasPipe && target != DefOf.VPE_GasPipeSub) return false;
 
-            if (constructible == DefOf.VPE_GasPipe || constructible == DefOf.VPE_GasPipeSub)
-            {
-                return false;
-            }
+            if (constructible == DefOf.VPE_GasPipe || constructible == DefOf.VPE_GasPipeSub) return false;
 
             return true;
         }
@@ -63,7 +54,7 @@ namespace GasNetwork.Patches
          * IL_0183: brfalse.s IL_019C
          */
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> _instructions,
-                                                              ILGenerator                  generator)
+            ILGenerator generator)
         {
             var instructions = _instructions.ToList();
             for (var i = 0; i < instructions.Count; i++)
@@ -71,16 +62,19 @@ namespace GasNetwork.Patches
                 yield return instructions[i];
 
                 if (i > 4
-                 && instructions[i - 4].LoadsField(Helpers.PowerConduit_FI)
-                 && instructions[i - 3].Branches(out _)
-                 && instructions[i - 2].LoadsConstant(1L)
-                 && instructions[i - 1].opcode == OpCodes.Ret
-                 && instructions[i - 0].opcode == OpCodes.Ldarg_0)
+                    && instructions[i - 4].LoadsField(Helpers.PowerConduit_FI)
+                    && instructions[i - 3].Branches(out _)
+                    && instructions[i - 2].LoadsConstant(1L)
+                    && instructions[i - 1].opcode == OpCodes.Ret
+                    && instructions[i - 0].opcode == OpCodes.Ldarg_0)
                 {
-                    yield return new CodeInstruction(OpCodes.Ldloc_3);
+                    yield return new CodeInstruction(OpCodes.Ldloc_2);
+                    yield return new CodeInstruction(OpCodes.Ldfld,
+                        AccessTools.Field(AccessTools.Inner(typeof(GenConstruct), "<>c__DisplayClass16_0"),
+                            "oldDefBuilt"));
                     yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(
-                                                         typeof(Helpers),
-                                                         nameof(Helpers.GasCheck)));
+                        typeof(Helpers),
+                        nameof(Helpers.GasCheck)));
 
                     var label = generator.DefineLabel();
                     yield return new CodeInstruction(OpCodes.Brfalse, label);
@@ -126,7 +120,7 @@ namespace GasNetwork.Patches
             AccessTools.Field(typeof(Thing), nameof(Thing.def));
 
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> _instructions,
-                                                              ILGenerator                  generator)
+            ILGenerator generator)
         {
             var instructions = _instructions.ToList();
             for (var i = 0; i < instructions.Count; i++)
@@ -134,21 +128,21 @@ namespace GasNetwork.Patches
                 yield return instructions[i];
 
                 if (i > 5
-                 && instructions[i - 5].LoadsField(Helpers.PowerConduit_FI)
-                 && instructions[i - 4].Branches(out var _dump)
-                 && instructions[i - 3].LoadsConstant(0L)
-                 && instructions[i - 2].opcode == OpCodes.Ret
-                 && instructions[i - 1].opcode == OpCodes.Ldarg_1
-                 && instructions[i - 0].LoadsField(def_FI))
+                    && instructions[i - 5].LoadsField(Helpers.PowerConduit_FI)
+                    && instructions[i - 4].Branches(out var _dump)
+                    && instructions[i - 3].LoadsConstant(0L)
+                    && instructions[i - 2].opcode == OpCodes.Ret
+                    && instructions[i - 1].opcode == OpCodes.Ldarg_1
+                    && instructions[i - 0].LoadsField(def_FI))
 
                 {
                     // push constructible.def
                     yield return new CodeInstruction(OpCodes.Ldloc_1);
                     // pop target.def & constructible.def, push bool
                     yield return new CodeInstruction(OpCodes.Call,
-                                                     AccessTools.Method(
-                                                         typeof(Helpers),
-                                                         nameof(Helpers.GasCheck2)));
+                        AccessTools.Method(
+                            typeof(Helpers),
+                            nameof(Helpers.GasCheck2)));
 
                     // on false, skip to next check.
                     // on true control passes to returning false.
