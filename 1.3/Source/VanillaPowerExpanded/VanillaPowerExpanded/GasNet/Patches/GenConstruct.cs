@@ -18,12 +18,17 @@ namespace GasNetwork.Patches
 
         public static bool GasCheck(ThingDef constructible, ThingDef target)
         {
-            Log.Debug($"c: {constructible.defName}, t: {target.defName}");
-            if (!constructible.EverTransmitsGas()) return false;
+            if(constructible!=null && target != null)
+            {
+                Log.Debug($"c: {constructible.defName}, t: {target.defName}");
+                if (!constructible.EverTransmitsGas()) return false;
 
-            if (target != DefOf.VPE_GasPipe && target != DefOf.VPE_GasPipeSub) return false;
+                if (target != DefOf.VPE_GasPipe && target != DefOf.VPE_GasPipeSub) return false;
 
-            if (constructible == DefOf.VPE_GasPipe || constructible == DefOf.VPE_GasPipeSub) return false;
+                if (constructible == DefOf.VPE_GasPipe || constructible == DefOf.VPE_GasPipeSub) return false;
+
+            }
+            
 
             return true;
         }
