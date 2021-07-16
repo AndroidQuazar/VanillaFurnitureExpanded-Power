@@ -441,7 +441,7 @@
 			</li>
 			<li Class="CompProperties_Power">
 				<compClass>GasNetwork.CompGasPowerPlant</compClass>
-				<basePowerConsumption>-2400</basePowerConsumption>
+				<basePowerConsumption>-3600</basePowerConsumption>
 				<transmitsPower>true</transmitsPower>
 			</li>
 
