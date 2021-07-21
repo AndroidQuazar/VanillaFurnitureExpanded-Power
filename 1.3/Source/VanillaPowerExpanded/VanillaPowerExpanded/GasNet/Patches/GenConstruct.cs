@@ -18,7 +18,7 @@ namespace GasNetwork.Patches
 
         public static bool GasCheck(ThingDef constructible, ThingDef target)
         {
-            if(constructible!=null && target != null)
+            if (constructible != null && target != null)
             {
                 Log.Debug($"c: {constructible.defName}, t: {target.defName}");
                 if (!constructible.EverTransmitsGas()) return false;
@@ -26,9 +26,8 @@ namespace GasNetwork.Patches
                 if (target != DefOf.VPE_GasPipe && target != DefOf.VPE_GasPipeSub) return false;
 
                 if (constructible == DefOf.VPE_GasPipe || constructible == DefOf.VPE_GasPipeSub) return false;
-
             }
-            
+
 
             return true;
         }
@@ -74,9 +73,6 @@ namespace GasNetwork.Patches
                     && instructions[i - 0].opcode == OpCodes.Ldarg_0)
                 {
                     yield return new CodeInstruction(OpCodes.Ldloc_2);
-                    yield return new CodeInstruction(OpCodes.Ldfld,
-                        AccessTools.Field(AccessTools.Inner(typeof(GenConstruct), "<>c__DisplayClass16_0"),
-                            "oldDefBuilt"));
                     yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(
                         typeof(Helpers),
                         nameof(Helpers.GasCheck)));
@@ -85,7 +81,7 @@ namespace GasNetwork.Patches
                     yield return new CodeInstruction(OpCodes.Brfalse, label);
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
                     yield return new CodeInstruction(OpCodes.Ret);
-                    yield return new CodeInstruction(OpCodes.Ldarg_0) {labels = new List<Label>(new[] {label})};
+                    yield return new CodeInstruction(OpCodes.Ldarg_0).WithLabels(label);
                 }
             }
         }
