@@ -6,6 +6,7 @@
     <label>large battery</label>
     <description>Stores a large amount of electricity for later use. Charged large batteries explode when exposed to rain or fire.</description>
     <thingClass>Building_Battery</thingClass>
+	<drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Things/Building/Batteries/BatteryLarge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -62,6 +63,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_SmallBattery</defName>
     <label>small battery</label>
+	<drawerType>MapMeshAndRealTime</drawerType>
     <description>Stores a small amount of electricity for later use. Charged batteries explode when exposed to rain or fire.</description>
     <thingClass>VanillaPowerExpanded.Building_SmallBattery</thingClass>
     <graphicData>
@@ -120,6 +122,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_AdvancedBattery</defName>
     <label>advanced battery</label>
+	<drawerType>MapMeshAndRealTime</drawerType>
     <description>Stores electricity for later use. Due to technological advancements, this battery unit is significantly more efficient. Charged advanced batteries are waterproof and don't explode when exposed to rain.</description>
     <thingClass>Building_Battery</thingClass>
     <graphicData>
@@ -183,6 +186,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>VFE_LargeAdvancedBattery</defName>
     <label>large advanced battery</label>
+	<drawerType>MapMeshAndRealTime</drawerType>
     <description>Stores large amounts of electricity for later use. Due to technological advancements, this battery unit is significantly more efficient. Charged large advanced batteries are waterproof and don't explode when exposed to rain.</description>
     <thingClass>Building_Battery</thingClass>
     <graphicData>
