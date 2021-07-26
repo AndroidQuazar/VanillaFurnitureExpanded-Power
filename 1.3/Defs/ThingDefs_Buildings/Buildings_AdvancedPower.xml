@@ -3,6 +3,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VFE_AdvancedWindTurbine</defName>
 		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
 		<label>advanced wind turbine</label>
 		<description>A spacertech, advanced wind-powered electrical generator. Requires a large clear space in front and behind for optimal air flow.</description>
 		<graphicData>
