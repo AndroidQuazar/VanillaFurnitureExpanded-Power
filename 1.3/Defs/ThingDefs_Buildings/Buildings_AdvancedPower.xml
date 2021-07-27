@@ -123,6 +123,7 @@
 		<label>advanced watermill generator</label>
 		<description>A spacertech building that produces electricity from a river. Must be placed with its wheel in moving water. If watermills are placed too close together, the turbulence they generate will interfere and reduce power generation.</description>
 		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Power/AdvancedWatermillGenerator/AdvancedWatermillGeneratorBody</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
