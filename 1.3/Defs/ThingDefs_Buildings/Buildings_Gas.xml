@@ -181,11 +181,12 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_GasTank</defName>
 		<label>gas tank</label>
+		<drawerType>MapMeshAndRealTime</drawerType>
 		<description>A large steel tank for gas storage. Will explode if damaged.</description>
 		<graphicData>
 			<texPath>Things/Building/GasMachines/GasTank</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(2.5,2.5)</drawSize>
+			<drawSize>(2,2)</drawSize>
 			<damageData>
 				<cornerTL>Damage/Corner</cornerTL>
 				<cornerTR>Damage/Corner</cornerTR>
@@ -229,7 +230,7 @@
 				<preExplosionSpawnChance>1</preExplosionSpawnChance>
 				<wickTicks>70~150</wickTicks>
 			</li>
-			<li Class="CompProperties_Breakdownable"/>
+			
 		</comps>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<designationCategory>Power</designationCategory>
