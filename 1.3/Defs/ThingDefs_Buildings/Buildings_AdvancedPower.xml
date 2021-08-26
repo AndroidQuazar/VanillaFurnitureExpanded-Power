@@ -68,6 +68,7 @@
 		<label>advanced solar generator</label>
 		<description>This spacertech solar generator is capable of extracting significantly more energy from sunlight. Does not work in the dark or under artificial light.</description>
 		<thingClass>Building</thingClass>
+		<drawerType>MapMeshAndRealTime</drawerType>
 		<graphicData>
 			<texPath>Things/Building/Power/AdvancedSolarCollector/AdvancedSolarCollector</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
