@@ -16,52 +16,60 @@ namespace GasNetwork.HarmonyPatches
         {
             // add extra pathing cost for tiles on or close to toxic or flammable gas. 
             // this is analogous to the vanilla code for fire.
-            if (perceivedStatic && Gas_Spreading.AnyGases)
+
+            if (VanillaPowerExpanded.VanillaPowerExpanded_Mod.settings.disableGasPathCalculations)
             {
-                //var before = __result;
-                //
-                var comp = MapComponent_GasDanger.GetCachedComp(___map);
-                var gases = comp.GasesAt(c);
-
-                foreach (var gas in gases)
+                if (perceivedStatic && Gas_Spreading.AnyGases)
                 {
-                    if (gas.Flammable)
+                    //var before = __result;
+                    //
+                    var comp = MapComponent_GasDanger.GetCachedComp(___map);
+                    var gases = comp.GasesAt(c);
+
+                    foreach (var gas in gases)
                     {
-                        __result += (int)Mathf.Clamp01(gas.Density) * (gas.Position == c ? 1000 : 150);
+                        if (gas.Flammable)
+                        {
+                            __result += (int)Mathf.Clamp01(gas.Density) * (gas.Position == c ? 1000 : 150);
+                        }
+
+                        if (gas.Toxic)
+                        {
+                            __result += (int)Mathf.Clamp01(gas.Density) * (gas.Position == c ? 500 : 75);
+                        }
                     }
 
-                    if (gas.Toxic)
-                    {
-                        __result += (int)Mathf.Clamp01(gas.Density) * (gas.Position == c ? 500 : 75);
-                    }
+                    //
+                    //foreach (var offset in GenAdj.AdjacentCellsAndInside)
+                    //{
+                    //    var cell = c + offset;
+                    //    var center = cell.Equals(c);
+                    //    if (!cell.InBounds(___map))
+                    //    {
+                    //        continue;
+                    //    }
+                    //
+                    //    var gases = comp.GasesAt(c + offset);
+                    //    // var gases = ___map.thingGrid.ThingsListAtFast(c + offset).OfType<Gas_Spreading>();
+                    //    foreach (var gas in gases)
+                    //    {
+                    //        if (gas.Flammable)
+                    //        {
+                    //            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 1000 : 150));
+                    //        }
+                    //
+                    //        if (gas.Toxic)
+                    //        {
+                    //            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 500 : 75));
+                    //        }
+                    //    }
+                    //}
                 }
 
-                //
-                //foreach (var offset in GenAdj.AdjacentCellsAndInside)
-                //{
-                //    var cell = c + offset;
-                //    var center = cell.Equals(c);
-                //    if (!cell.InBounds(___map))
-                //    {
-                //        continue;
-                //    }
-                //
-                //    var gases = comp.GasesAt(c + offset);
-                //    // var gases = ___map.thingGrid.ThingsListAtFast(c + offset).OfType<Gas_Spreading>();
-                //    foreach (var gas in gases)
-                //    {
-                //        if (gas.Flammable)
-                //        {
-                //            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 1000 : 150));
-                //        }
-                //
-                //        if (gas.Toxic)
-                //        {
-                //            __result += Mathf.CeilToInt(Mathf.Clamp01(gas.Density) * (center ? 500 : 75));
-                //        }
-                //    }
-                //}
+
             }
+
+            
         }
     }
 }

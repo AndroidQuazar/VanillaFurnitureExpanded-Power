@@ -18,6 +18,7 @@
 	<VPE_MustPlaceAdjacentToPipe>Gas powered buildings must be placed adjacent to gas pipes, not on top</VPE_MustPlaceAdjacentToPipe>
 	<VPE_DeconstructGasPipes>Deconstruct Gas Network</VPE_DeconstructGasPipes>
 	<VPE_DeconstructGasPipesDesc>Deconstruct only gas pipes and subterranean gas pipes</VPE_DeconstructGasPipesDesc>
+	<VPE_DisableGasPathCalculations>Disable Helixien gas path calculations (use to reduce lag)</VPE_DisableGasPathCalculations>
 
 
 	<Fluffy.GasNetwork.GasNetworkInspectString>Gas excess (stored) in network: {0} ({1})</Fluffy.GasNetwork.GasNetworkInspectString>
@@ -58,7 +59,7 @@
 
 	<!-- Lightning Generator -->
 	<VPE_LightningTime>Lightning energy stored for: </VPE_LightningTime>
-	<VPE_Producing>Producing {0} W of electricity</VPE_Producing>
+
 	<VPE_NotLightningProducing>Lightning electricity depleted. Looks like you'll have to wait for the next thunderstorm.</VPE_NotLightningProducing>
 
 	<!-- Gas pipe kaboom -->

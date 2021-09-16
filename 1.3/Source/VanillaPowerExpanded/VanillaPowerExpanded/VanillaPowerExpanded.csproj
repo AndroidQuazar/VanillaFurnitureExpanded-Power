@@ -337,6 +337,8 @@
     <Compile Include="GasNet\Patches\OverlayDrawer.cs" />
     <Compile Include="Lightning\CompLightningPowerPlant.cs" />
     <Compile Include="Lightning\WeatherEvent_CustomLightningStrike.cs" />
+    <Compile Include="Options\VanillaPowerExpanded_Settings.cs" />
+    <Compile Include="Options\VanillaPowerExpanded_SettingsController.cs" />
     <Compile Include="SpecialSpawns\MapComponentExtender.cs" />
     <Compile Include="BillInheritance\NonPublicFields.cs" />
     <Compile Include="Nuclear\CompPlantHarmRadiusIfBroken.cs" />
