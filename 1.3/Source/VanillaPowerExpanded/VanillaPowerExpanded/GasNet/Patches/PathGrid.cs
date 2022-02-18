@@ -17,7 +17,7 @@ namespace GasNetwork.HarmonyPatches
             // add extra pathing cost for tiles on or close to toxic or flammable gas. 
             // this is analogous to the vanilla code for fire.
 
-            if (VanillaPowerExpanded.VanillaPowerExpanded_Mod.settings.disableGasPathCalculations)
+            if (!VanillaPowerExpanded.VanillaPowerExpanded_Mod.settings.disableGasPathCalculations)
             {
                 if (perceivedStatic && Gas_Spreading.AnyGases)
                 {

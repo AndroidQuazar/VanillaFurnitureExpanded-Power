@@ -22,7 +22,7 @@ namespace GasNetwork.Patches
     {
         public static void Postfix(ref Danger __result, Verse.Region __instance)
         {
-            if (VanillaPowerExpanded.VanillaPowerExpanded_Mod.settings.disableGasPathCalculations) {
+            if (!VanillaPowerExpanded.VanillaPowerExpanded_Mod.settings.disableGasPathCalculations) {
                 if (Gas_Spreading.AnyGases)
                 {
                     var danger = MapComponent_GasDanger.GetCachedComp(__instance.Map)?.DangerIn(__instance) ?? Danger.None;
